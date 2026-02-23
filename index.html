@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -194,6 +194,13 @@
 </head>
 
 <body>
+
+    <!-- Silently normalize /index.html to / without redirect (SEO: prevents duplicate URL) -->
+    <script>
+        if (window.location.pathname === '/index.html') {
+            history.replaceState(null, document.title, '/' + window.location.hash);
+        }
+    </script>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
