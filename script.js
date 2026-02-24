@@ -480,3 +480,35 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('%c GetUpdated', 'font-size: 24px; font-weight: bold; color: #6366f1');
     console.log('%c Welcome to GetUpdated - Your Gateway to Success!', 'font-size: 14px; color: #ec4899;');
 });
+
+// ===== Cookie Consent Banner (GDPR / Google AdSense Requirement) =====
+(function () {
+    if (localStorage.getItem('cookieConsent')) return;
+
+    const banner = document.createElement('div');
+    banner.id = 'cookie-consent';
+    banner.innerHTML = `
+        <div style="position:fixed;bottom:0;left:0;right:0;background:#1e1e2e;color:#e0e0e0;padding:16px 24px;z-index:99999;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;font-family:'Poppins',sans-serif;font-size:14px;box-shadow:0 -2px 20px rgba(0,0,0,0.3);">
+            <p style="margin:0;flex:1;min-width:280px;line-height:1.6;">
+                We use cookies to enhance your experience, serve personalized ads through Google AdSense, and analyze traffic.
+                By clicking "Accept All", you consent to our use of cookies.
+                <a href="/privacy-policy.html" style="color:#818cf8;text-decoration:underline;">Privacy Policy</a>
+            </p>
+            <div style="display:flex;gap:8px;flex-shrink:0;">
+                <button id="cookie-reject" style="padding:10px 20px;border:1px solid #818cf8;background:transparent;color:#818cf8;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;">Reject</button>
+                <button id="cookie-accept" style="padding:10px 20px;border:none;background:linear-gradient(135deg,#6366f1,#ec4899);color:#fff;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;">Accept All</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(banner);
+
+    document.getElementById('cookie-accept').addEventListener('click', function () {
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.remove();
+    });
+
+    document.getElementById('cookie-reject').addEventListener('click', function () {
+        localStorage.setItem('cookieConsent', 'rejected');
+        banner.remove();
+    });
+})();
