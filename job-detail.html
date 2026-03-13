@@ -500,6 +500,120 @@
             gap: 1.5rem;
         }
 
+        /* Also Apply Section */
+        .also-apply-section {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .also-apply-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .also-apply-section h3 i {
+            color: #ec4899;
+            font-size: 1.1rem;
+        }
+
+        .also-apply-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .also-apply-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--card-bg, rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .also-apply-card:hover {
+            border-color: #6366f1;
+            background: rgba(99, 102, 241, 0.05);
+            transform: translateX(4px);
+        }
+
+        .also-apply-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .also-apply-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .also-apply-info h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .also-apply-info .also-apply-company {
+            font-size: 0.8rem;
+            color: var(--text-secondary, #94a3b8);
+        }
+
+        .also-apply-info .also-apply-salary {
+            font-size: 0.78rem;
+            color: #10b981;
+            font-weight: 500;
+            margin-top: 0.15rem;
+        }
+
+        .also-apply-arrow {
+            color: var(--text-secondary, #94a3b8);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .also-apply-card:hover .also-apply-arrow {
+            transform: translateX(3px);
+            color: #6366f1;
+        }
+
+        @media (max-width: 576px) {
+            .also-apply-card {
+                padding: 0.85rem 1rem;
+            }
+
+            .also-apply-logo {
+                width: 42px;
+                height: 42px;
+                font-size: 0.75rem;
+            }
+
+            .also-apply-info h4 {
+                font-size: 0.88rem;
+            }
+        }
+
         @media (max-width: 1024px) {
             .job-content {
                 grid-template-columns: 1fr;
@@ -734,6 +848,14 @@
                         <a href="#" class="engagement-apply-btn" id="applyBtnMain" target="_blank">
                             APPLY NOW <i class="fas fa-external-link-alt"></i>
                         </a>
+                    </div>
+
+                    <!-- Also Apply Section -->
+                    <div class="also-apply-section" id="alsoApplySection">
+                        <h3><i class="fas fa-briefcase"></i> Also Apply</h3>
+                        <div class="also-apply-grid" id="alsoApplyGrid">
+                            <!-- Populated dynamically -->
+                        </div>
                     </div>
                 </div>
 
@@ -2586,39 +2708,137 @@
                 companyType: 'Government - State Police',
                 openings: '3,298',
                 qualification: '10+2 (Intermediate)',
-                skills: ['Physical Fitness', 'Punjabi (Matric Level)', 'General Knowledge', 'Computer Basics', 'Reasoning', 'English'],
+                skills: ['Physical Fitness', 'Punjabi (Matric Level)', 'General Knowledge', 'Computer Basics', 'Reasoning', 'English', 'Mental Aptitude', 'Current Affairs Punjab'],
                 applyUrl: 'https://punjabpolice.gov.in/',
                 gradient: 'linear-gradient(135deg, #1e40af, #1e3a8a)',
                 description: `
                     <p><strong>About Punjab Police Constable Recruitment 2026:</strong></p>
-                    <p>Punjab Police has released recruitment notification for 3,298 Constable posts covering both District Cadre (2,522 posts) and Armed Cadre (776 posts). Applications are open from March 10, 2026.</p>
+                    <p>Punjab Police has released an official recruitment notification for <strong>3,298 Constable posts</strong> covering both District Cadre and Armed Cadre. The notification was issued on <strong>March 6, 2026</strong>, and online applications opened on <strong>March 10, 2026</strong> via the official portal punjabpolice.gov.in. This is one of the largest state police recruitment drives of 2026.</p>
                     
-                    <p><strong>Total Vacancies:</strong> 3,298 posts</p>
+                    <h4 style="margin-top:1.5rem;color:#6366f1;">📋 Vacancy Breakdown</h4>
+                    <table style="width:100%;border-collapse:collapse;margin:0.75rem 0 1.25rem;">
+                        <tr style="background:rgba(99,102,241,0.1);">
+                            <th style="padding:0.6rem 1rem;text-align:left;border:1px solid rgba(255,255,255,0.1);">Post</th>
+                            <th style="padding:0.6rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.1);">Vacancies</th>
+                        </tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">District Cadre Constable</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);"><strong>2,522</strong></td></tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">Armed Cadre Constable</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);"><strong>776</strong></td></tr>
+                        <tr style="background:rgba(99,102,241,0.05);"><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);"><strong>Total</strong></td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);"><strong>3,298</strong></td></tr>
+                    </table>
                     
-                    <p><strong>Post Breakdown:</strong></p>
+                    <h4 style="color:#6366f1;">📅 Important Dates</h4>
                     <ul>
-                        <li>District Cadre Constable - 2,522 posts</li>
-                        <li>Armed Cadre Constable - 776 posts</li>
+                        <li><strong>Notification Date:</strong> March 6, 2026</li>
+                        <li><strong>Application Start:</strong> March 10, 2026 (7:00 PM)</li>
+                        <li><strong>Last Date to Apply:</strong> March 30, 2026 (11:55 PM)</li>
+                        <li><strong>CBT Exam Date:</strong> To be announced</li>
+                        <li><strong>Admit Card:</strong> Available on official website before exam</li>
                     </ul>
                     
-                    <p><strong>Eligibility:</strong></p>
+                    <h4 style="color:#6366f1;">✅ Eligibility Criteria (as of Jan 1, 2026)</h4>
+                    <p><strong>Educational Qualification:</strong></p>
                     <ul>
-                        <li>10+2 (Intermediate) from recognized board</li>
-                        <li>Punjabi studied as a subject in Matriculation</li>
-                        <li>Age: 18-28 years (relaxation: SC/BC up to 33 years)</li>
-                        <li>Ex-Servicemen: Matric qualification sufficient</li>
+                        <li>Must have passed <strong>10+2 (Intermediate)</strong> or equivalent from a recognized board</li>
+                        <li><strong>Punjabi</strong> must have been studied as a subject in Matriculation (10th)</li>
+                        <li>Ex-Servicemen: Matriculation (10th) qualification is sufficient</li>
                     </ul>
                     
-                    <p><strong>Application Fee:</strong></p>
+                    <p><strong>Age Limit:</strong></p>
                     <ul>
-                        <li>General: ₹1,200</li>
-                        <li>SC/BC/EWS: ₹700</li>
-                        <li>Ex-Servicemen: ₹500</li>
+                        <li>Minimum: <strong>18 years</strong></li>
+                        <li>Maximum: <strong>28 years</strong></li>
+                        <li>SC/BC candidates: Up to <strong>33 years</strong></li>
+                        <li>Government employees: Up to <strong>33 years</strong></li>
+                        <li>Ex-Servicemen: Service period deducted + 3 years additional relaxation</li>
                     </ul>
                     
-                    <p><strong>Selection Process:</strong> Computer-Based Test (CBT) → Physical Screening Test (PST) & Physical Measurement Test (PMT) → Document Scrutiny</p>
+                    <h4 style="color:#6366f1;">💰 Salary & Pay Scale</h4>
+                    <ul>
+                        <li>Minimum Pay: <strong>₹19,900 per month</strong> for first 3 years</li>
+                        <li>After 3 years: Pay as per revised Punjab Government rules</li>
+                        <li>Additional: Dearness Allowance (DA), House Rent Allowance (HRA), and other Govt. allowances</li>
+                        <li>Other benefits: Medical, Leave Travel, Pension (NPS)</li>
+                    </ul>
                     
-                    <p><strong>Apply by:</strong> March 30, 2026</p>
+                    <h4 style="color:#6366f1;">💳 Application Fee</h4>
+                    <table style="width:100%;border-collapse:collapse;margin:0.75rem 0 1.25rem;">
+                        <tr style="background:rgba(99,102,241,0.1);">
+                            <th style="padding:0.6rem 1rem;text-align:left;border:1px solid rgba(255,255,255,0.1);">Category</th>
+                            <th style="padding:0.6rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.1);">Fee</th>
+                        </tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">General</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">₹1,200</td></tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">SC / BC / EWS</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">₹700</td></tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">Ex-Servicemen</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">₹500</td></tr>
+                    </table>
+                    <p style="font-size:0.85rem;color:var(--text-secondary);">Payment via Debit Card, Credit Card, Net Banking, or UPI</p>
+                    
+                    <h4 style="color:#6366f1;">📝 Selection Process</h4>
+                    <p>The recruitment follows a 3-stage selection process:</p>
+                    <ol>
+                        <li><strong>Computer-Based Test (CBT):</strong> Written exam covering General Knowledge, Punjabi Language, Mental Aptitude, Current Affairs (Punjab & India), Reasoning, and Basic Computer Knowledge. Duration: 90 minutes, 100 questions.</li>
+                        <li><strong>Physical Screening Test (PST) & Physical Measurement Test (PMT):</strong>
+                            <ul>
+                                <li><strong>Male:</strong> Height — 5'7" (Gen) / 5'5" (SC/BC); Race — 1600m in 6 min 30 sec; Long Jump — 12 feet; High Jump — 3.5 feet</li>
+                                <li><strong>Female:</strong> Height — 5'3" (Gen) / 5'1" (SC/BC); Race — 800m in 4 minutes</li>
+                            </ul>
+                        </li>
+                        <li><strong>Document Verification & Medical Examination:</strong> Original documents verified + medical fitness test</li>
+                    </ol>
+                    
+                    <h4 style="color:#6366f1;">📖 Exam Pattern — CBT</h4>
+                    <table style="width:100%;border-collapse:collapse;margin:0.75rem 0 1.25rem;">
+                        <tr style="background:rgba(99,102,241,0.1);">
+                            <th style="padding:0.6rem 1rem;text-align:left;border:1px solid rgba(255,255,255,0.1);">Subject</th>
+                            <th style="padding:0.6rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.1);">Questions</th>
+                            <th style="padding:0.6rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.1);">Marks</th>
+                        </tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">General Knowledge & Current Affairs</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">25</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">25</td></tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">Mental Aptitude & Reasoning</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">25</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">25</td></tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">Punjabi Language</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">25</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">25</td></tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">Computer & IT Knowledge</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">25</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">25</td></tr>
+                        <tr style="background:rgba(99,102,241,0.05);"><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);"><strong>Total</strong></td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);"><strong>100</strong></td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);"><strong>100</strong></td></tr>
+                    </table>
+                    <p><strong>Note:</strong> No negative marking. Duration: 90 minutes. Medium: English & Punjabi.</p>
+                    
+                    <h4 style="color:#6366f1;">🏃 Physical Standards</h4>
+                    <table style="width:100%;border-collapse:collapse;margin:0.75rem 0 1.25rem;">
+                        <tr style="background:rgba(99,102,241,0.1);">
+                            <th style="padding:0.6rem 1rem;text-align:left;border:1px solid rgba(255,255,255,0.1);">Test</th>
+                            <th style="padding:0.6rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.1);">Male</th>
+                            <th style="padding:0.6rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.1);">Female</th>
+                        </tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">Height (Gen)</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">5'7\" (170 cm)</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">5'3\" (160 cm)</td></tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">Height (SC/BC)</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">5'5\" (165 cm)</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">5'1\" (155 cm)</td></tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">Race</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">1600m in 6:30</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">800m in 4:00</td></tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">Long Jump</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">12 feet</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">9 feet</td></tr>
+                        <tr><td style="padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.06);">High Jump</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">3.5 feet</td><td style="padding:0.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,0.06);">3 feet</td></tr>
+                    </table>
+
+                    <h4 style="color:#6366f1;">📌 How to Apply</h4>
+                    <ol>
+                        <li>Visit the official website: <strong>punjabpolice.gov.in</strong></li>
+                        <li>Click on "Recruitment" → "Constable Recruitment 2026"</li>
+                        <li>Register with your mobile number and email</li>
+                        <li>Fill in personal, educational, and physical details</li>
+                        <li>Upload photograph, signature, and required documents</li>
+                        <li>Pay the application fee via Debit/Credit Card, Net Banking, or UPI</li>
+                        <li>Submit and download the confirmation for future reference</li>
+                    </ol>
+
+                    <h4 style="color:#6366f1;">💡 Preparation Tips</h4>
+                    <ul>
+                        <li><strong>Start physical training early</strong> — practice 1600m/800m race, long jump, and high jump daily</li>
+                        <li><strong>Focus on Punjab GK</strong> — Punjab history, geography, famous personalities, and current affairs</li>
+                        <li><strong>Practice Punjabi language</strong> — grammar, comprehension, and vocabulary</li>
+                        <li><strong>Basic computer knowledge</strong> — MS Office, Internet basics, computer fundamentals</li>
+                        <li><strong>Reasoning & Mental Aptitude</strong> — practice number series, analogies, coding-decoding</li>
+                        <li><strong>Read newspapers daily</strong> — especially Punjab-centric news channels and newspapers</li>
+                    </ul>
+                    
+                    <p style="margin-top:1.5rem;"><strong>⚠️ Note:</strong> This is a government job with excellent career growth. Selected candidates will undergo training at Punjab Police Academy. Career progression from Constable → Head Constable → ASI → SI → Inspector.</p>
+                    
+                    <p><strong>Apply by:</strong> March 30, 2026 (11:55 PM)</p>
+                    <p><strong>Official Website:</strong> <a href="https://punjabpolice.gov.in" target="_blank" style="color:#6366f1;">punjabpolice.gov.in</a></p>
         `
             },
             'shell-graduate': {
@@ -2799,8 +3019,41 @@
             }
         }
 
+        // Load Also Apply section
+        function loadAlsoApply() {
+            const currentJobId = getJobId();
+            const grid = document.getElementById('alsoApplyGrid');
+            if (!grid) return;
+
+            // Get all other jobs except the current one
+            const otherJobs = Object.entries(jobsData)
+                .filter(([id]) => id !== currentJobId)
+                .sort(() => Math.random() - 0.5) // shuffle
+                .slice(0, 3); // show max 3
+
+            if (otherJobs.length === 0) {
+                document.getElementById('alsoApplySection').style.display = 'none';
+                return;
+            }
+
+            grid.innerHTML = otherJobs.map(([id, job]) => `
+                <a href="job-detail.html?id=${id}" class="also-apply-card">
+                    <div class="also-apply-logo" style="background: ${job.gradient};">${job.logo}</div>
+                    <div class="also-apply-info">
+                        <h4>${job.title}</h4>
+                        <div class="also-apply-company">${job.company} · ${job.location}</div>
+                        <div class="also-apply-salary">${job.salary}</div>
+                    </div>
+                    <i class="fas fa-chevron-right also-apply-arrow"></i>
+                </a>
+            `).join('');
+        }
+
         // Initialize
-        document.addEventListener('DOMContentLoaded', loadJobDetails);
+        document.addEventListener('DOMContentLoaded', function() {
+            loadJobDetails();
+            loadAlsoApply();
+        });
     </script>
 
 <!-- Cookie Consent Banner -->
