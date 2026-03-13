@@ -500,117 +500,124 @@
             gap: 1.5rem;
         }
 
-        /* Also Apply Section */
+        /* Also Apply Section - Blog "Also Read" Style */
         .also-apply-section {
             margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1rem;
         }
 
-        .also-apply-section h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .also-apply-section h3 i {
-            color: #ec4899;
-            font-size: 1.1rem;
+        .also-apply-section > h3 {
+            display: none;
         }
 
         .also-apply-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
         }
 
         .also-apply-card {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 1.25rem;
-            background: var(--card-bg, rgba(255, 255, 255, 0.03));
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--card-bg, rgba(15, 23, 42, 0.6));
+            border: 2px dashed #ec4899;
             border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            position: relative;
             text-decoration: none;
+            display: block;
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
         .also-apply-card:hover {
-            border-color: #6366f1;
-            background: rgba(99, 102, 241, 0.05);
-            transform: translateX(4px);
+            border-color: #f472b6;
+            background: rgba(236, 72, 153, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .also-apply-label {
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            background: var(--card-bg, #0f172a);
+            padding: 0 8px;
+            color: #ec4899;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .also-apply-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .also-apply-logo {
-            width: 48px;
-            height: 48px;
+            width: 60px;
+            height: 60px;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 1rem;
             color: white;
             flex-shrink: 0;
         }
 
-        .also-apply-info {
+        .also-apply-text {
             flex: 1;
             min-width: 0;
         }
 
-        .also-apply-info h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.2rem;
-            white-space: nowrap;
+        .also-apply-text h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary, #fff);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
             overflow: hidden;
-            text-overflow: ellipsis;
         }
 
-        .also-apply-info .also-apply-company {
-            font-size: 0.8rem;
-            color: var(--text-secondary, #94a3b8);
-        }
-
-        .also-apply-info .also-apply-salary {
+        .also-apply-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.35rem;
             font-size: 0.78rem;
-            color: #10b981;
-            font-weight: 500;
-            margin-top: 0.15rem;
-        }
-
-        .also-apply-arrow {
             color: var(--text-secondary, #94a3b8);
-            font-size: 0.85rem;
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
         }
 
-        .also-apply-card:hover .also-apply-arrow {
-            transform: translateX(3px);
-            color: #6366f1;
+        .also-apply-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .also-apply-salary-tag {
+            color: #10b981;
+            font-weight: 600;
         }
 
         @media (max-width: 576px) {
             .also-apply-card {
-                padding: 0.85rem 1rem;
+                padding: 1rem 1.15rem;
             }
 
             .also-apply-logo {
-                width: 42px;
-                height: 42px;
-                font-size: 0.75rem;
+                width: 48px;
+                height: 48px;
+                font-size: 0.85rem;
             }
 
-            .also-apply-info h4 {
-                font-size: 0.88rem;
+            .also-apply-text h4 {
+                font-size: 0.9rem;
+            }
+
+            .also-apply-meta {
+                flex-wrap: wrap;
+                gap: 0.4rem;
             }
         }
 
@@ -3038,13 +3045,17 @@
 
             grid.innerHTML = otherJobs.map(([id, job]) => `
                 <a href="job-detail.html?id=${id}" class="also-apply-card">
-                    <div class="also-apply-logo" style="background: ${job.gradient};">${job.logo}</div>
-                    <div class="also-apply-info">
-                        <h4>${job.title}</h4>
-                        <div class="also-apply-company">${job.company} · ${job.location}</div>
-                        <div class="also-apply-salary">${job.salary}</div>
+                    <span class="also-apply-label">Also apply</span>
+                    <div class="also-apply-content">
+                        <div class="also-apply-logo" style="background: ${job.gradient};">${job.logo}</div>
+                        <div class="also-apply-text">
+                            <h4>${job.title} — ${job.company}</h4>
+                            <div class="also-apply-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
+                                <span class="also-apply-salary-tag"><i class="fas fa-rupee-sign"></i> ${job.salary}</span>
+                            </div>
+                        </div>
                     </div>
-                    <i class="fas fa-chevron-right also-apply-arrow"></i>
                 </a>
             `).join('');
         }
