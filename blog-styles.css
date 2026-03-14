@@ -12,8 +12,9 @@ html, body { max-width: 100%; overflow-x: hidden; }
 @media (max-width: 576px) {
   .blog-header-simple { padding: 0.85rem 1rem; }
   .blog-logo { font-size: 1.2rem; }
-  .blog-nav { gap: 0.5rem; }
-  .blog-nav a { padding: 0.25rem 0; font-size: 0.85rem; }
+  .blog-nav { gap: 1rem; }
+  .blog-nav a { padding: 0.35rem 0.85rem; font-size: 0.85rem; border: 1px solid var(--blog-border); border-radius: 6px; }
+  .article-title { font-size: 1.3rem; line-height: 1.35; }
   .search-form { flex-wrap: wrap; }
   .search-btn { width: 100%; }
 }
