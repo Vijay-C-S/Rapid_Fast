@@ -116,7 +116,7 @@
 
         .all-tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -129,8 +129,23 @@
         }
 
         @media (max-width: 768px) {
+            .tech-news-header h1 {
+                font-size: 2rem;
+            }
+
             .all-tech-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .tech-news-header h1 {
+                font-size: 1.65rem;
+                line-height: 1.3;
             }
         }
     </style>
