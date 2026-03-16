@@ -645,56 +645,56 @@
                     </div>
                 </div>
 
-                <!-- IDBI Bank JAM & AM 2026 -->
-                <div class="job-card hot-job" data-type="government" data-job="idbi-jam" data-deadline="2026-03-19T23:59:59" style="border-color: #047857;">
-                    <div class="job-badge" style="background: linear-gradient(135deg, #1e40af, #1e3a8a);">BANKING</div>
+                <!-- UPSC CMS 2026 -->
+                <div class="job-card hot-job" data-type="government" data-job="upsc-cms-2026" data-deadline="2026-03-31T18:00:00" style="border-color: #0ea5e9;">
+                    <div class="job-badge" style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">UPSC</div>
                     <div class="job-header">
-                        <div class="company-logo" style="background: #047857;">IDBI</div>
+                        <div class="company-logo" style="background: #0284c7;">UPSC</div>
                         <div class="job-info">
-                            <h4>IDBI Bank</h4>
+                            <h4>Union Public Service Commission</h4>
                             <span class="job-location"><i class="fas fa-map-marker-alt"></i> All India</span>
                         </div>
                         <button class="bookmark-btn"><i class="far fa-bookmark"></i></button>
                     </div>
-                    <h3 class="job-title">JAM & Asst Manager - 1,300 Posts</h3>
+                    <h3 class="job-title">Combined Medical Services (CMS) 2026 - 1,358 Posts</h3>
                     <div class="job-tags">
-                        <span class="tag deadline-tag" style="background: #ecfdf5; color: #059669;">Apply by Mar 19</span>
-                        <span class="tag">Graduate</span>
-                        <span class="tag">Banking</span>
+                        <span class="tag deadline-tag" style="background: #ecfdf5; color: #059669;">Apply by Mar 31</span>
+                        <span class="tag">MBBS</span>
+                        <span class="tag">Medical Officer</span>
                     </div>
                     <div class="job-footer">
-                        <span class="salary"><i class="fas fa-rupee-sign"></i> 36,000 - 63,840</span>
+                        <span class="salary"><i class="fas fa-rupee-sign"></i> Level-10 Govt Pay</span>
                         <span class="job-type government" style="background: #059669;">Government</span>
                     </div>
                     <div class="job-buttons">
-                        <a href="job-detail.html?id=idbi-jam" class="view-job-btn"><i class="fas fa-eye"></i> View
+                        <a href="job-detail.html?id=upsc-cms-2026" class="view-job-btn"><i class="fas fa-eye"></i> View
                             Job</a>
                     </div>
                 </div>
 
-                <!-- Shell Graduate Programme 2026 -->
-                <div class="job-card hot-job" data-type="fulltime" data-job="shell-graduate" style="border-color: #f59e0b;">
-                    <div class="job-badge" style="background: linear-gradient(135deg, #f59e0b, #d97706);">SHELL</div>
+                <!-- Railway RRB ALP 2026 -->
+                <div class="job-card hot-job" data-type="government" data-job="rrb-alp-2026" data-deadline="2026-06-14T23:59:59" style="border-color: #f59e0b;">
+                    <div class="job-badge" style="background: linear-gradient(135deg, #f59e0b, #d97706);">RAILWAY</div>
                     <div class="job-header">
-                        <div class="company-logo" style="background: #f59e0b;">S</div>
+                        <div class="company-logo" style="background: #f59e0b;">RRB</div>
                         <div class="job-info">
-                            <h4>Shell India</h4>
-                            <span class="job-location"><i class="fas fa-map-marker-alt"></i> Bangalore/Gurgaon</span>
+                            <h4>Railway Recruitment Board</h4>
+                            <span class="job-location"><i class="fas fa-map-marker-alt"></i> All India</span>
                         </div>
                         <button class="bookmark-btn"><i class="far fa-bookmark"></i></button>
                     </div>
-                    <h3 class="job-title">Graduate Programme 2026 - Leadership Track</h3>
+                    <h3 class="job-title">Assistant Loco Pilot (CEN 01/2026) - 11,127 Posts</h3>
                     <div class="job-tags">
-                        <span class="tag" style="background: #fef3c7; color: #d97706;">3-Year Program</span>
-                        <span class="tag">BE/ME/PhD</span>
-                        <span class="tag">0-3 Yrs</span>
+                        <span class="tag deadline-tag" style="background: #ecfdf5; color: #059669;">Apply by Jun 14</span>
+                        <span class="tag">10th + ITI / Diploma</span>
+                        <span class="tag">Railway</span>
                     </div>
                     <div class="job-footer">
-                        <span class="salary"><i class="fas fa-rupee-sign"></i> 10-21 LPA</span>
-                        <span class="job-type fulltime">Full Time</span>
+                        <span class="salary"><i class="fas fa-rupee-sign"></i> Level-2 + Allowances</span>
+                        <span class="job-type government" style="background: #059669;">Government</span>
                     </div>
                     <div class="job-buttons">
-                        <a href="job-detail.html?id=shell-graduate" class="view-job-btn"><i class="fas fa-eye"></i> View
+                        <a href="job-detail.html?id=rrb-alp-2026" class="view-job-btn"><i class="fas fa-eye"></i> View
                             Job</a>
                     </div>
                 </div>
@@ -981,41 +981,24 @@
                 });
             });
 
-            // Auto "Registration Closed" when deadline passes
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
+            // Auto-remove jobs whose deadlines have passed.
+            function removeExpiredHomeJobs() {
+                const now = new Date();
 
-            document.querySelectorAll('.job-card[data-deadline]').forEach(card => {
-                const deadlineStr = card.dataset.deadline;
-                if (!deadlineStr) return;
+                document.querySelectorAll('.job-card[data-deadline]').forEach(card => {
+                    const deadlineStr = card.dataset.deadline;
+                    if (!deadlineStr) return;
 
-                const deadline = new Date(deadlineStr + 'T23:59:59');
-                if (today > deadline) {
-                    // Mark card as expired
-                    card.style.opacity = '0.75';
-                    card.classList.add('deadline-passed');
-
-                    // Update Apply button to "Registration Closed"
-                    const applyBtn = card.querySelector('.apply-btn[data-deadline]');
-                    if (applyBtn) {
-                        applyBtn.textContent = 'Registration Closed';
-                        applyBtn.style.background = '#6b7280';
-                        applyBtn.style.cursor = 'not-allowed';
-                        applyBtn.style.pointerEvents = 'none';
-                        applyBtn.removeAttribute('href');
-                        applyBtn.removeAttribute('target');
+                    const deadline = new Date(deadlineStr);
+                    if (now > deadline) {
+                        card.setAttribute('data-status', 'closed');
+                        card.remove();
                     }
+                });
+            }
 
-                    // Update deadline tag
-                    const deadlineTag = card.querySelector('.deadline-tag[data-deadline]');
-                    if (deadlineTag) {
-                        deadlineTag.textContent = '\u274C Registration Closed';
-                        deadlineTag.style.background = '#fef2f2';
-                        deadlineTag.style.color = '#ef4444';
-                        deadlineTag.style.fontWeight = '600';
-                    }
-                }
-            });
+            removeExpiredHomeJobs();
+            setInterval(removeExpiredHomeJobs, 60000);
         });
     </script>
 

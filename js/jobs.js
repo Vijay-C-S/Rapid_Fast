@@ -42,9 +42,10 @@ export function initJobs() {
         const totalCount = jobCards.length;
 
         jobCards.forEach(card => {
+            const isClosed = card.getAttribute('data-status') === 'closed';
             const matchesFilter = filter === 'all' || card.getAttribute('data-type') === filter;
             const matchesSearch = !query || getCardSearchText(card).includes(query);
-            if (matchesFilter && matchesSearch) {
+            if (!isClosed && matchesFilter && matchesSearch) {
                 card.style.display = 'block';
                 card.style.animation = 'fadeIn 0.5s ease';
                 visibleCount++;
@@ -100,6 +101,21 @@ export function initJobs() {
             jobSearchInput.focus();
         });
     }
+
+    // Remove closed jobs as soon as the deadline passes.
+    function removeExpiredJobs() {
+        const now = new Date();
+        document.querySelectorAll('.job-card[data-deadline]').forEach(card => {
+            const deadline = new Date(card.getAttribute('data-deadline'));
+            if (now > deadline) {
+                card.setAttribute('data-status', 'closed');
+                card.remove();
+            }
+        });
+    }
+
+    removeExpiredJobs();
+    setInterval(removeExpiredJobs, 60000);
 
     // Bookmark Toggle
     const bookmarkBtns = document.querySelectorAll('.bookmark-btn');
