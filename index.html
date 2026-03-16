@@ -134,16 +134,69 @@
         .nav-actions { display: flex; align-items: center; gap: 0.75rem }
 
         .theme-toggle {
-            width: 40px;
+            width: 100px;
             height: 40px;
             border-radius: 9999px;
-            background: #334155;
+            background: #1a1a2e;
             color: #f8fafc;
             display: flex;
             align-items: center;
-            justify-content: center;
             border: none;
-            cursor: pointer
+            cursor: pointer;
+            position: relative;
+            padding: 0;
+            overflow: hidden;
+            transition: background 0.4s ease
+        }
+
+        .theme-toggle .toggle-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #ffffff;
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            transition: transform 0.4s ease, background 0.4s ease;
+            z-index: 2
+        }
+
+        .theme-toggle .toggle-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            position: absolute;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+            user-select: none
+        }
+
+        .theme-toggle .toggle-label-night {
+            right: 12px;
+            color: #e2e8f0
+        }
+
+        .theme-toggle .toggle-label-day {
+            left: 12px;
+            color: #1a1a2e;
+            opacity: 0
+        }
+
+        [data-theme="light"] .theme-toggle {
+            background: #e2e8f0
+        }
+
+        [data-theme="light"] .theme-toggle .toggle-circle {
+            transform: translateX(60px);
+            background: #1a1a2e
+        }
+
+        [data-theme="light"] .theme-toggle .toggle-label-night {
+            opacity: 0
+        }
+
+        [data-theme="light"] .theme-toggle .toggle-label-day {
+            opacity: 1
         }
 
         .hamburger {
@@ -377,7 +430,9 @@
             </div>
             <div class="nav-actions">
                 <button class="theme-toggle" id="theme-toggle">
-                    <i class="fas fa-moon"></i>
+                    <span class="toggle-circle"></span>
+                    <span class="toggle-label toggle-label-night">NIGHT</span>
+                    <span class="toggle-label toggle-label-day">DAY</span>
                 </button>
                 <div class="hamburger" id="hamburger">
                     <span></span>
