@@ -1648,30 +1648,29 @@
                     </div>
                 </div>
 
-                <!-- SSC CHSL 2026 -->
-                <div class="job-card hot-job" data-type="government" data-job="ssc-chsl" data-deadline="2026-04-30T23:59:59">
-                    <div class="job-badge" style="background: linear-gradient(135deg, #059669, #047857);">GOVT</div>
+                <!-- Bihar Police CSBC Constable Operator 2026 -->
+                <div class="job-card hot-job" data-type="government" data-job="csbc-constable-operator" data-deadline="2026-03-31T23:59:59">
+                    <div class="job-badge" style="background: linear-gradient(135deg, #0f766e, #115e59);">CSBC</div>
                     <div class="job-header">
-                        <div class="company-logo" style="background: #1e40af;">SSC</div>
+                        <div class="company-logo" style="background: #0f766e;">BP</div>
                         <div class="job-info">
-                            <h4>Staff Selection Commission</h4>
-                            <span class="job-location"><i class="fas fa-map-marker-alt"></i> All India</span>
+                            <h4>Bihar Police (CSBC)</h4>
+                            <span class="job-location"><i class="fas fa-map-marker-alt"></i> Bihar</span>
                         </div>
                         <button class="bookmark-btn"><i class="far fa-bookmark"></i></button>
                     </div>
-                    <h3 class="job-title">CHSL (10+2) - 3,712 Posts</h3>
+                    <h3 class="job-title">Constable Operator (Advt 02/2026) - 993 Posts</h3>
                     <div class="job-tags">
-                        <span class="tag deadline-tag" style="background: #ecfdf5; color: #059669;">Apply by Apr
-                            30</span>
-                        <span class="tag">12th Pass</span>
-                        <span class="tag">LDC/DEO/PA</span>
+                        <span class="tag deadline-tag" style="background: #ecfdf5; color: #059669;">Apply by Mar 31</span>
+                        <span class="tag">10+2 Science</span>
+                        <span class="tag">Police Telecom</span>
                     </div>
                     <div class="job-footer">
-                        <span class="salary"><i class="fas fa-rupee-sign"></i> 25,500 - 81,100</span>
+                        <span class="salary"><i class="fas fa-rupee-sign"></i> Bihar Police Pay Scale</span>
                         <span class="job-type government" style="background: #059669;">Government</span>
                     </div>
                     <div class="job-buttons">
-                        <a href="job-detail.html?id=ssc-chsl" class="view-job-btn"><i class="fas fa-eye"></i> View
+                        <a href="job-detail.html?id=csbc-constable-operator" class="view-job-btn"><i class="fas fa-eye"></i> View
                             Job</a>
                     </div>
                 </div>
@@ -1792,8 +1791,14 @@
         // Auto-hide expired jobs and mark them as registration closed.
         (function () {
             function removeExpiredJobs() {
+                const nonDeadlineCards = document.querySelectorAll('.job-card:not([data-deadline])');
                 const cards = document.querySelectorAll('.job-card[data-deadline]');
                 const now = new Date();
+
+                nonDeadlineCards.forEach(card => {
+                    card.setAttribute('data-status', 'closed');
+                    card.remove();
+                });
 
                 cards.forEach(card => {
                     const deadline = new Date(card.getAttribute('data-deadline'));
