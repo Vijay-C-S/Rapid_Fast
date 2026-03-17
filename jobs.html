@@ -257,6 +257,34 @@
             min-height: 1.2rem;
         }
 
+        /* Prevent long job text from stretching mobile layout horizontally */
+        .all-jobs-grid,
+        .all-jobs-grid > * {
+            min-width: 0;
+        }
+
+        .job-header {
+            align-items: flex-start;
+        }
+
+        .job-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .bookmark-btn {
+            flex-shrink: 0;
+        }
+
+        .job-info h4,
+        .job-title,
+        .job-location,
+        .tag,
+        .salary {
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
         .no-results-message {
             text-align: center;
             padding: 3rem 1rem;
@@ -279,6 +307,14 @@
         @media (max-width: 576px) {
             .container {
                 padding: 0 1rem;
+            }
+
+            .jobs-filter {
+                max-width: 100%;
+            }
+
+            .job-card {
+                width: 100%;
             }
 
             .jobs-page-header h1 {
