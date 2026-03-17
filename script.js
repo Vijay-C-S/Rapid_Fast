@@ -73,3 +73,16 @@ const konamiCode=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','Arrow
             </div>
         </div>
     `;document.body.appendChild(banner);document.getElementById('cookie-accept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');banner.remove();});document.getElementById('cookie-reject').addEventListener('click',function(){localStorage.setItem('cookieConsent','rejected');banner.remove();});})();
+
+// Global WhatsApp floating channel button for all pages.
+(function(){
+if(document.querySelector('.whatsapp-float'))return;
+const waStyle=document.createElement('style');waStyle.textContent=`
+.whatsapp-float{position:fixed;bottom:95px;right:30px;width:60px;height:60px;background-color:#25d366;border-radius:50%;display:flex;justify-content:center;align-items:center;box-shadow:2px 2px 10px rgba(0,0,0,0.2);z-index:9999;animation:pulse-animation 2s infinite}
+.whatsapp-float img{width:35px;height:35px}
+@keyframes pulse-animation{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0.7)}50%{transform:scale(1.1);box-shadow:0 0 0 15px rgba(37,211,102,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.whatsapp-float:hover{animation:none;transform:scale(1.1);transition:transform 0.2s ease-in-out}
+@media (max-width:576px){.whatsapp-float{right:16px;bottom:82px;width:54px;height:54px}.whatsapp-float img{width:30px;height:30px}}
+`;document.head.appendChild(waStyle);
+const waLink=document.createElement('a');waLink.href='https://whatsapp.com/channel/0029Vb7OqCF3QxS6oVWKm83a';waLink.className='whatsapp-float';waLink.target='_blank';waLink.rel='noopener noreferrer';waLink.setAttribute('aria-label','Follow us on WhatsApp Channel');waLink.innerHTML='<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat with us on WhatsApp" />';document.body.appendChild(waLink);
+})();
