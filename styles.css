@@ -4,3 +4,6 @@
 .whatsapp-follow-btn{max-width:100%;flex-wrap:wrap;text-align:center;white-space:normal}
 .whatsapp-follow-btn span{overflow-wrap:anywhere;word-break:break-word}
 @media (max-width:576px){.info-card{align-items:flex-start}.whatsapp-follow-btn{width:100%;padding:1rem;font-size:.95rem;line-height:1.35}}
+/* Extra mobile overflow hardening */
+html,body{max-width:100%;overflow-x:clip}
+@media (max-width:640px){.blogs-grid,.jobs-grid,.offers-grid,.services-grid,.testimonials-slider{grid-template-columns:minmax(0,1fr)}.blog-card,.job-card,.offer-card,.service-card,.testimonial-card{min-width:0;max-width:100%}.blog-content,.job-description,.section-subtitle{overflow-wrap:anywhere;word-break:break-word}}
