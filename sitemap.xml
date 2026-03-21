@@ -60,6 +60,12 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://www.getupdated.in/blogs/deltek-hiring-freshers-associate-software-engineer-bangalore-2026.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.getupdated.in/blogs/digidxdoc-hiring-freshers-frontend-developer-intern-bangalore-2026.html</loc>
     <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
