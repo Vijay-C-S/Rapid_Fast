@@ -18,3 +18,16 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .search-form { flex-wrap: wrap; }
   .search-btn { width: 100%; }
 }
+
+/* Global blog spacing fix: avoid doubled top gap from base + blog layout styles. */
+.blog-wrapper .blog-article {
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: auto;
+}
+
+@media (max-width: 768px) {
+  .blog-wrapper .blog-article {
+    padding: 0;
+  }
+}
