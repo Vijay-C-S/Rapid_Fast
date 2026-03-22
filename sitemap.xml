@@ -60,6 +60,12 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://www.getupdated.in/blogs/know-why-you-are-not-getting-shortlisted-resume-tips-2026.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.getupdated.in/blogs/cloudsek-hiring-freshers-sde-intern-frontend-bengaluru-2026.html</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
