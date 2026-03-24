@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://www.getupdated.in/blogs.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -59,6 +59,12 @@
   <!-- Job Detail Pages excluded from sitemap temporarily (content changes frequently) -->
 
   <!-- Blog Articles -->
+  <url>
+    <loc>https://www.getupdated.in/blogs/claude-6-months-free-subscription-worth-1200-open-source-offer-2026.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.getupdated.in/blogs/the-glove-hiring-freshers-frontend-developer-work-from-home-2026.html</loc>
     <lastmod>2026-03-23</lastmod>
