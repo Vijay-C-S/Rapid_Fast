@@ -36,7 +36,7 @@
 
         injectInlineAdSpacingStyle();
 
-        var existingInlineAds = articleContent.querySelectorAll('.adsterra-native, .article-inline-ad');
+        var existingInlineAds = articleContent.querySelectorAll('.adsterra-native, .adsterra-300x250.article-inline-ad, .article-inline-ad');
         existingInlineAds.forEach(function (ad) { ad.remove(); });
 
         var paragraphs = Array.from(articleContent.querySelectorAll(':scope > p')).filter(function (p) {
@@ -66,7 +66,8 @@
             }
 
             var adBlock = document.createElement('div');
-            adBlock.className = 'adsterra-ad adsterra-native article-inline-ad';
+            // Use 300x250 for inline placements to avoid empty native containers.
+            adBlock.className = 'adsterra-ad adsterra-300x250 article-inline-ad';
             anchor.insertAdjacentElement('afterend', adBlock);
 
             paragraphsSinceLastAd = 0;
