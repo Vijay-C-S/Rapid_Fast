@@ -225,10 +225,7 @@
 
 
                 <p>A traditional IDE — Visual Studio Code, IntelliJ, PyCharm — is a tool you use to write code. You open files, you type, you run things, you debug. The IDE provides the environment; you provide the intelligence. AI coding assistants like Copilot added a layer of suggestion on top of that, but the fundamental model didn't change. You're still in charge. The AI is your passenger, occasionally pointing at things through the window.</p>
-                <!-- Adsterra Native Banner -->
-                <div class="adsterra-ad adsterra-native"></div>
-
-                <p>An "agent-first" IDE flips that relationship. In Antigravity, the AI agents aren't passengers — they're drivers. You describe what you want built, and the agents take over. One agent plans the architecture. Another writes the code. A third runs the test suite in the terminal. A fourth opens a browser and verifies the UI looks right. A fifth monitors for errors and debugging issues across the entire pipeline. They communicate with each other, resolve conflicts, and deliver working code — not code suggestions, not snippets, not "here's a starting point." Working, tested, verified code.</p>
+<p>An "agent-first" IDE flips that relationship. In Antigravity, the AI agents aren't passengers — they're drivers. You describe what you want built, and the agents take over. One agent plans the architecture. Another writes the code. A third runs the test suite in the terminal. A fourth opens a browser and verifies the UI looks right. A fifth monitors for errors and debugging issues across the entire pipeline. They communicate with each other, resolve conflicts, and deliver working code — not code suggestions, not snippets, not "here's a starting point." Working, tested, verified code.</p>
 
 
                 <p>The IDE itself is built around this agent-first philosophy. The editor, terminal, and integrated browser aren't just tools for the developer — they're workspaces for the agents. You can watch an agent type code in the editor in real-time, see another agent running commands in the terminal window, and observe a third agent navigating a browser to check the deployed output. It's like watching a team of invisible developers working on your machine simultaneously.</p>
@@ -254,11 +251,7 @@
                 <p><strong>Step 1: Task Decomposition.</strong> You describe what you want in natural language. Something like "Add a dark mode toggle to the settings page that persists user preference in localStorage and updates the CSS variables across the entire app." The planning agent analyses this request and breaks it into discrete, actionable subtasks — create the toggle component, implement the localStorage logic, define the CSS variables, update the settings page layout, write tests for the toggle behaviour, verify the visual output in the browser.</p>
 
                 <p><strong>Step 2: Agent Assignment.</strong> Each subtask gets assigned to a specialised agent. The code-writing agent handles the implementation. The testing agent writes and runs unit tests. The browser agent verifies the visual output. The terminal agent handles build commands and environment setup. These aren't generic agents doing everything — they're specialists, each optimised for their specific domain.</p>
-                <!-- Adsterra Native Banner -->
-                <div class="adsterra-ad adsterra-native"></div>
-
-
-                <p><strong>Step 3: Parallel Execution.</strong> Here's where it gets genuinely impressive. The agents work simultaneously. While one agent is writing the React component in the editor, another is already setting up the test file. A third is modifying the CSS variables file. They coordinate through an internal messaging system — if the code agent changes a function signature, the testing agent immediately updates its test cases to match. It's concurrent development with automatic synchronisation.</p>
+<p><strong>Step 3: Parallel Execution.</strong> Here's where it gets genuinely impressive. The agents work simultaneously. While one agent is writing the React component in the editor, another is already setting up the test file. A third is modifying the CSS variables file. They coordinate through an internal messaging system — if the code agent changes a function signature, the testing agent immediately updates its test cases to match. It's concurrent development with automatic synchronisation.</p>
 
                 <p><strong>Step 4: Verification Loop.</strong> Once the implementation is done, the system enters a verification cycle. The testing agent runs the test suite. The browser agent loads the application and checks the UI. If anything fails — a test doesn't pass, the UI doesn't render correctly, a console error appears — the debugging agent identifies the issue, traces it back to the responsible code, and the code agent fixes it. This loop continues until all tests pass and the browser verification succeeds. You get notified when everything is done.</p>
 
@@ -273,10 +266,7 @@
                 <h3>Test 1: Building a REST API from Scratch</h3>
 
                 <p>I asked Antigravity to "Build a REST API in Node.js with Express for a simple blog system — posts with CRUD operations, user authentication with JWT, input validation, error handling, and unit tests." The planning agent broke this into seven subtasks. Within about four minutes, I had a fully functional API with twelve endpoints, JWT authentication middleware, Joi validation schemas, centralised error handling, and thirty-two unit tests — all passing. The code was clean, well-structured, and followed standard Express patterns. I would have taken two to three hours to write this manually. Four minutes.</p>
-                <!-- Adsterra Native Banner -->
-                <div class="adsterra-ad adsterra-native"></div>
-
-                <h3>Test 2: Debugging a Complex Frontend Issue</h3>
+<h3>Test 2: Debugging a Complex Frontend Issue</h3>
 
                 <p>I pointed Antigravity at an existing React project that had a persistent state management bug — a race condition where two components were updating the same Redux slice simultaneously, causing intermittent UI glitches. I described the symptoms: "The dashboard widget occasionally shows stale data after the user updates their profile. It only happens when both the dashboard and profile pages are loaded." The debugging agent traced the issue through the component tree, identified the conflicting dispatches, and the code agent implemented a fix using Redux Toolkit's createAsyncThunk with proper sequential dispatching. The browser agent verified the fix by simulating the exact user flow that triggered the bug. Total time: about ninety seconds.</p>
 
@@ -305,10 +295,7 @@
                 <p>I keep emphasising this because it's the most important point: Antigravity is not an evolution of Copilot. It's a different category of tool entirely. Here's why the distinction matters:</p>
 
                 <p><strong>Copilot/Cursor/Codeium Model:</strong> You write code → AI suggests the next line or block → You accept, reject, or modify → You continue writing → AI suggests again. The human drives, the AI assists. The bottleneck is still human typing speed and human decision-making speed.</p>
-                <!-- Adsterra Native Banner -->
-                <div class="adsterra-ad adsterra-native"></div>
-
-                <p><strong>Antigravity Model:</strong> You describe the task → Multiple AI agents independently plan, write, test, and verify → Agents coordinate with each other automatically → You review the finished result. The AI drives, the human supervises. The bottleneck shifts from implementation speed to review speed.</p>
+<p><strong>Antigravity Model:</strong> You describe the task → Multiple AI agents independently plan, write, test, and verify → Agents coordinate with each other automatically → You review the finished result. The AI drives, the human supervises. The bottleneck shifts from implementation speed to review speed.</p>
 
                 <p>That shift is transformational. A senior developer's most valuable skills aren't typing speed — they're architectural thinking, code review, quality judgement, and understanding user needs. Antigravity lets developers spend their time on exactly those high-value activities while the agents handle the implementation grind.</p>
 
@@ -330,10 +317,7 @@
                 <h2>The Interface — Designed for Agent Collaboration</h2>
 
                 <p>The Antigravity IDE interface is clearly built from the ground up for the agent-first paradigm. It's not VS Code with agents bolted on. The layout has three primary zones — the code editor on the left, the terminal panel at the bottom, and a browser preview on the right. Each zone is both a developer workspace and an agent workspace.</p>
-                <!-- Adsterra Native Banner -->
-                <div class="adsterra-ad adsterra-native"></div>
-
-                <p>The most striking visual element is the agent status panel. It shows all active agents, their current tasks, and their status (planning, writing, testing, waiting, complete). You can click into any agent to see exactly what it's doing in real-time — which file it's editing, which command it's running, what it's checking in the browser. The transparency is remarkable. There's no magic black box — every agent action is visible and auditable.</p>
+<p>The most striking visual element is the agent status panel. It shows all active agents, their current tasks, and their status (planning, writing, testing, waiting, complete). You can click into any agent to see exactly what it's doing in real-time — which file it's editing, which command it's running, what it's checking in the browser. The transparency is remarkable. There's no magic black box — every agent action is visible and auditable.</p>
 
                 <p>The diff review system is excellent too. When agents complete a task, you get a comprehensive diff view showing every change, with the agent's reasoning annotated alongside each modification. It's like getting a pull request with inline comments explaining every decision. This makes code review fast and meaningful — you're not just scanning code, you're understanding the intent behind each change.</p>
 
@@ -365,10 +349,7 @@
                 <h2>Limitations and Honest Criticisms</h2>
 
                 <p>No tool is perfect, and I'd rather be transparent about where Antigravity falls short than pretend it's flawless:</p>
-                <!-- Adsterra Native Banner -->
-                <div class="adsterra-ad adsterra-native"></div>
-
-                <ul>
+<ul>
                     <li><strong>Complex Architectural Decisions Still Need Humans:</strong> The agents are excellent at implementing well-defined tasks. They struggle with ambiguous, open-ended architectural problems where the "right" answer depends on business context, team conventions, or future requirements that aren't captured in code. When I asked Antigravity to "redesign the data layer for better scalability," the result was technically competent but lacked the strategic thinking a senior architect would bring — considering team expertise, migration costs, and long-term maintenance implications.</li>
                     <li><strong>Learning Curve for Effective Prompting:</strong> Getting the best results requires learning how to describe tasks at the right level of detail. Too vague ("make the app faster") and the agents make scattered, superficial changes. Too specific ("add a cache with exactly 60-second TTL on this specific endpoint") and you lose the benefit of autonomous planning. Finding the sweet spot takes practice.</li>
                     <li><strong>Resource Intensive:</strong> Running multiple AI agents simultaneously requires serious computational resources. The IDE is noticeably heavier than VS Code — longer startup times, higher memory usage, and occasional sluggishness on machines with less than 16GB RAM. If you're working on an older laptop, the experience degrades.</li>
@@ -410,10 +391,7 @@
                 <p>This doesn't mean developers become irrelevant. It means what we mean by "developer" evolves. The job shifts from writing code to directing, reviewing, and refining AI-generated code. The skills that matter shift from "can you write a binary search from scratch?" to "can you evaluate whether this architecture will scale?" and "can you identify where this agent's approach conflicts with the business requirements?" The thinking becomes more important than the typing — which, honestly, is how it always should have been.</p>
 
                 <p>We're seeing this same pattern across the entire tech tool landscape. <a href="rork-build-publish-app-single-prompt.html">Rork builds mobile apps from prompts</a>, <a href="rytr-ai-writing-tool-review.html">Rytr generates content autonomously</a>, <a href="skywork-ai-content-generator-review.html">Skywork creates SEO articles</a>, and now Antigravity writes, tests, and deploys code through autonomous agents. The common thread is clear: AI is moving from assistance to execution, from suggesting to doing, from copilot to pilot. And the humans who thrive in this landscape are the ones who learn to direct these tools effectively rather than competing with them on implementation speed.</p>
-                <!-- Adsterra Native Banner -->
-                <div class="adsterra-ad adsterra-native"></div>
-
-                <h2>Final Verdict — Is Google Antigravity Worth It?</h2>
+<h2>Final Verdict — Is Google Antigravity Worth It?</h2>
 
                 <p>After weeks of hands-on testing across real projects in multiple languages and frameworks, here's my honest assessment:</p>
 
@@ -428,9 +406,7 @@
                 </blockquote>
 
                 <p>Sign up for early access at <a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer">antigravity.google</a> and see it for yourself. Even if you're sceptical about the hype — and healthy scepticism is good — spend thirty minutes watching the agents work on your codebase. The moment an agent simultaneously fixes a bug, updates the tests, and verifies the browser output while you sip your coffee is the moment you understand that something genuinely shifted in how we build software.</p>
-                <!-- Adsterra Native Banner -->
-                <div class="adsterra-ad adsterra-native"></div>
-            </div>
+</div>
 
             <!-- Tags -->
             <div class="article-tags">
@@ -449,9 +425,7 @@
 
             <!-- Sidebar -->
             <aside class="blog-sidebar">
-                <!-- Adsterra 300x250 Sidebar Ad -->
-                <div class="sidebar-widget adsterra-ad adsterra-300x250"></div>
-                <div class="sidebar-widget">
+<div class="sidebar-widget">
                     <h3>Search</h3>
                     <form class="search-form" action="/blogs.html">
                         <input type="text" name="q" class="search-input" placeholder="Search blogs...">
@@ -583,7 +557,5 @@
     </div>
 </div>
 <script src="../js/cookie-consent.js" defer></script>
-<!-- Adsterra Ads Loader -->
-<script src="../js/adsterra-ads.js" defer></script>
 </body>
 </html>

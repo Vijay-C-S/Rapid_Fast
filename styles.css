@@ -7,6 +7,5 @@
 /* Extra mobile overflow hardening */
 html,body{max-width:100%;overflow-x:clip}
 @media (max-width:640px){.blogs-grid,.jobs-grid,.offers-grid,.services-grid,.testimonials-slider{grid-template-columns:minmax(0,1fr)}.blog-card,.job-card,.offer-card,.service-card,.testimonial-card{min-width:0;max-width:100%}.blog-content,.job-description,.section-subtitle{overflow-wrap:anywhere;word-break:break-word}}
-/* Adsterra Ad Containers */
-.adsterra-ad{text-align:center;margin:2rem auto;overflow:hidden;clear:both}.adsterra-ad iframe{max-width:100%}.adsterra-728x90{max-width:728px}.adsterra-300x250{max-width:300px}.adsterra-native{margin:1.5rem 0}@media(max-width:768px){.adsterra-728x90{display:none}.adsterra-mobile-show{display:block}}@media(min-width:769px){.adsterra-mobile-show{display:none}}
+
 
