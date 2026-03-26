@@ -20,8 +20,24 @@
         if (document.getElementById('inline-ad-spacing-style')) return;
         var style = document.createElement('style');
         style.id = 'inline-ad-spacing-style';
-        style.textContent = '.article-inline-ad{display:flex;justify-content:center;margin:1.75rem 0 2rem;min-height:250px;}';
+        style.textContent = '.article-inline-ad{display:flex;justify-content:center;margin:1.5rem 0;}';
         document.head.appendChild(style);
+    }
+
+    function collapseIfInlineAdEmpty(container) {
+        if (!container || !container.classList.contains('article-inline-ad')) return;
+
+        var hasFrame = container.querySelector('iframe');
+        var hasVisibleContent = hasFrame && hasFrame.offsetHeight > 20;
+        if (!hasVisibleContent) {
+            container.remove();
+        }
+    }
+
+    function scheduleInlineAdValidation(container) {
+        if (!container || !container.classList.contains('article-inline-ad')) return;
+        setTimeout(function () { collapseIfInlineAdEmpty(container); }, 3500);
+        setTimeout(function () { collapseIfInlineAdEmpty(container); }, 7000);
     }
 
     function getWordCount(text) {
@@ -92,6 +108,8 @@
         var invokeScript = document.createElement('script');
         invokeScript.src = 'https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js';
         container.appendChild(invokeScript);
+
+        scheduleInlineAdValidation(container);
     }
 
     // ========== Banner 728x90 ==========
