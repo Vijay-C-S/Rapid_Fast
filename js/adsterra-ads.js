@@ -16,6 +16,42 @@
 (function () {
     'use strict';
 
+    function injectInlineAdSpacingStyle() {
+        if (document.getElementById('inline-ad-spacing-style')) return;
+        var style = document.createElement('style');
+        style.id = 'inline-ad-spacing-style';
+        style.textContent = '.article-inline-ad{display:flex;justify-content:center;margin:1.75rem 0 2rem;min-height:250px;}';
+        document.head.appendChild(style);
+    }
+
+    // Build a clean in-article ad layout by inserting ads after every 3 to 4 paragraphs.
+    function arrangeBlogInlineAds() {
+        var articleContent = document.querySelector('.article-content');
+        if (!articleContent) return;
+
+        injectInlineAdSpacingStyle();
+
+        var existingInlineAds = articleContent.querySelectorAll('.adsterra-native, .article-inline-ad');
+        existingInlineAds.forEach(function (ad) { ad.remove(); });
+
+        var paragraphs = Array.from(articleContent.querySelectorAll(':scope > p'));
+        if (paragraphs.length < 4) return;
+
+        var gapPattern = [3, 4];
+        var patternIndex = 0;
+        var currentIndex = gapPattern[patternIndex] - 1;
+
+        while (currentIndex < paragraphs.length) {
+            var adBlock = document.createElement('div');
+            adBlock.className = 'adsterra-ad adsterra-native article-inline-ad';
+            paragraphs[currentIndex].insertAdjacentElement('afterend', adBlock);
+
+            patternIndex++;
+            var nextGap = gapPattern[patternIndex % gapPattern.length];
+            currentIndex += nextGap;
+        }
+    }
+
     // ========== Social Bar (loads on all pages) ==========
     function loadSocialBar() {
         var script = document.createElement('script');
@@ -65,6 +101,9 @@
     function initAds() {
         // Social Bar on all pages
         loadSocialBar();
+
+        // Blog inline ad experience (3 to 4 paragraph spacing)
+        arrangeBlogInlineAds();
 
         // Banner 300x250 in sidebar containers
         var sidebar300 = document.querySelectorAll('.adsterra-300x250');
