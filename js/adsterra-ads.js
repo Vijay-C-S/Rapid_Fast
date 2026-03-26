@@ -24,7 +24,12 @@
         document.head.appendChild(style);
     }
 
-    // Build a clean in-article ad layout by inserting ads after every 3 to 4 paragraphs.
+    function getWordCount(text) {
+        if (!text) return 0;
+        return text.trim().split(/\s+/).filter(Boolean).length;
+    }
+
+    // Build a clean in-article ad layout by inserting ads after every 3 to 4 meaningful paragraphs.
     function arrangeBlogInlineAds() {
         var articleContent = document.querySelector('.article-content');
         if (!articleContent) return;
@@ -34,21 +39,38 @@
         var existingInlineAds = articleContent.querySelectorAll('.adsterra-native, .article-inline-ad');
         existingInlineAds.forEach(function (ad) { ad.remove(); });
 
-        var paragraphs = Array.from(articleContent.querySelectorAll(':scope > p'));
-        if (paragraphs.length < 4) return;
+        var paragraphs = Array.from(articleContent.querySelectorAll(':scope > p')).filter(function (p) {
+            return getWordCount(p.textContent) >= 20;
+        });
+        if (paragraphs.length < 6) return;
 
         var gapPattern = [3, 4];
         var patternIndex = 0;
-        var currentIndex = gapPattern[patternIndex] - 1;
+        var paragraphsSinceLastAd = 0;
 
-        while (currentIndex < paragraphs.length) {
+        for (var i = 0; i < paragraphs.length; i++) {
+            paragraphsSinceLastAd++;
+            var nextGap = gapPattern[patternIndex % gapPattern.length];
+            var remainingParagraphs = paragraphs.length - (i + 1);
+
+            if (paragraphsSinceLastAd < nextGap) continue;
+
+            // Keep the tail section cleaner: do not inject too close to article end.
+            if (remainingParagraphs < 2) break;
+
+            var anchor = paragraphs[i];
+            if (anchor.nextElementSibling && anchor.nextElementSibling.classList.contains('article-inline-ad')) {
+                paragraphsSinceLastAd = 0;
+                patternIndex++;
+                continue;
+            }
+
             var adBlock = document.createElement('div');
             adBlock.className = 'adsterra-ad adsterra-native article-inline-ad';
-            paragraphs[currentIndex].insertAdjacentElement('afterend', adBlock);
+            anchor.insertAdjacentElement('afterend', adBlock);
 
+            paragraphsSinceLastAd = 0;
             patternIndex++;
-            var nextGap = gapPattern[patternIndex % gapPattern.length];
-            currentIndex += nextGap;
         }
     }
 
