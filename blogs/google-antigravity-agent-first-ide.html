@@ -215,22 +215,27 @@
                 <p>I need to be upfront about something. I've been writing code for years. I've used every AI coding tool you can think of — Copilot, Cursor, Cody, Codeium, Amazon CodeWhisperer, Tabnine, you name it. They all do more or less the same thing: sit in your editor, watch you type, and suggest the next few lines. Some are better at it than others, sure. But fundamentally, they're all autocomplete on steroids. You're still the one driving. You're still the one thinking. The AI is just finishing your sentences.</p>
 
                 <p>Then Google dropped Antigravity, and I'll be honest — the first time I watched it work, I sat there with a genuinely stupid expression on my face. Because this isn't autocomplete. This isn't "let me suggest what you might type next." This is an AI that takes a task description, breaks it into subtasks, assigns those subtasks to autonomous agents, and then those agents go off and actually do the work — writing code in your editor, running commands in your terminal, opening a browser to verify the output, fixing bugs they find along the way — all while you sit there and watch.</p>
+                <!-- Adsterra Native Banner -->
+                <div class="adsterra-ad adsterra-native"></div>
 
                 <p>That's not an incremental improvement over existing tools. That's a fundamentally different approach to software development. And after spending serious time with it, I have thoughts. Lots of them.</p>
 
                 <h2>What Is Google Antigravity? The Concept That Changes Everything</h2>
 
                 <p><a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer">Google Antigravity</a> is what Google calls an "agent-first IDE." Let's unpack what that actually means, because the terminology matters.</p>
+                <!-- Adsterra Native Banner -->
+                <div class="adsterra-ad adsterra-native"></div>
 
                 <p>A traditional IDE — Visual Studio Code, IntelliJ, PyCharm — is a tool you use to write code. You open files, you type, you run things, you debug. The IDE provides the environment; you provide the intelligence. AI coding assistants like Copilot added a layer of suggestion on top of that, but the fundamental model didn't change. You're still in charge. The AI is your passenger, occasionally pointing at things through the window.</p>
 
                 <p>An "agent-first" IDE flips that relationship. In Antigravity, the AI agents aren't passengers — they're drivers. You describe what you want built, and the agents take over. One agent plans the architecture. Another writes the code. A third runs the test suite in the terminal. A fourth opens a browser and verifies the UI looks right. A fifth monitors for errors and debugging issues across the entire pipeline. They communicate with each other, resolve conflicts, and deliver working code — not code suggestions, not snippets, not "here's a starting point." Working, tested, verified code.</p>
+                <!-- Adsterra Native Banner -->
+                <div class="adsterra-ad adsterra-native"></div>
 
                 <p>The IDE itself is built around this agent-first philosophy. The editor, terminal, and integrated browser aren't just tools for the developer — they're workspaces for the agents. You can watch an agent type code in the editor in real-time, see another agent running commands in the terminal window, and observe a third agent navigating a browser to check the deployed output. It's like watching a team of invisible developers working on your machine simultaneously.</p>
 
                 
-                <!-- Adsterra Native Banner -->
-                <div class="adsterra-ad adsterra-native"></div>
+
 <!-- Also Read Section -->
                 <div class="also-read">
                     <span class="also-read-label">Also read</span>
@@ -245,20 +250,28 @@
                 <h2>How the Agent System Actually Works — Under the Hood</h2>
 
                 <p>Based on my extensive testing and what Google has publicly shared about the architecture, here's what happens when you give Antigravity a task:</p>
+                <!-- Adsterra Native Banner -->
+                <div class="adsterra-ad adsterra-native"></div>
 
                 <p><strong>Step 1: Task Decomposition.</strong> You describe what you want in natural language. Something like "Add a dark mode toggle to the settings page that persists user preference in localStorage and updates the CSS variables across the entire app." The planning agent analyses this request and breaks it into discrete, actionable subtasks — create the toggle component, implement the localStorage logic, define the CSS variables, update the settings page layout, write tests for the toggle behaviour, verify the visual output in the browser.</p>
 
                 <p><strong>Step 2: Agent Assignment.</strong> Each subtask gets assigned to a specialised agent. The code-writing agent handles the implementation. The testing agent writes and runs unit tests. The browser agent verifies the visual output. The terminal agent handles build commands and environment setup. These aren't generic agents doing everything — they're specialists, each optimised for their specific domain.</p>
+                <!-- Adsterra Native Banner -->
+                <div class="adsterra-ad adsterra-native"></div>
 
                 <p><strong>Step 3: Parallel Execution.</strong> Here's where it gets genuinely impressive. The agents work simultaneously. While one agent is writing the React component in the editor, another is already setting up the test file. A third is modifying the CSS variables file. They coordinate through an internal messaging system — if the code agent changes a function signature, the testing agent immediately updates its test cases to match. It's concurrent development with automatic synchronisation.</p>
 
                 <p><strong>Step 4: Verification Loop.</strong> Once the implementation is done, the system enters a verification cycle. The testing agent runs the test suite. The browser agent loads the application and checks the UI. If anything fails — a test doesn't pass, the UI doesn't render correctly, a console error appears — the debugging agent identifies the issue, traces it back to the responsible code, and the code agent fixes it. This loop continues until all tests pass and the browser verification succeeds. You get notified when everything is done.</p>
+                <!-- Adsterra Native Banner -->
+                <div class="adsterra-ad adsterra-native"></div>
 
                 <p><strong>Step 5: Human Review.</strong> The agents don't push code to production without your approval. Once they're done, you review the changes — a diff view shows exactly what was written, modified, or deleted. You can accept everything, reject specific changes, or ask the agents to adjust their approach. This human-in-the-loop checkpoint is critical — it means the agents do the heavy lifting, but you retain final authority.</p>
 
                 <h2>I Tested It on Real Projects — Here's What Happened</h2>
 
                 <p>Reading about features is one thing. Watching agents work on your actual codebase is another experience entirely. I ran several tests across different project types to see how Antigravity performs in practice.</p>
+                <!-- Adsterra Native Banner -->
+                <div class="adsterra-ad adsterra-native"></div>
 
                 <h3>Test 1: Building a REST API from Scratch</h3>
 
@@ -267,6 +280,8 @@
                 <h3>Test 2: Debugging a Complex Frontend Issue</h3>
 
                 <p>I pointed Antigravity at an existing React project that had a persistent state management bug — a race condition where two components were updating the same Redux slice simultaneously, causing intermittent UI glitches. I described the symptoms: "The dashboard widget occasionally shows stale data after the user updates their profile. It only happens when both the dashboard and profile pages are loaded." The debugging agent traced the issue through the component tree, identified the conflicting dispatches, and the code agent implemented a fix using Redux Toolkit's createAsyncThunk with proper sequential dispatching. The browser agent verified the fix by simulating the exact user flow that triggered the bug. Total time: about ninety seconds.</p>
+                <!-- Adsterra Native Banner -->
+                <div class="adsterra-ad adsterra-native"></div>
 
                 <h3>Test 3: Full-Stack Feature Addition</h3>
 
