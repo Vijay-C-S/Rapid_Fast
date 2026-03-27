@@ -112,7 +112,8 @@ format:'iframe',
 height:90,
 width:728,
 params:{}
-}
+},
+socialBarScriptUrl:'https://pl28651117.profitablecpmratenetwork.com/49/5b/52/495b52b6086994ad230aaaf172aba64c.js'
 };
 
 const bannerUnits=[adsterraConfig.banner300,adsterraConfig.banner728].filter(unit=>{
@@ -201,9 +202,23 @@ const placements=[
 {slot:secondarySlot,unit:bannerUnits[1]}
 ].filter(item=>item.slot&&item.unit);
 
+function loadSocialBar(url){
+if(typeof url!=='string')return;
+const trimmed=url.trim();
+if(trimmed==='')return;
+if(!/^https?:\/\//i.test(trimmed))return;
+if(document.querySelector('script[data-getupdated-socialbar="1"]'))return;
+const socialScript=document.createElement('script');
+socialScript.src=trimmed;
+socialScript.async=true;
+socialScript.setAttribute('data-getupdated-socialbar','1');
+document.body.appendChild(socialScript);
+}
+
 (async()=>{
 for(const placement of placements){
 await loadBannerUnit(placement.slot,placement.unit);
 }
+loadSocialBar(adsterraConfig.socialBarScriptUrl);
 })();
 })();
