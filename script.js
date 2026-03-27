@@ -87,3 +87,123 @@ const konamiCode=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','Arrow
             </div>
         </div>
     `;document.body.appendChild(banner);document.getElementById('cookie-accept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');banner.remove();});document.getElementById('cookie-reject').addEventListener('click',function(){localStorage.setItem('cookieConsent','rejected');banner.remove();});})();
+
+// Temporary Adsterra fallback while AdSense is suspended. Keeps existing AdSense code untouched.
+(function(){
+const fallbackWindowDays=29;
+const activationKey='getupdated_adsterra_activation_date';
+const existingActivation=localStorage.getItem(activationKey);
+const activationTime=existingActivation?Number(existingActivation):Date.now();
+if(!existingActivation){localStorage.setItem(activationKey,String(activationTime));}
+if(Number.isNaN(activationTime))return;
+if(Date.now()-activationTime>fallbackWindowDays*24*60*60*1000)return;
+
+const adsterraConfig=window.GETUPDATED_ADSTERRA||{
+banner300:{
+key:'8c8e95641949eb53920ed955003e36a9',
+format:'iframe',
+height:250,
+width:300,
+params:{}
+},
+banner728:{
+key:'935fe7821d46927df6296fe874433356',
+format:'iframe',
+height:90,
+width:728,
+params:{}
+}
+};
+
+const bannerUnits=[adsterraConfig.banner300,adsterraConfig.banner728].filter(unit=>{
+if(!unit||typeof unit!=='object')return false;
+if(typeof unit.key!=='string'||unit.key.trim()==='')return false;
+if(typeof unit.width!=='number'||typeof unit.height!=='number')return false;
+return true;
+});
+if(bannerUnits.length===0)return;
+
+if(!document.getElementById('adsterra-fallback-style')){
+const style=document.createElement('style');
+style.id='adsterra-fallback-style';
+style.textContent=`
+.adsterra-slot{width:100%;display:flex;justify-content:center;align-items:center;margin:22px 0;overflow:hidden}
+.adsterra-slot iframe{max-width:100%}
+`;document.head.appendChild(style);
+}
+
+function insertSlot(afterNode,minHeight){
+if(!afterNode||!afterNode.parentNode)return null;
+const slot=document.createElement('div');
+slot.className='adsterra-slot';
+slot.style.minHeight=minHeight+'px';
+afterNode.parentNode.insertBefore(slot,afterNode.nextSibling);
+return slot;
+}
+
+const articleParagraphs=document.querySelectorAll('.article-content p,.blog-content p,article p,main p');
+let primarySlot=null;
+let secondarySlot=null;
+
+if(articleParagraphs.length>=3){primarySlot=insertSlot(articleParagraphs[2],250);}
+if(articleParagraphs.length>=8){secondarySlot=insertSlot(articleParagraphs[7],90);}
+
+if(!primarySlot){
+const firstMainBlock=document.querySelector('main .container, main, .main-content, .content-wrapper, .blogs-grid, .jobs-grid, .offers-grid');
+if(firstMainBlock){
+primarySlot=document.createElement('div');
+primarySlot.className='adsterra-slot';
+primarySlot.style.minHeight='250px';
+firstMainBlock.prepend(primarySlot);
+}
+}
+
+if(!secondarySlot){
+const footer=document.querySelector('footer');
+if(footer){
+secondarySlot=document.createElement('div');
+secondarySlot.className='adsterra-slot';
+secondarySlot.style.minHeight='90px';
+footer.parentNode.insertBefore(secondarySlot,footer);
+}
+}
+
+const targets=[];
+if(primarySlot)targets.push(primarySlot);
+if(secondarySlot)targets.push(secondarySlot);
+if(targets.length===0)return;
+
+function loadBannerUnit(target,unit){
+return new Promise(resolve=>{
+if(!target||!unit){resolve();return;}
+const payload={
+key:unit.key,
+format:unit.format||'iframe',
+height:unit.height,
+width:unit.width,
+params:unit.params||{}
+};
+const optionsScript=document.createElement('script');
+optionsScript.text='atOptions = '+JSON.stringify(payload)+';';
+document.body.appendChild(optionsScript);
+optionsScript.remove();
+const invokeScript=document.createElement('script');
+invokeScript.src='https://www.highperformanceformat.com/'+unit.key+'/invoke.js';
+invokeScript.async=false;
+invokeScript.onload=()=>resolve();
+invokeScript.onerror=()=>resolve();
+target.appendChild(invokeScript);
+});
+}
+
+const placements=[
+{slot:primarySlot,unit:bannerUnits[0]},
+{slot:secondarySlot,unit:bannerUnits[1]}
+].filter(item=>item.slot&&item.unit);
+
+(async()=>{
+for(const placement of placements){
+await loadBannerUnit(placement.slot,placement.unit);
+}
+})();
+})();
