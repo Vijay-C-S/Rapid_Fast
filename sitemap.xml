@@ -60,6 +60,12 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://www.getupdated.in/blogs/lsg-vs-dc-sure-shot-prediction-2026.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.getupdated.in/blogs/infrrd-hiring-freshers-software-development-engineer-trainee-2026.html</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
