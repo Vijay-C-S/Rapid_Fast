@@ -1855,6 +1855,105 @@
                 }
             });
         })();
+
+        // Ensure jobs filters/search always use live cards after expired cards are removed.
+        (function () {
+            function initLiveJobsFiltering() {
+                const filterButtons = Array.from(document.querySelectorAll('.filter-btn'));
+                const searchInput = document.getElementById('job-search');
+                const clearButton = document.getElementById('job-search-clear');
+                const noResults = document.getElementById('no-results');
+                const searchCount = document.getElementById('job-search-count');
+
+                if (!filterButtons.length) {
+                    return;
+                }
+
+                function getActiveFilter() {
+                    const active = document.querySelector('.filter-btn.active');
+                    return active ? active.getAttribute('data-filter') : 'all';
+                }
+
+                function cardSearchText(card) {
+                    const title = card.querySelector('.job-title')?.textContent || '';
+                    const company = card.querySelector('.job-info h4')?.textContent || '';
+                    const location = card.querySelector('.job-location')?.textContent || '';
+                    const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent || '').join(' ');
+                    const badge = card.querySelector('.job-badge')?.textContent || '';
+                    const salary = card.querySelector('.salary')?.textContent || '';
+                    const jobType = card.querySelector('.job-type')?.textContent || '';
+                    return `${title} ${company} ${location} ${tags} ${badge} ${salary} ${jobType}`.toLowerCase();
+                }
+
+                function applyLiveFilter() {
+                    const activeFilter = getActiveFilter();
+                    const query = (searchInput?.value || '').toLowerCase().trim();
+                    const cards = Array.from(document.querySelectorAll('.all-jobs-grid .job-card'));
+                    let visibleCount = 0;
+
+                    cards.forEach(card => {
+                        const matchesFilter = activeFilter === 'all' || card.getAttribute('data-type') === activeFilter;
+                        const matchesSearch = !query || cardSearchText(card).includes(query);
+                        const isVisible = matchesFilter && matchesSearch;
+
+                        card.style.display = isVisible ? 'block' : 'none';
+                        if (isVisible) {
+                            visibleCount += 1;
+                        }
+                    });
+
+                    if (noResults) {
+                        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+                    }
+
+                    if (searchCount) {
+                        if (query) {
+                            searchCount.textContent = `Showing ${visibleCount} of ${cards.length} jobs`;
+                        } else {
+                            searchCount.textContent = '';
+                        }
+                    }
+
+                    if (clearButton) {
+                        clearButton.style.display = query ? 'flex' : 'none';
+                    }
+                }
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        applyLiveFilter();
+                    });
+                });
+
+                if (searchInput) {
+                    let timer = null;
+                    searchInput.addEventListener('input', function () {
+                        clearTimeout(timer);
+                        timer = setTimeout(applyLiveFilter, 150);
+                    });
+                }
+
+                if (clearButton && searchInput) {
+                    clearButton.addEventListener('click', function () {
+                        searchInput.value = '';
+                        applyLiveFilter();
+                        searchInput.focus();
+                    });
+                }
+
+                // Keep counts/visibility correct after scheduled deadline pruning.
+                setInterval(applyLiveFilter, 65000);
+                applyLiveFilter();
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initLiveJobsFiltering);
+            } else {
+                initLiveJobsFiltering();
+            }
+        })();
     </script>
 <!-- Cookie Consent Banner -->
 <div id="cookie-consent" class="cookie-consent">
