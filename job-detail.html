@@ -44,6 +44,39 @@
     <!-- Hreflang -->
     <link rel="alternate" hreflang="en-in" href="https://www.getupdated.in/job-detail.html">
     <link rel="alternate" hreflang="x-default" href="https://www.getupdated.in/job-detail.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Job Details - Apply for Fresher Jobs - GetUpdated">
+    <meta property="og:description"
+        content="View job details, eligibility, salary, and apply for fresher jobs and internships on GetUpdated.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.getupdated.in/job-detail.html">
+    <meta property="og:site_name" content="GetUpdated">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:image" content="https://www.getupdated.in/images/cognizant-hiring-2026.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Job Details - Apply for Fresher Jobs - GetUpdated">
+    <meta name="twitter:description"
+        content="View job details, eligibility, salary, and apply for fresher jobs and internships on GetUpdated.">
+    <meta name="twitter:image" content="https://www.getupdated.in/images/cognizant-hiring-2026.jpg">
+
+    <!-- Schema.org WebPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Job Details - Apply for Fresher Jobs",
+        "description": "View job details, eligibility, salary, and apply for fresher jobs and internships on GetUpdated.",
+        "url": "https://www.getupdated.in/job-detail.html",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "GetUpdated",
+            "url": "https://www.getupdated.in/"
+        }
+    }
+    </script>
     <link rel="stylesheet" href="styles.css">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" as="style" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"></noscript>
@@ -500,6 +533,93 @@
             gap: 1.5rem;
         }
 
+        .mobile-sticky-cta {
+            display: none;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1200;
+            padding: 0.75rem 1rem;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .mobile-sticky-cta-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .mobile-sticky-cta-text {
+            min-width: 0;
+            flex: 1;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mobile-sticky-apply,
+        .mobile-sticky-share {
+            border: none;
+            border-radius: 999px;
+            padding: 0.7rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .mobile-sticky-apply {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #ffffff;
+        }
+
+        .mobile-sticky-share {
+            background: rgba(255, 255, 255, 0.12);
+            color: #e5e7eb;
+            cursor: pointer;
+        }
+
+        .related-journey {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(2, 6, 23, 0.3);
+        }
+
+        .related-journey h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .related-journey-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        .related-journey-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.8rem;
+            text-decoration: none;
+            color: #e5e7eb;
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            font-size: 0.82rem;
+        }
+
         @media (max-width: 1024px) {
             .job-content {
                 grid-template-columns: 1fr;
@@ -541,6 +661,14 @@
 
             .sidebar-card {
                 min-width: 100%;
+            }
+
+            .mobile-sticky-cta {
+                display: block;
+            }
+
+            .job-detail-page {
+                padding-bottom: 110px;
             }
         }
 
@@ -686,7 +814,7 @@
                     </span>
                 </div>
                 <div class="header-actions">
-                    <button class="share-btn" onclick="shareJob()">
+                    <button class="share-btn" onclick="shareJob()" aria-label="Share this job">
                         <i class="fas fa-share-alt"></i>
                     </button>
                 </div>
@@ -734,9 +862,18 @@
                     <div class="engagement-apply-section">
                         <p><i class="fas fa-bolt"></i> Interested in this role? Apply directly on the company's portal
                         </p>
-                        <a href="#" class="engagement-apply-btn" id="applyBtnMain" target="_blank">
+                        <a href="#" class="engagement-apply-btn" id="applyBtnMain" target="_blank" rel="noopener noreferrer">
                             APPLY NOW <i class="fas fa-external-link-alt"></i>
                         </a>
+                    </div>
+
+                    <div class="related-journey" aria-label="Continue your journey">
+                        <h3>Continue Your Journey</h3>
+                        <div class="related-journey-links">
+                            <a class="related-journey-link" href="jobs.html"><i class="fas fa-briefcase"></i> More Jobs</a>
+                            <a class="related-journey-link" href="offers.html"><i class="fas fa-tags"></i> Student Offers</a>
+                            <a class="related-journey-link" href="blogs.html"><i class="fas fa-pen-nib"></i> Career Blogs</a>
+                        </div>
                     </div>
 
                 </div>
@@ -780,6 +917,19 @@
             </div>
         </div>
     </section>
+
+    <div class="mobile-sticky-cta" aria-label="Quick apply actions">
+        <div class="mobile-sticky-cta-inner">
+            <span class="mobile-sticky-cta-text" id="stickyCtaText">Open role and apply securely</span>
+            <button class="mobile-sticky-share" type="button" onclick="shareJob()" aria-label="Share this job">
+                <i class="fas fa-share-alt"></i> Share
+            </button>
+            <a href="#" class="mobile-sticky-apply" id="applyBtnSticky" target="_blank" rel="noopener noreferrer">
+                Apply Now <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
     <!-- Footer -->
     
     <script>
@@ -791,7 +941,7 @@
         'params' : {}
       };
     </script>
-    <script src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
+    <script async src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
 
 
     <script>
@@ -803,7 +953,7 @@
         'params' : {}
       };
     </script>
-    <script src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
+    <script async src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
 
 <footer class="footer">
         <div class="container">
@@ -854,6 +1004,7 @@
     </button>
 
     <script src="script.js" defer></script>
+    <script src="js/engagement-analytics.js" defer></script>
     <script>
         // Job database
         const jobsData = {
@@ -2214,7 +2365,7 @@
                     <p style="margin-top:1.5rem;"><strong>⚠️ Note:</strong> This is a government job with excellent career growth. Selected candidates will undergo training at Punjab Police Academy. Career progression from Constable → Head Constable → ASI → SI → Inspector.</p>
                     
                     <p><strong>Apply by:</strong> March 30, 2026 (11:55 PM)</p>
-                    <p><strong>Official Website:</strong> <a href="https://cdn.digialm.com/EForms/configuredHtml/31526/97759/Index.html" target="_blank" style="color:#6366f1;">Apply Portal</a></p>
+                    <p><strong>Official Website:</strong> <a href="https://cdn.digialm.com/EForms/configuredHtml/31526/97759/Index.html" target="_blank" rel="noopener noreferrer" style="color:#6366f1;">Apply Portal</a></p>
         `
             },
             'shell-graduate': {
@@ -2388,7 +2539,7 @@
                     </ol>
                     
                     <p><strong>Apply by:</strong> April 20, 2026</p>
-                    <p><strong>Official Website:</strong> <a href="https://applyssb.com/ssb_ac_ja_2026_v1/applicationIndex" target="_blank" style="color:#6366f1;">applyssb.com</a></p>
+                    <p><strong>Official Website:</strong> <a href="https://applyssb.com/ssb_ac_ja_2026_v1/applicationIndex" target="_blank" rel="noopener noreferrer" style="color:#6366f1;">applyssb.com</a></p>
         `
             },
             'allahabad-hc-private-secretary': {
@@ -2451,7 +2602,7 @@
                     </ol>
                     
                     <p><strong>Apply by:</strong> April 1, 2026 (11:59 PM)</p>
-                    <p><strong>Official Website:</strong> <a href="https://exams.nta.nic.in/private-secretary-grade-i-recruitment-examination-2026/" target="_blank" style="color:#6366f1;">NTA Recruitment Portal</a></p>
+                    <p><strong>Official Website:</strong> <a href="https://exams.nta.nic.in/private-secretary-grade-i-recruitment-examination-2026/" target="_blank" rel="noopener noreferrer" style="color:#6366f1;">NTA Recruitment Portal</a></p>
         `
             },
             'scr-apprentice-2026': {
@@ -2522,7 +2673,7 @@
                     </ol>
                     
                     <p><strong>Apply by:</strong> April 11, 2026 (11:59 PM)</p>
-                    <p><strong>Official Website:</strong> <a href="https://scr.onlineregister.org.in/home" target="_blank" style="color:#6366f1;">scr.onlineregister.org.in</a></p>
+                    <p><strong>Official Website:</strong> <a href="https://scr.onlineregister.org.in/home" target="_blank" rel="noopener noreferrer" style="color:#6366f1;">scr.onlineregister.org.in</a></p>
         `
             },
             'ssc-cgl-2026': {
@@ -2604,7 +2755,7 @@
                     <p style="margin-top:1.5rem;"><strong>⚠️ Note:</strong> SSC CGL is one of India's most competitive exams. Start preparation early with focus on Reasoning, Quantitative Aptitude, English, and General Awareness. Previous year papers are available on ssc.gov.in.</p>
                     
                     <p><strong>Apply by:</strong> April 30, 2026</p>
-                    <p><strong>Official Website:</strong> <a href="https://ssc.gov.in/" target="_blank" style="color:#6366f1;">ssc.gov.in</a></p>
+                    <p><strong>Official Website:</strong> <a href="https://ssc.gov.in/" target="_blank" rel="noopener noreferrer" style="color:#6366f1;">ssc.gov.in</a></p>
         `
             },
         };
@@ -2658,7 +2809,16 @@
 
             // Update apply button
             const applyBtn = document.getElementById('applyBtnMain');
+            const applyBtnSticky = document.getElementById('applyBtnSticky');
             applyBtn.href = job.applyUrl;
+            if (applyBtnSticky) {
+                applyBtnSticky.href = job.applyUrl;
+            }
+
+            const stickyCtaText = document.getElementById('stickyCtaText');
+            if (stickyCtaText) {
+                stickyCtaText.textContent = `${job.company} - ${job.title}`;
+            }
 
             if (job.deadline && new Date() > new Date(job.deadline)) {
                 applyBtn.textContent = 'REGISTRATION CLOSED';
@@ -2666,10 +2826,109 @@
                 applyBtn.style.background = '#9ca3af';
                 applyBtn.style.cursor = 'not-allowed';
                 applyBtn.style.pointerEvents = 'none';
+
+                if (applyBtnSticky) {
+                    applyBtnSticky.textContent = 'Registration Closed';
+                    applyBtnSticky.removeAttribute('href');
+                    applyBtnSticky.style.background = '#9ca3af';
+                    applyBtnSticky.style.cursor = 'not-allowed';
+                    applyBtnSticky.style.pointerEvents = 'none';
+                }
             }
 
             // Update page title
             document.title = `${job.title} at ${job.company} - GetUpdated`;
+
+            // Inject dynamic JobPosting schema for better rich results.
+            injectJobPostingSchema(jobId, job);
+        }
+
+        function stripHtml(html) {
+            const temp = document.createElement('div');
+            temp.innerHTML = html || '';
+            return temp.textContent || temp.innerText || '';
+        }
+
+        function normalizeEmploymentType(typeValue) {
+            const value = (typeValue || '').toLowerCase();
+            if (value.includes('intern')) return 'INTERN';
+            if (value.includes('part')) return 'PART_TIME';
+            if (value.includes('contract')) return 'CONTRACTOR';
+            return 'FULL_TIME';
+        }
+
+        function parseBaseSalary(rawSalary) {
+            const text = (rawSalary || '').toString();
+            const matches = text.match(/\d+/g);
+            if (!matches || matches.length === 0) return null;
+            const numbers = matches.map(n => parseInt(n, 10)).filter(n => !Number.isNaN(n));
+            if (numbers.length === 0) return null;
+            const maxValue = Math.max(...numbers);
+            return {
+                '@type': 'MonetaryAmount',
+                currency: 'INR',
+                value: {
+                    '@type': 'QuantitativeValue',
+                    value: maxValue,
+                    unitText: 'MONTH'
+                }
+            };
+        }
+
+        function injectJobPostingSchema(jobId, job) {
+            const existing = document.getElementById('dynamic-jobposting-schema');
+            if (existing) existing.remove();
+
+            const salary = parseBaseSalary(job.salary);
+            const schema = {
+                '@context': 'https://schema.org',
+                '@type': 'JobPosting',
+                title: job.title,
+                description: stripHtml(job.description),
+                identifier: {
+                    '@type': 'PropertyValue',
+                    name: 'GetUpdated',
+                    value: jobId
+                },
+                datePosted: new Date().toISOString().split('T')[0],
+                validThrough: job.deadline ? new Date(job.deadline).toISOString() : undefined,
+                employmentType: normalizeEmploymentType(job.type),
+                hiringOrganization: {
+                    '@type': 'Organization',
+                    name: job.company,
+                    sameAs: 'https://www.getupdated.in/'
+                },
+                jobLocation: {
+                    '@type': 'Place',
+                    address: {
+                        '@type': 'PostalAddress',
+                        addressLocality: job.location || 'India',
+                        addressCountry: 'IN'
+                    }
+                },
+                applicantLocationRequirements: {
+                    '@type': 'Country',
+                    name: 'India'
+                },
+                directApply: true,
+                url: window.location.href,
+                qualifications: job.qualification,
+                experienceRequirements: job.experience
+            };
+
+            if ((job.location || '').toLowerCase().includes('work from home')) {
+                schema.jobLocationType = 'TELECOMMUTE';
+            }
+
+            if (salary) {
+                schema.baseSalary = salary;
+            }
+
+            const script = document.createElement('script');
+            script.id = 'dynamic-jobposting-schema';
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify(schema);
+            document.head.appendChild(script);
         }
 
         // Share job
@@ -2677,6 +2936,20 @@
             const jobId = getJobId();
             const job = jobsData[jobId];
             const url = window.location.href;
+
+            if (typeof window.trackEngagement === 'function') {
+                window.trackEngagement('job_share_click', {
+                    event_category: 'job_detail',
+                    event_label: `${job.company} - ${job.title}`,
+                    transport_type: 'beacon'
+                });
+            } else if (typeof window.gtag === 'function') {
+                window.gtag('event', 'job_share_click', {
+                    event_category: 'job_detail',
+                    event_label: `${job.company} - ${job.title}`,
+                    transport_type: 'beacon'
+                });
+            }
 
             if (navigator.share) {
                 navigator.share({
@@ -2694,6 +2967,53 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             loadJobDetails();
+
+            const applyMain = document.getElementById('applyBtnMain');
+            const applySticky = document.getElementById('applyBtnSticky');
+
+            function trackApplyClick(source) {
+                const jobId = getJobId();
+                const job = jobsData[jobId];
+                if (!job) {
+                    return;
+                }
+
+                var payload = {
+                    event_category: 'job_detail',
+                    event_label: `${source}: ${job.company} - ${job.title}`,
+                    transport_type: 'beacon'
+                };
+
+                if (typeof window.trackEngagement === 'function') {
+                    window.trackEngagement('job_apply_click', payload);
+                } else if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'job_apply_click', payload);
+                }
+            }
+
+            applyMain?.addEventListener('click', function () {
+                trackApplyClick('main_cta');
+            });
+
+            applySticky?.addEventListener('click', function () {
+                trackApplyClick('sticky_cta');
+            });
+
+            document.querySelectorAll('.related-journey-link').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    var payload = {
+                        event_category: 'internal_navigation',
+                        event_label: link.textContent.trim(),
+                        transport_type: 'beacon'
+                    };
+
+                    if (typeof window.trackEngagement === 'function') {
+                        window.trackEngagement('job_detail_related_click', payload);
+                    } else if (typeof window.gtag === 'function') {
+                        window.gtag('event', 'job_detail_related_click', payload);
+                    }
+                });
+            });
         });
     </script>
 <!-- Cookie Consent Banner -->
@@ -2709,7 +3029,7 @@
     </div>
 </div>
 <script src="js/cookie-consent.js" defer></script>
-    <script src="
+    <script async src="https://pl28651117.profitablecpmratenetwork.com/49/5b/52/495b52b6086994ad230aaaf172aba64c.js"></script>
     <!-- extra-ads-slot-v2 -->
     <script>
       atOptions = {
@@ -2720,7 +3040,7 @@
         'params' : {}
       };
     </script>
-    <script src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
+    <script async src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
     
     <script>
       atOptions = {
@@ -2731,8 +3051,7 @@
         'params' : {}
       };
     </script>
-    <script src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
-https://pl28651117.profitablecpmratenetwork.com/49/5b/52/495b52b6086994ad230aaaf172aba64c.js"></script>
+    <script async src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
 </body>
 
 </html>

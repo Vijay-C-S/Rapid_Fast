@@ -192,9 +192,9 @@
     </nav>
 
     <!-- Blog Content -->
-    <main class="blog-wrapper">
+    <main class="blog-wrapper" role="main" aria-label="Blog content">
         <div class="blog-layout">
-            <article class="blog-article">
+            <article class="blog-article" aria-label="Blog article">
             
             <!-- Article Header -->
             <header class="article-header">
@@ -227,11 +227,11 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
 
 
 
-                <h2>What Is Google Antigravity? The Concept That Changes Everything</h2>
+                <h1>What Is Google Antigravity? The Concept That Changes Everything</h1>
 
                 <p><a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer">Google Antigravity</a> is what Google calls an "agent-first IDE." Let's unpack what that actually means, because the terminology matters.</p>
                 
@@ -253,7 +253,7 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
 
 
 
@@ -273,7 +273,7 @@
                     </div>
                 </div>
 
-                <h2>How the Agent System Actually Works — Under the Hood</h2>
+                <h1>How the Agent System Actually Works — Under the Hood</h1>
 
                 <p>Based on my extensive testing and what Google has publicly shared about the architecture, here's what happens when you give Antigravity a task:</p>
                 
@@ -291,7 +291,7 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
 
 
 
@@ -308,7 +308,7 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
 
 
                 
@@ -318,12 +318,12 @@
 
                 <p><strong>Step 5: Human Review.</strong> The agents don't push code to production without your approval. Once they're done, you review the changes — a diff view shows exactly what was written, modified, or deleted. You can accept everything, reject specific changes, or ask the agents to adjust their approach. This human-in-the-loop checkpoint is critical — it means the agents do the heavy lifting, but you retain final authority.</p>
 
-                <h2>I Tested It on Real Projects — Here's What Happened</h2>
+                <h1>I Tested It on Real Projects — Here's What Happened</h1>
 
                 <p>Reading about features is one thing. Watching agents work on your actual codebase is another experience entirely. I ran several tests across different project types to see how Antigravity performs in practice.</p>
 
 
-                <h3>Test 1: Building a REST API from Scratch</h3>
+                <h1>Test 1: Building a REST API from Scratch</h1>
 
                 <p>I asked Antigravity to "Build a REST API in Node.js with Express for a simple blog system — posts with CRUD operations, user authentication with JWT, input validation, error handling, and unit tests." The planning agent broke this into seven subtasks. Within about four minutes, I had a fully functional API with twelve endpoints, JWT authentication middleware, Joi validation schemas, centralised error handling, and thirty-two unit tests — all passing. The code was clean, well-structured, and followed standard Express patterns. I would have taken two to three hours to write this manually. Four minutes.</p>
                 <script>
@@ -335,10 +335,10 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
 
 
-<h3>Test 2: Debugging a Complex Frontend Issue</h3>
+<h1>Test 2: Debugging a Complex Frontend Issue</h1>
 
                 <p>I pointed Antigravity at an existing React project that had a persistent state management bug — a race condition where two components were updating the same Redux slice simultaneously, causing intermittent UI glitches. I described the symptoms: "The dashboard widget occasionally shows stale data after the user updates their profile. It only happens when both the dashboard and profile pages are loaded." The debugging agent traced the issue through the component tree, identified the conflicting dispatches, and the code agent implemented a fix using Redux Toolkit's createAsyncThunk with proper sequential dispatching. The browser agent verified the fix by simulating the exact user flow that triggered the bug. Total time: about ninety seconds.</p>
                 
@@ -346,11 +346,11 @@
 
 
 
-                <h3>Test 3: Full-Stack Feature Addition</h3>
+                <h1>Test 3: Full-Stack Feature Addition</h1>
 
                 <p>This was the big one. I asked Antigravity to add a complete commenting system to an existing blog application — backend API endpoints, database schema changes, frontend React components, real-time updates with WebSockets, and full test coverage. This involved coordinating changes across backend (Python/Django), frontend (React/TypeScript), and database (PostgreSQL migrations). The agents worked for about twelve minutes. The result was a fully working commenting system with nested replies, real-time updates, optimistic UI rendering, proper error handling, and forty-seven tests covering both frontend and backend. The most impressive part was watching the agents coordinate across the full stack — the backend agent and frontend agent were essentially pair programming, with the backend agent informing the frontend agent about API response shapes in real-time.</p>
 
-                <h3>Test 4: Deploying to Production</h3>
+                <h1>Test 4: Deploying to Production</h1>
 
                 <p>I asked Antigravity to "Set up a CI/CD pipeline using GitHub Actions for this project — run tests on every PR, build the Docker image, push to Google Cloud Artifact Registry, and deploy to Cloud Run." The terminal agent handled the entire process — creating the workflow YAML files, configuring Docker, setting up the deployment commands, and even testing the pipeline with a dry run. It created three separate workflow files (test, build, deploy), a Dockerfile with multi-stage builds, and documented everything with inline comments. The only thing I had to do manually was enter my Google Cloud credentials. Everything else was handled autonomously.</p>
                 <script>
@@ -362,7 +362,7 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
 
 
 
@@ -377,7 +377,7 @@
                     </div>
                 </div>
 
-                <h2>What Makes Antigravity Genuinely Different from Other AI Coding Tools</h2>
+                <h1>What Makes Antigravity Genuinely Different from Other AI Coding Tools</h1>
 
                 <p>I keep emphasising this because it's the most important point: Antigravity is not an evolution of Copilot. It's a different category of tool entirely. Here's why the distinction matters:</p>
 
@@ -395,7 +395,7 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
 
 
 
@@ -413,7 +413,7 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
 
 
                 
@@ -431,7 +431,7 @@
                     </div>
                 </div>
 
-                <h2>The Interface — Designed for Agent Collaboration</h2>
+                <h1>The Interface — Designed for Agent Collaboration</h1>
 
                 <p>The Antigravity IDE interface is clearly built from the ground up for the agent-first paradigm. It's not VS Code with agents bolted on. The layout has three primary zones — the code editor on the left, the terminal panel at the bottom, and a browser preview on the right. Each zone is both a developer workspace and an agent workspace.</p>
 <p>The most striking visual element is the agent status panel. It shows all active agents, their current tasks, and their status (planning, writing, testing, waiting, complete). You can click into any agent to see exactly what it's doing in real-time — which file it's editing, which command it's running, what it's checking in the browser. The transparency is remarkable. There's no magic black box — every agent action is visible and auditable.</p>
@@ -446,7 +446,7 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
 
 
 
@@ -455,7 +455,7 @@
 
 
 
-                <h2>Who Benefits Most from Google Antigravity?</h2>
+                <h1>Who Benefits Most from Google Antigravity?</h1>
 
                 <p>After extensive testing, here's my honest assessment of who gets the most value from this tool:</p>
 
@@ -478,7 +478,7 @@
                     </div>
                 </div>
 
-                <h2>Limitations and Honest Criticisms</h2>
+                <h1>Limitations and Honest Criticisms</h1>
 
                 <p>No tool is perfect, and I'd rather be transparent about where Antigravity falls short than pretend it's flawless:</p>
                 <script>
@@ -490,7 +490,7 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
 
 
 <ul>
@@ -502,7 +502,7 @@
                     <li><strong>Early Access Means Rough Edges:</strong> The product is still in early access. Extension ecosystem is thin, plugin support is limited, and some language-specific features (like advanced Rust borrow-checker awareness) aren't as mature as dedicated IDEs for those languages. Google is clearly iterating fast, but it's worth setting expectations that this isn't a finished product yet.</li>
                 </ul>
 
-                <h2>Tips for Getting the Best Results from Antigravity</h2>
+                <h1>Tips for Getting the Best Results from Antigravity</h1>
 
                 <p>After weeks of daily use, these practices consistently produce the best outcomes:</p>
 
@@ -526,7 +526,7 @@
                     </div>
                 </div>
 
-                <h2>The Bigger Picture — What Agent-First Development Means for the Industry</h2>
+                <h1>The Bigger Picture — What Agent-First Development Means for the Industry</h1>
 
                 <p>Google Antigravity isn't just a new IDE. It's a signal of where software development is heading. The shift from "AI-assisted coding" to "AI-autonomous coding with human oversight" is the most significant paradigm change in developer tools since the move from text editors to IDEs in the first place.</p>
                 
@@ -543,14 +543,14 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
 
 
 
                 <p>This doesn't mean developers become irrelevant. It means what we mean by "developer" evolves. The job shifts from writing code to directing, reviewing, and refining AI-generated code. The skills that matter shift from "can you write a binary search from scratch?" to "can you evaluate whether this architecture will scale?" and "can you identify where this agent's approach conflicts with the business requirements?" The thinking becomes more important than the typing — which, honestly, is how it always should have been.</p>
 
                 <p>We're seeing this same pattern across the entire tech tool landscape. <a href="rork-build-publish-app-single-prompt.html">Rork builds mobile apps from prompts</a>, <a href="rytr-ai-writing-tool-review.html">Rytr generates content autonomously</a>, <a href="skywork-ai-content-generator-review.html">Skywork creates SEO articles</a>, and now Antigravity writes, tests, and deploys code through autonomous agents. The common thread is clear: AI is moving from assistance to execution, from suggesting to doing, from copilot to pilot. And the humans who thrive in this landscape are the ones who learn to direct these tools effectively rather than competing with them on implementation speed.</p>
-<h2>Final Verdict — Is Google Antigravity Worth It?</h2>
+<h1>Final Verdict — Is Google Antigravity Worth It?</h1>
 
                 <p>After weeks of hands-on testing across real projects in multiple languages and frameworks, here's my honest assessment:</p>
                 <script>
@@ -562,7 +562,7 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
 
 
                 
@@ -583,7 +583,7 @@
                     'params' : {}
                   };
                 </script>
-                <script src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
+                <script async src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
 
 
 
@@ -613,11 +613,12 @@
             </article>
 
             <!-- Sidebar -->
-            <aside class="blog-sidebar">
+            <aside class="blog-sidebar" aria-label="Related blog content">
 <div class="sidebar-widget">
                     <h3>Search</h3>
-                    <form class="search-form" action="/blogs.html">
-                        <input type="text" name="q" class="search-input" placeholder="Search blogs...">
+                    <form class="search-form" action="/blogs.html" role="search" aria-label="Search blog posts">
+                        <label for="blog-search" style="position:absolute;left:-9999px;">Search blog posts</label>
+                        <input type="text" id="blog-search" name="q" class="search-input" placeholder="Search blogs..." aria-label="Search blog posts">
                         <button type="submit" class="search-btn">Search</button>
                     </form>
                 </div>
@@ -746,7 +747,7 @@
     </div>
 </div>
 <script src="../js/cookie-consent.js" defer></script>
-    <script src="
+    <script async src="https://pl28651117.profitablecpmratenetwork.com/49/5b/52/495b52b6086994ad230aaaf172aba64c.js"></script>
     <!-- extra-ads-slot-v2 -->
     <script>
       atOptions = {
@@ -757,7 +758,7 @@
         'params' : {}
       };
     </script>
-    <script src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
+    <script async src="https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js"></script>
     
     <script>
       atOptions = {
@@ -768,7 +769,6 @@
         'params' : {}
       };
     </script>
-    <script src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
-https://pl28651117.profitablecpmratenetwork.com/49/5b/52/495b52b6086994ad230aaaf172aba64c.js"></script>
+    <script async src="https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js"></script>
 </body>
 </html>
