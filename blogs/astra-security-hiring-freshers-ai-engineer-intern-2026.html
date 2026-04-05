@@ -762,5 +762,35 @@
     </div>
 </div>
 <script src="../js/cookie-consent.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const articleContent = document.querySelector('.article-content');
+    if (!articleContent) {
+        return;
+    }
+
+    const paragraphs = Array.from(articleContent.querySelectorAll(':scope > p'));
+    paragraphs.forEach(function (paragraph) {
+        const adWrapper = document.createElement('div');
+        adWrapper.style.margin = '1.25rem 0';
+
+        const adUnit = document.createElement('ins');
+        adUnit.className = 'adsbygoogle';
+        adUnit.style.display = 'block';
+        adUnit.setAttribute('data-ad-client', 'ca-pub-2196788914593702');
+        adUnit.setAttribute('data-ad-format', 'auto');
+        adUnit.setAttribute('data-full-width-responsive', 'true');
+
+        adWrapper.appendChild(adUnit);
+        paragraph.insertAdjacentElement('afterend', adWrapper);
+
+        try {
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+            console.warn('Ad unit render skipped', e);
+        }
+    });
+});
+</script>
 </body>
 </html>
