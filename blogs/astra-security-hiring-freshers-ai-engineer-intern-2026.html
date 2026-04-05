@@ -770,25 +770,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const paragraphs = Array.from(articleContent.querySelectorAll(':scope > p'));
-    paragraphs.forEach(function (paragraph) {
+    paragraphs.forEach(function (paragraph, index) {
         const adWrapper = document.createElement('div');
-        adWrapper.style.margin = '1.25rem 0';
+        adWrapper.className = 'inline-ad-wrap';
+        adWrapper.style.margin = '1rem auto';
+        adWrapper.style.maxWidth = '300px';
+        adWrapper.style.minHeight = '250px';
+        adWrapper.style.display = 'flex';
+        adWrapper.style.alignItems = 'center';
+        adWrapper.style.justifyContent = 'center';
 
-        const adUnit = document.createElement('ins');
-        adUnit.className = 'adsbygoogle';
-        adUnit.style.display = 'block';
-        adUnit.setAttribute('data-ad-client', 'ca-pub-2196788914593702');
-        adUnit.setAttribute('data-ad-format', 'auto');
-        adUnit.setAttribute('data-full-width-responsive', 'true');
-
-        adWrapper.appendChild(adUnit);
         paragraph.insertAdjacentElement('afterend', adWrapper);
 
-        try {
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {
-            console.warn('Ad unit render skipped', e);
-        }
+        const optionsScript = document.createElement('script');
+        optionsScript.text = "atOptions = {'key':'8c8e95641949eb53920ed955003e36a9','format':'iframe','height':250,'width':300,'params':{}};";
+        adWrapper.appendChild(optionsScript);
+
+        const invokeScript = document.createElement('script');
+        invokeScript.src = 'https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js';
+        invokeScript.async = true;
+        adWrapper.appendChild(invokeScript);
+
+        window.setTimeout(function () {
+            const hasIframe = adWrapper.querySelector('iframe');
+            if (!hasIframe) {
+                adWrapper.style.display = 'none';
+            }
+        }, 4000 + (index * 50));
     });
 });
 </script>
