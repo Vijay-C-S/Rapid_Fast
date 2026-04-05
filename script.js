@@ -10,3 +10,40 @@ function createIframeAd(isLeaderboard){var wrap=createAdWrap();var adBox=documen
 function injectBlogAds(){if(!isBlogPage()){return;}var article=document.querySelector('.article-content');if(!article||article.getAttribute('data-gu-ads-injected')==='1'){return;}article.setAttribute('data-gu-ads-injected','1');var paragraphs=Array.prototype.slice.call(article.querySelectorAll('p'));if(paragraphs.length<4){return;}var placements=[];for(var i=1;i<paragraphs.length;i+=2){placements.push(paragraphs[i]);}for(var p=0;p<placements.length;p++){var ref=placements[p];var adNode;if(p===0){adNode=createContainerAd();}else if(window.innerWidth>=992&&p%2===0){adNode=createIframeAd(true);}else{adNode=createIframeAd(false);}ref.insertAdjacentElement('afterend',adNode);}appendNetworkScript('https://pl28651056.profitablecpmratenetwork.com/77c8b09883a9d6e0e7c2d0be9cac6e83/invoke.js',true);}
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',injectBlogAds);}else{injectBlogAds();}
 })();
+
+;(function(){
+if(window.__guListingAdInjectorInitialized){return;}
+window.__guListingAdInjectorInitialized=true;
+function pathName(){return (window.location.pathname||'').toLowerCase();}
+function isJobs(){var p=pathName();return p.indexOf('/jobs.html')!==-1||p.endsWith('jobs.html');}
+function isOffers(){var p=pathName();return p.indexOf('/offers.html')!==-1||p.endsWith('offers.html');}
+function isTechNews(){var p=pathName();return p.indexOf('/tech-news.html')!==-1||p.endsWith('tech-news.html');}
+function createWrap(){var wrap=document.createElement('div');wrap.className='gu-listing-ad-wrap';wrap.style.cssText='display:flex;justify-content:center;align-items:center;margin:18px 0;min-height:110px;overflow:hidden;';return wrap;}
+function createContainerUnit(){var wrap=createWrap();var holder=document.createElement('div');holder.id='container-77c8b09883a9d6e0e7c2d0be9cac6e83';wrap.appendChild(holder);return wrap;}
+function createIframeUnit(isLeaderboard){var wrap=createWrap();var scriptCfg=document.createElement('script');if(isLeaderboard){scriptCfg.text="atOptions = {'key':'935fe7821d46927df6296fe874433356','format':'iframe','height':90,'width':728,'params':{}};";}else{scriptCfg.text="atOptions = {'key':'8c8e95641949eb53920ed955003e36a9','format':'iframe','height':250,'width':300,'params':{}};";}wrap.appendChild(scriptCfg);var scriptInvoke=document.createElement('script');scriptInvoke.src=isLeaderboard?'https://www.highperformanceformat.com/935fe7821d46927df6296fe874433356/invoke.js':'https://www.highperformanceformat.com/8c8e95641949eb53920ed955003e36a9/invoke.js';scriptInvoke.async=true;wrap.appendChild(scriptInvoke);return wrap;}
+function addPrimaryScriptOnce(){if(window.__guPrimaryListingAdLoaded){return;}window.__guPrimaryListingAdLoaded=true;var s=document.createElement('script');s.src='https://pl28651056.profitablecpmratenetwork.com/77c8b09883a9d6e0e7c2d0be9cac6e83/invoke.js';s.async=true;s.setAttribute('data-cfasync','false');document.body.appendChild(s);}
+function injectIntoGrid(gridSelector,itemSelector,interval,firstOffset){
+var grid=document.querySelector(gridSelector);
+if(!grid||grid.getAttribute('data-gu-listing-ads')==='1'){return;}
+grid.setAttribute('data-gu-listing-ads','1');
+var items=Array.prototype.slice.call(grid.querySelectorAll(itemSelector));
+if(items.length<firstOffset+1){return;}
+var positions=[];
+for(var i=firstOffset;i<items.length;i+=interval){positions.push(items[i]);}
+for(var idx=0;idx<positions.length;idx++){
+var ref=positions[idx];
+var node;
+if(idx===0){node=createContainerUnit();}
+else if(window.innerWidth>=992&&idx%2===0){node=createIframeUnit(true);}
+else{node=createIframeUnit(false);}
+ref.insertAdjacentElement('afterend',node);
+}
+addPrimaryScriptOnce();
+}
+function injectNonBlogAds(){
+if(isJobs()){injectIntoGrid('.all-jobs-grid','.job-card',6,2);return;}
+if(isOffers()){injectIntoGrid('.all-offers-grid','.offer-card',4,1);return;}
+if(isTechNews()){injectIntoGrid('.all-tech-grid','.tech-card',4,1);}
+}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',injectNonBlogAds);}else{injectNonBlogAds();}
+})();
