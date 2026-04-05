@@ -769,8 +769,17 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
-    const paragraphs = Array.from(articleContent.querySelectorAll(':scope > p'));
-    paragraphs.forEach(function (paragraph, index) {
+    const adTargets = Array.from(
+        articleContent.querySelectorAll(':scope > p, :scope > h1, :scope > ul, :scope > table')
+    );
+
+    let lastAdAfterIndex = -10;
+    adTargets.forEach(function (target, index) {
+        // Avoid placing ads too tightly together.
+        if (index - lastAdAfterIndex < 2) {
+            return;
+        }
+
         const adWrapper = document.createElement('div');
         adWrapper.className = 'inline-ad-wrap';
         adWrapper.style.margin = '1rem auto';
@@ -780,7 +789,7 @@ document.addEventListener('DOMContentLoaded', function () {
         adWrapper.style.alignItems = 'center';
         adWrapper.style.justifyContent = 'center';
 
-        paragraph.insertAdjacentElement('afterend', adWrapper);
+        target.insertAdjacentElement('afterend', adWrapper);
 
         const optionsScript = document.createElement('script');
         optionsScript.text = "atOptions = {'key':'8c8e95641949eb53920ed955003e36a9','format':'iframe','height':250,'width':300,'params':{}};";
@@ -797,6 +806,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 adWrapper.style.display = 'none';
             }
         }, 4000 + (index * 50));
+
+        lastAdAfterIndex = index;
     });
 });
 </script>
