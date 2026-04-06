@@ -60,6 +60,12 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://www.getupdated.in/blogs/niti-aayog-government-internship-2026.html</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.getupdated.in/blogs/uidai-aadhaar-hiring-freshers-technology-intern-2026.html</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
