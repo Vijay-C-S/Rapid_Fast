@@ -767,14 +767,11 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
-    const adTargets = Array.from(
-        articleContent.querySelectorAll(':scope > p, :scope > h1, :scope > ul, :scope > table')
-    );
+    const paragraphTargets = Array.from(articleContent.querySelectorAll(':scope > p'));
 
-    let lastAdAfterIndex = -10;
-    adTargets.forEach(function (target, index) {
-        // Avoid placing ads too tightly together.
-        if (index - lastAdAfterIndex < 2) {
+    paragraphTargets.forEach(function (target, index) {
+        // Insert one ad after every 2 paragraphs.
+        if ((index + 1) % 2 !== 0) {
             return;
         }
 
@@ -809,8 +806,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 adWrapper.style.display = 'none';
             }
         }, 4000 + (index * 50));
-
-        lastAdAfterIndex = index;
     });
 });
 </script>
