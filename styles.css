@@ -8,9 +8,3 @@
 html,body{max-width:100%;overflow-x:clip}
 @media (max-width:640px){.blogs-grid,.jobs-grid,.offers-grid,.services-grid,.testimonials-slider{grid-template-columns:minmax(0,1fr)}.blog-card,.job-card,.offer-card,.service-card,.testimonial-card{min-width:0;max-width:100%}.blog-content,.job-description,.section-subtitle{overflow-wrap:anywhere;word-break:break-word}}
 
-/* Keep View Job inside card and show Direct Apply outside for cards that have it */
-.job-card:has(.apply-btn){overflow:visible;margin-bottom:3.25rem}
-.job-card:has(.apply-btn) .job-buttons{display:block;position:relative}
-.job-card:has(.apply-btn) .job-buttons .view-job-btn{width:100%}
-.job-card:has(.apply-btn) .job-buttons .apply-btn{position:absolute;left:0;right:0;top:calc(100% + 0.75rem);z-index:5}
-.job-card:has(.apply-btn) .job-buttons .apply-btn:hover{transform:none}
