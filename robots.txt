@@ -1,11 +1,11 @@
-# GetUpdated Robots.txt
-# https://www.getupdated.in
+# RapidFast Robots.txt
+# https://www.rapidfast.in
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.getupdated.in/sitemap.xml
+Sitemap: https://www.rapidfast.in/sitemap.xml
 
 # Allow Google to access all important content
 User-agent: Googlebot
