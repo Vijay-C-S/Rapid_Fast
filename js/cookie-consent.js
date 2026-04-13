@@ -1,5 +1,5 @@
 // ===== COOKIE CONSENT BANNER =====
-// Manages cookie consent for GDPR/AdSense compliance
+// Manages cookie consent for GDPR compliance
 (function () {
     'use strict';
 

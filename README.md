@@ -10,7 +10,7 @@ AI-focused static website for RapidFast (rapidfast.in), with curated AI blogs, l
 - Global styles: `styles.css`
 - Blog styles: `blog-styles.css`
 - Global JS: `script.js`
-- SEO/Indexing files: `sitemap.xml`, `robots.txt`, `ads.txt`
+- SEO/Indexing files: `sitemap.xml`, `robots.txt`
 - Legal pages: `privacy-policy.html`, `terms-of-service.html`, `disclaimer.html`
 
 ## Current Scope
@@ -43,13 +43,12 @@ PASS: Core SEO and technical checks passed.
 
 This is a static site; deploy by publishing repository files as-is to your hosting provider (GitHub Pages / Netlify / Vercel static / cPanel file manager).
 
-## AdSense Notes
+## Search Console Notes
 
-Before final AdSense review:
+For indexing health:
 
-1. Add the official AdSense script snippet from your AdSense dashboard.
-2. Replace placeholder `ads.txt` with your real publisher line.
-3. Re-submit sitemap in Google Search Console.
+1. Keep `sitemap.xml` updated when content URLs change.
+2. Re-submit sitemap in Google Search Console after major content updates.
 
 ## Git Quick Commands
 

@@ -11,13 +11,6 @@ Sitemap: https://www.rapidfast.in/sitemap.xml
 User-agent: Googlebot
 Allow: /
 
-# Allow Google Ads to crawl
-User-agent: Mediapartners-Google
-Allow: /
-
-User-agent: AdsBot-Google
-Allow: /
-
 # Block unnecessary files that don't need indexing
 Disallow: /sections/
 Disallow: /.git/

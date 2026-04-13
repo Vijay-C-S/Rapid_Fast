@@ -38,7 +38,7 @@ foreach ($file in $allPages) {
     }
 }
 
-"=== GetUpdated SEO QA Report ==="
+"=== RapidFast SEO QA Report ==="
 "Root pages scanned: $($rootPages.Count)"
 "All html pages scanned: $($allPages.Count)"
 ""
