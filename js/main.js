@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initEasterEgg();
     
     // Console branding
-    console.log('%c RapidFast??', 'font-size: 24px; font-weight: bold; color: #6366f1;');
+    console.log('%c RapidFast', 'font-size: 24px; font-weight: bold; color: #6366f1;');
     console.log('%c Welcome to RapidFast- Your Gateway to Success!', 'font-size: 14px; color: #ec4899;');
 });
 
