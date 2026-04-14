@@ -1,4 +1,4 @@
-// ===== Main Application Entry Point =====
+﻿// ===== Main Application Entry Point =====
 // Import and initialize all modules
 
 import { initNavbar } from './navbar.js';
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Console branding
     console.log('%c RapidFast', 'font-size: 24px; font-weight: bold; color: #6366f1;');
-    console.log('%c Welcome to RapidFast- Your Gateway to Success!', 'font-size: 14px; color: #ec4899;');
+    console.log('%c Welcome to RapidFast- Your Gateway to Success!', 'font-size: 14px; color: #0ea5e9;');
 });
+
 

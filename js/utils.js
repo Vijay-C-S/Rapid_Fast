@@ -1,4 +1,4 @@
-// ===== Utils Module =====
+﻿// ===== Utils Module =====
 // Common utility functions
 
 // Notification System
@@ -17,7 +17,7 @@ export function showNotification(message) {
         bottom: 100px;
         right: 30px;
         padding: 1rem 1.5rem;
-        background: linear-gradient(135deg, #6366f1, #ec4899);
+        background: linear-gradient(135deg, #6366f1, #0ea5e9);
         color: white;
         border-radius: 10px;
         font-weight: 500;
@@ -149,7 +149,7 @@ export function initEasterEgg() {
         if (e.key === konamiCode[konamiIndex]) {
             konamiIndex++;
             if (konamiIndex === konamiCode.length) {
-                showNotification('🎮 Konami Code activated! You found the secret! 🎉');
+                showNotification('ðŸŽ® Konami Code activated! You found the secret! ðŸŽ‰');
                 document.body.style.animation = 'rainbow 2s ease';
                 konamiIndex = 0;
             }
@@ -168,3 +168,4 @@ export function initEasterEgg() {
     `;
     document.head.appendChild(rainbowStyle);
 }
+
