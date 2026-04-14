@@ -1,6 +1,6 @@
 # Rapid_Fast
 
-AI-focused static website for RapidFast (rapidfast.in), with curated AI blogs, legal pages, SEO files, and homepage UI custom styling.
+AI-focused static website for RapidFast (rapidfast.page), with curated AI blogs, legal pages, SEO files, and homepage UI custom styling.
 
 ## Project Overview
 

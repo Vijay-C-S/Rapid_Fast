@@ -1,11 +1,11 @@
 # RapidFast Robots.txt
-# https://www.rapidfast.in
+# https://www.rapidfast.page
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.rapidfast.in/sitemap.xml
+Sitemap: https://www.rapidfast.page/sitemap.xml
 
 # Allow Google to access all important content
 User-agent: Googlebot
