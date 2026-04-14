@@ -172,6 +172,32 @@ body.home-v2 .hero-v2 .hero-stats .stat {
   text-align: left;
 }
 
+body.home-v2 .hero-v2 .hero-stats .stat-number {
+  color: #4f46e5;
+}
+
+body.home-v2 .hero-v2 .hero-stats .stat-label {
+  color: #475569;
+}
+
+body.home-v2[data-theme="dark"] .hero-v2 .hero-stats .stat,
+[data-theme="dark"] body.home-v2 .hero-v2 .hero-stats .stat {
+  background: rgba(15, 23, 42, 0.78);
+  border-color: rgba(103, 232, 249, 0.35);
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.35);
+  color: #f8fafc;
+}
+
+body.home-v2[data-theme="dark"] .hero-v2 .hero-stats .stat-number,
+[data-theme="dark"] body.home-v2 .hero-v2 .hero-stats .stat-number {
+  color: #a5b4fc;
+}
+
+body.home-v2[data-theme="dark"] .hero-v2 .hero-stats .stat-label,
+[data-theme="dark"] body.home-v2 .hero-v2 .hero-stats .stat-label {
+  color: #e2e8f0;
+}
+
 body.home-v2 .hero-v2 .hero-panel {
   background: rgba(15, 23, 42, 0.92);
   border: 1px solid rgba(148, 163, 184, 0.2);
