@@ -1,20 +1,17 @@
-# RapidFast Robots.txt
-# https://rapidfast.page
+# RapidFast robots.txt
+# Keep sitemap structure intact and strengthen discovery signals.
 
 User-agent: *
 Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /blogs/
 
-# Sitemap location
-Sitemap: https://rapidfast.page/sitemap.xml
-
-# Allow Google to access all important content
-User-agent: Googlebot
-Allow: /
-
-# Block unnecessary files that don't need indexing
-Disallow: /sections/
 Disallow: /.git/
 Disallow: /.gitignore
-
-# Block non-existent URLs discovered by Google
 Disallow: /category/
+
+# Primary sitemap and www mirror for URL-prefix properties.
+Sitemap: https://rapidfast.page/sitemap.xml
+Sitemap: https://www.rapidfast.page/sitemap.xml
