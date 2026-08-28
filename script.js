@@ -485,30 +485,40 @@
     }
 
     function initForms() {
-        const newsletterForm = doc.getElementById('newsletter-form');
         const contactForm = doc.getElementById('contact-form');
-
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', (event) => {
-                event.preventDefault();
-                const input = qs('input', newsletterForm);
-                const email = input ? input.value : '';
-
-                if (validateEmail(email)) {
-                    showNotification('Successfully subscribed! Welcome aboard!');
-                    newsletterForm.reset();
-                    return;
-                }
-
-                showNotification('Please enter a valid email address');
-            });
-        }
 
         if (contactForm) {
             contactForm.addEventListener('submit', (event) => {
                 event.preventDefault();
-                showNotification('Message sent successfully! We will get back to you soon.');
-                contactForm.reset();
+
+                const name = (doc.getElementById('contact-name') || {}).value || '';
+                const email = (doc.getElementById('contact-email') || {}).value || '';
+                const subject = (doc.getElementById('contact-subject') || {}).value || '';
+                const message = (doc.getElementById('contact-message') || {}).value || '';
+
+                if (!name.trim() || !message.trim()) {
+                    showNotification('Please add your name and a message before sending.');
+                    return;
+                }
+
+                if (!validateEmail(email)) {
+                    showNotification('Please enter a valid email address so we can reply.');
+                    return;
+                }
+
+                // This is a static site with no server, so the form hands the message
+                // to the visitor's own email client rather than pretending to send it.
+                const mailSubject = subject.trim() || ('Message from ' + name.trim() + ' via RapidFast');
+                const nl = String.fromCharCode(10);
+                const mailBody = message.trim() + nl + nl + '---' + nl
+                    + 'From: ' + name.trim() + nl
+                    + 'Reply to: ' + email.trim();
+                const mailto = 'mailto:updated456updated@gmail.com'
+                    + '?subject=' + encodeURIComponent(mailSubject)
+                    + '&body=' + encodeURIComponent(mailBody);
+
+                showNotification('Opening your email app with this message ready to send.');
+                window.location.href = mailto;
             });
         }
     }

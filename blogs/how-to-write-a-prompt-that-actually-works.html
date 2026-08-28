@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="One bad prompt, rewritten five times, with the real output at every stage. A practical prompt engineering guide you can copy — plus the formula I still use daily.">
+    <meta name="description" content="One bad prompt, rewritten five times, with every real output shown. A tested prompt engineering guide, updated August 2026 for reasoning models — plus a copy-paste prompt library.">
     <title>How to Write a Prompt That Actually Works | RapidFast</title>
     <link rel="icon" type="image/jpeg" href="../images/favicon.jpg">
     <link rel="canonical" href="https://rapidfast.page/blogs/how-to-write-a-prompt-that-actually-works.html">
@@ -13,7 +13,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="How to Write a Prompt That Actually Works: One Bad Prompt, Five Rewrites">
-    <meta property="og:description" content="Watch one lazy prompt turn into a genuinely good one across five rewrites — every version, every output, and the reason each change worked.">
+    <meta property="og:description" content="Watch one lazy prompt turn into a genuinely good one across five rewrites — every version, every output, and the reason each change worked. Updated for 2026 reasoning models.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://rapidfast.page/blogs/how-to-write-a-prompt-that-actually-works.html">
     <meta property="og:site_name" content="RapidFast">
@@ -23,7 +23,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="How to Write a Prompt That Actually Works">
-    <meta name="twitter:description" content="One bad prompt, five rewrites, and the real output at every stage. The prompt engineering guide I wish I'd had.">
+    <meta name="twitter:description" content="One bad prompt, five rewrites, every real output shown — and what changed now that reasoning models do the thinking themselves.">
     <meta name="twitter:image" content="https://rapidfast.page/images/prompts_good_bad.webp">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../blog-styles.css">
@@ -39,7 +39,7 @@
         "headline": "How to Write a Prompt That Actually Works: One Bad Prompt, Five Rewrites",
         "description": "A practical prompt engineering guide built around a single experiment: one weak prompt improved five times, with the AI output shown at every stage and an explanation of why each rewrite worked.",
         "datePublished": "2026-04-21",
-        "dateModified": "2026-04-21",
+        "dateModified": "2026-08-27",
         "author": {
             "@type": "Person",
             "name": "Vijay",
@@ -186,6 +186,22 @@
             },
             {
                 "@type": "Question",
+                "name": "Is think step by step still worth adding in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Usually not. Reasoning models carry out that reasoning internally before they answer, so the phrase adds little or nothing. Where a model exposes a thinking control, such as Claude's extended thinking, ChatGPT's Think button or Gemini's reasoning depth, using the control is more reliable than asking for step-by-step reasoning in the prompt, and it does not consume part of your instruction budget. On older or lighter non-reasoning models the phrase still helps."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Has any prompting advice actually expired?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, mostly the tricks. Chain-of-thought instructions, elaborate framings and expert flattery all did something on 2023-era models and do much less now. What has not expired is anything that supplies information the model cannot obtain by itself: context, audience, constraints, format and examples. A useful filter is to ask whether a technique compensates for a model weakness or supplies missing information. The first kind expires as models improve; the second kind never does."
+                }
+            },
+            {
+                "@type": "Question",
                 "name": "What is the most common prompting mistake?",
                 "acceptedAnswer": {
                     "@type": "Answer",
@@ -227,6 +243,33 @@
 
     <!-- Google AdSense verification -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4371693143508188" crossorigin="anonymous"></script>
+
+    <style>
+        .summary-box { background: linear-gradient(135deg, #f0f7ff, #e8f4fd); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+        .summary-box h3 { margin-top: 0; color: #1d4ed8; font-size: 1.05rem; }
+        .summary-box ul { margin: 10px 0 0; padding-left: 20px; }
+        .summary-box ul li { margin-bottom: 6px; font-size: 0.97rem; }
+        .verdict-box { background: linear-gradient(135deg, #fdf4ff, #f3e8ff); border-left: 4px solid #9333ea; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+        .verdict-box h3 { margin-top: 0; color: #7e22ce; font-size: 1.05rem; }
+        .faq-section .faq-item { border-bottom: 1px solid #e5e7eb; padding: 18px 0; }
+        .faq-section .faq-item:last-child { border-bottom: none; }
+        .faq-section .faq-q { font-weight: 600; font-size: 1rem; color: #1e293b; margin-bottom: 8px; }
+        .faq-section .faq-a { font-size: 0.97rem; color: #475569; line-height: 1.7; margin: 0; }
+        .highlight-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 16px 20px; margin: 20px 0; font-size: 0.97rem; color: #1e293b; }
+        .highlight-box strong { color: #92400e; }
+        .source-list { font-size: 0.93rem; line-height: 1.8; }
+        [data-theme="dark"] .summary-box { background: rgba(59, 130, 246, 0.1); border-left-color: #60a5fa; }
+        [data-theme="dark"] .summary-box h3 { color: #93c5fd; }
+        [data-theme="dark"] .summary-box ul li { color: #e2e8f0; }
+        [data-theme="dark"] .verdict-box { background: rgba(147, 51, 234, 0.12); border-left-color: #a78bfa; }
+        [data-theme="dark"] .verdict-box h3 { color: #c4b5fd; }
+        [data-theme="dark"] .verdict-box p { color: #e2e8f0; }
+        [data-theme="dark"] .faq-section .faq-item { border-bottom-color: #334155; }
+        [data-theme="dark"] .faq-section .faq-q { color: #e2e8f0; }
+        [data-theme="dark"] .faq-section .faq-a { color: #94a3b8; }
+        [data-theme="dark"] .highlight-box { background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.3); color: #e2e8f0; }
+        [data-theme="dark"] .highlight-box strong { color: #fcd34d; }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem;background:#6366f1;color:#fff;text-decoration:none;font-weight:600;" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:9999;padding:1rem;background:#6366f1;color:#fff;text-decoration:none;font-weight:600;'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'">Skip to content</a>
@@ -267,10 +310,17 @@
                 <h1 class="article-title">How to Write a Prompt That Actually Works: One Bad Prompt, Five Rewrites</h1>
                 <div class="article-meta">
                     <span class="article-meta-item">Apr 21, 2026</span>
+                    <span class="article-meta-item">Updated Aug 27, 2026</span>
                     <span class="article-meta-item">by <a href="/about.html#author" class="author-link">Vijay</a></span>
-                    <span class="article-meta-item">14 min read</span>
+                    <span class="article-meta-item">15 min read</span>
                 </div>
             </header>
+
+            <aside class="research-note" aria-label="How this was tested">
+                <h2 class="research-note-title">How this experiment was run</h2>
+                <p>Everything below is one real session, not a reconstruction. The six outputs are pasted verbatim, typos and clichés included — I have not cleaned them up to make the progression look tidier than it was. The prompts were run consecutively in a single chat on a mainstream general-purpose assistant, changing exactly one thing per rewrite so the comparison stays honest. The underlying facts in the example (an invoice-checking automation) are real; the LinkedIn post was never actually published.</p>
+                <p>Scores in the comparison table are my judgement after reading all six, not a measurement — they are there to show the shape of the curve, not to be precise. <strong>Updated 27 August 2026</strong> with a new section on what reasoning models changed about this advice, and with corrected links to the three provider prompting guides, all of which had moved since first publication.</p>
+            </aside>
 
             <!-- Featured Image -->
             <div class="featured-image-container">
@@ -281,7 +331,19 @@
             <!-- Article Content -->
             <div class="article-content">
 
-                <p class="lead">This guide is for anyone who has typed a question into ChatGPT or Claude, read the answer, and thought <em>that's it?</em> — students, developers, writers, marketers, founders, and anyone who suspects the tool is smarter than the results they're getting. We're going to take one genuinely bad prompt and rewrite it five times. You'll see the actual output at every stage, and by the end you'll have a formula you can reuse, a library of copy-paste prompts, and a much better instinct for why AI gives you boring answers. Reading time is about fourteen minutes. The part where it clicks usually happens around rewrite three.</p>
+                <p class="lead">This guide is for anyone who has typed a question into ChatGPT, Claude or Gemini, read the answer, and thought <em>that's it?</em> — students, developers, writers, marketers, founders, and anyone who suspects the tool is smarter than the results they are getting. We are going to take one genuinely bad prompt and rewrite it five times. You will see the real output at every stage, and by the end you will have a formula you can reuse, a library of copy-paste prompts, and a much better instinct for why AI gives you boring answers. The part where it clicks usually happens around rewrite three.</p>
+
+                <div class="summary-box">
+                    <h3>&#9889; The short version</h3>
+                    <ul>
+                        <li><strong>Context and audience do most of the work.</strong> If you only add two things to a prompt, add those.</li>
+                        <li><strong>Generic in, generic out is not a flaw.</strong> Average is the correct answer to an unspecified question.</li>
+                        <li><strong>Ban words, don't request tones.</strong> "Make it human" is unactionable; "never use 'leverage'" is checkable.</li>
+                        <li><strong>Hard word limits kill clichés,</strong> because padding is where clichés live.</li>
+                        <li><strong>Roles work by narrowing, not by granting expertise.</strong> Describe behaviour, never status.</li>
+                        <li><strong>What changed in 2026:</strong> reasoning models made "think step by step" mostly redundant, and shifted the advice from scripting the reasoning to specifying the goal. <a href="#whats-changed">Jump to that section</a>.</li>
+                    </ul>
+                </div>
 
                 <p>Here's the thing that changed how I use these tools. For most of my first year with AI, I thought I was evaluating the model. I'd type something in, get something mediocre back, and quietly file it under "overhyped." It took me embarrassingly long to notice that the model was doing exactly what I asked. I just hadn't asked for much.</p>
 
@@ -311,6 +373,7 @@
                     <li><a href="#rewrite-5">Rewrite 5 — Give it a role</a></li>
                     <li><a href="#comparison">Side-by-side comparison</a></li>
                     <li><a href="#why-this-happens">Why this happens</a></li>
+                    <li><a href="#whats-changed">What reasoning models changed in 2026</a></li>
                     <li><a href="#formula">The universal prompt formula</a></li>
                     <li><a href="#examples">Copy-paste prompts for real jobs</a></li>
                     <li><a href="#mistakes">Common mistakes</a></li>
@@ -530,7 +593,19 @@
 
                 <p>Every detail you add deletes an enormous set of wrong answers. That's the entire mechanism. There are no magic words — there's only ambiguity, and how much of it you removed before you pressed enter.</p>
 
-                <p>It also explains the specific failures. Constraints improve precision because "180 words, no emojis" is checkable while "make it engaging" isn't. Roles change style because they select a slice of the training data with a consistent voice. Examples work better than descriptions because a pattern is unambiguous and an adjective is a Rorschach test. Both <a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="noopener noreferrer nofollow">OpenAI</a> and <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener noreferrer nofollow">Anthropic</a> publish their own prompting guides, and they're worth reading — they say the same thing in more formal language.</p>
+                <p>It also explains the specific failures. Constraints improve precision because "180 words, no emojis" is checkable while "make it engaging" isn't. Roles change style because they select a slice of the training data with a consistent voice. Examples work better than descriptions because a pattern is unambiguous and an adjective is a Rorschach test. Both <a href="https://developers.openai.com/api/docs/guides/prompt-engineering" target="_blank" rel="noopener noreferrer nofollow">OpenAI</a> and <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener noreferrer nofollow">Anthropic</a> publish their own prompting guides, and they are worth reading — they say the same thing in more formal language.</p>
+
+                <h2 id="whats-changed">What Reasoning Models Changed in 2026</h2>
+
+                <p>Most prompting advice you will find online was written for the assistants of 2023 and 2024, and a chunk of it is now obsolete. If you learned prompting from a course or a Twitter thread a couple of years ago, three things have moved.</p>
+
+                <p><strong>"Think step by step" is largely redundant.</strong> That phrase was the single most-repeated prompting tip of 2023, and it worked: it pushed the model into showing its reasoning, which improved accuracy on anything with steps. Reasoning models now do that internally before they answer. Adding the instruction usually does nothing, and where a model exposes a thinking control — Claude's extended thinking, ChatGPT's Think button, Gemini's reasoning depth — using the control is more reliable than asking nicely in the prompt.</p>
+
+                <p><strong>The advice now splits by model type.</strong> OpenAI's own current guidance is explicit about this: its GPT-5 series responds best to precise, explicit instructions, while its reasoning models work better when you give a high-level goal and leave the approach to them. That is a genuinely awkward split, because it means the same over-specified prompt that improves one model's output can constrain another's. The practical rule I have settled on: specify the <em>outcome and the constraints</em> tightly on any model, and only specify the <em>method</em> when you are using a non-reasoning model or you have a real reason to force a particular approach.</p>
+
+                <p><strong>Structure markers matter more, not less.</strong> All three providers now recommend Markdown headings or XML-style tags to separate instructions from pasted material. As prompts get longer and context windows get bigger, the risk is no longer that the model runs out of room — it is that your pasted content gets read as an instruction, or that a constraint buried in paragraph four gets skimmed. Labelled sections and fenced content fix both cheaply.</p>
+
+                <div class="highlight-box"><strong>What did not change:</strong> everything in the five rewrites below. Context, audience, structure, constraints and role are model-independent, because they are not tricks — they are the information the model does not have and cannot ask for. Every "prompt hack" that has expired was a workaround for a model limitation. Nothing on that list expires, because none of it is about the model.</div>
 
                 <h2 id="formula">The Universal Prompt Formula</h2>
 
@@ -658,50 +733,76 @@
 
                 <h2 id="faq">Frequently Asked Questions</h2>
 
-                <h3>How long should a prompt be?</h3>
-                <p>Long enough to remove ambiguity, no longer. Most useful prompts land between three and fifteen lines. The real test isn't word count: could a competent freelancer do this job correctly from your prompt alone, without asking a single follow-up? If yes, it's long enough. If no, the missing answers are what you should add.</p>
-
-                <h3>Do longer prompts always give better results?</h3>
-                <p>No. Length helps only when the extra words carry decisions — audience, purpose, format, things to avoid. It hurts when it adds vague praise like "engaging, powerful, world-class," because those describe a feeling and the model can't act on a feeling. Long prompts also make self-contradiction more likely, which is worse than saying less. Add words a stranger could check you against; delete words that only signal enthusiasm.</p>
-
-                <h3>Does ChatGPT need different prompts from Claude?</h3>
-                <p>The fundamentals transfer completely — role, context, audience, constraints, and format help everywhere. Differences are degree, not kind. In my testing Claude follows long structured instructions and negative constraints closely, while ChatGPT needs a firmer shove out of its default polished register. Both publish prompting guides worth reading, but you don't need a separate skill set per tool.</p>
-
-                <h3>Should I use markdown or formatting inside prompts?</h3>
-                <p>Yes, and it helps more than it should. Headings, bullets, and delimiters make instruction boundaries explicit, so your pasted content doesn't get read as an instruction and your constraints don't get skimmed. Label sections, fence pasted material with <code>---</code>, keep constraints in a list rather than buried in prose. Costs nothing, measurably improves instruction-following on long prompts.</p>
-
-                <h3>Can better prompts reduce hallucinations?</h3>
-                <p>They reduce them; they don't eliminate them. Three habits genuinely help: give it the source rather than relying on its memory, explicitly permit "I don't know," and ask it to mark low-confidence claims. What no prompt can do is make a model reliably aware of its own knowledge limits — so for anything with consequences (a statistic, a citation, a medical or legal claim, a number in an exam answer), verify against a real source regardless of how good the prompt was.</p>
-
-                <h3>Can prompts improve AI coding output?</h3>
-                <p>Coding is where prompt quality pays off fastest, because code has an objective standard — it runs or it doesn't. What matters: language and version, environment, input/output shape, error handling, and what you've already tried. Pasting the actual error rather than describing it is the highest-value habit there is. Asking for the explanation alongside the fix turns it from a patch dispenser into something you learn from.</p>
-
-                <h3>What is few-shot prompting?</h3>
-                <p>Showing two or three examples of the input-to-output pattern you want before the real task. It's the most reliable way to communicate a style you'd struggle to describe. Three summaries you already like teach it faster than a paragraph of adjectives. Risk: it copies examples too literally — so vary them, and say explicitly that they demonstrate the pattern, not the content.</p>
-
-                <h3>Does giving the AI a role actually work?</h3>
-                <p>Yes, but not for the reason people think. Telling it it's an expert grants no expertise it lacked. What a role does is narrow the vocabulary, structure, and priorities it draws on, making output more consistent and context-appropriate. Useful roles are concrete: "a hiring manager who screens sixty resumes a week." Useless roles describe status: "a world-class genius." The model can copy behaviour, not status.</p>
-
-                <h3>Why does AI give generic answers?</h3>
-                <p>Because a generic question has a huge number of acceptable answers, and the model lands near the middle. Ask for a post about AI and a bland post about AI is a correct response — nothing you said ruled it out. Every detail you add deletes a large set of possible answers and pushes the output away from average and towards what you meant.</p>
-
-                <h3>Is prompt engineering a real skill or just hype?</h3>
-                <p>Real, and badly oversold. The hype version promises secret words and magic templates; that version is nonsense. The real version is unglamorous — the ability to specify a task clearly, which is the same skill that makes someone good at briefing a colleague or writing a bug report. An afternoon to learn the fundamentals, years to get genuinely good, mostly because the hard part is knowing what you want rather than how to phrase it.</p>
-
-                <h3>Should I ask the AI to write my prompt for me?</h3>
-                <p>It's a legitimate shortcut and I use it, with a caveat. Describing your task and asking for a detailed prompt, then editing the result, often beats a blank box. But the model doesn't know your audience, constraints, or taste — what you get is a competent skeleton with your specifics missing. Treat it as a draft to correct, never as finished, or you've just moved the vagueness one step back.</p>
-
-                <h3>How do I stop AI writing from sounding like AI?</h3>
-                <p>Ban the specific patterns rather than asking for a human tone — "human tone" isn't actionable. Name the words you never want, prohibit the habits you find hollow (opening on a rhetorical question, closing on an inspirational summary), demand one concrete detail only real experience would produce, and set a hard word limit. The limit does the most work, because padding is where the tells live. It'll still need your edit, but it starts far closer.</p>
-
-                <h3>Do I need to rewrite a prompt five times every day?</h3>
-                <p>No. The five rewrites here are a teaching device for a process that collapses into one good prompt once you've learned it. In daily use I write something like version five first time, because the decisions became habits. Deliberate rewriting is worth it when the task is new, when output disappoints and you don't know why, or when you're building something reusable. For a throwaway question, a throwaway prompt is fine.</p>
-
-                <h3>Can I reuse the same prompt for different tasks?</h3>
-                <p>Yes, and building a small library is probably the highest-return habit here. Write them as templates with obvious blanks, keep them in a plain text file rather than trusting chat history, and revise any template that produced something you had to heavily edit. Five or six refined prompts will cover most of what you actually do, and they improve every time you fix one.</p>
-
-                <h3>What's the most common prompting mistake?</h3>
-                <p>Assuming the model knows what's in your head. You know who it's for, why you're writing it, what happened last week, what you'd never say. None of that is in the prompt, and it can't ask, so it fills every gap with the most ordinary option available. Nearly every disappointing output I've produced traces back to something I knew and didn't share.</p>
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <p class="faq-q">How long should a prompt be?</p>
+                        <p class="faq-a">Long enough to remove ambiguity, no longer. Most useful prompts land between three and fifteen lines. The real test isn't word count: could a competent freelancer do this job correctly from your prompt alone, without asking a single follow-up? If yes, it's long enough. If no, the missing answers are what you should add.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Do longer prompts always give better results?</p>
+                        <p class="faq-a">No. Length helps only when the extra words carry decisions — audience, purpose, format, things to avoid. It hurts when it adds vague praise like "engaging, powerful, world-class," because those describe a feeling and the model can't act on a feeling. Long prompts also make self-contradiction more likely, which is worse than saying less. Add words a stranger could check you against; delete words that only signal enthusiasm.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Does ChatGPT need different prompts from Claude?</p>
+                        <p class="faq-a">The fundamentals transfer completely — role, context, audience, constraints, and format help everywhere. Differences are degree, not kind. In my testing Claude follows long structured instructions and negative constraints closely, while ChatGPT needs a firmer shove out of its default polished register. Both publish prompting guides worth reading, but you don't need a separate skill set per tool.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Should I use markdown or formatting inside prompts?</p>
+                        <p class="faq-a">Yes, and it helps more than it should. Headings, bullets, and delimiters make instruction boundaries explicit, so your pasted content doesn't get read as an instruction and your constraints don't get skimmed. Label sections, fence pasted material with <code>---</code>, keep constraints in a list rather than buried in prose. Costs nothing, measurably improves instruction-following on long prompts.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Can better prompts reduce hallucinations?</p>
+                        <p class="faq-a">They reduce them; they don't eliminate them. Three habits genuinely help: give it the source rather than relying on its memory, explicitly permit "I don't know," and ask it to mark low-confidence claims. What no prompt can do is make a model reliably aware of its own knowledge limits — so for anything with consequences (a statistic, a citation, a medical or legal claim, a number in an exam answer), verify against a real source regardless of how good the prompt was.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Can prompts improve AI coding output?</p>
+                        <p class="faq-a">Coding is where prompt quality pays off fastest, because code has an objective standard — it runs or it doesn't. What matters: language and version, environment, input/output shape, error handling, and what you've already tried. Pasting the actual error rather than describing it is the highest-value habit there is. Asking for the explanation alongside the fix turns it from a patch dispenser into something you learn from.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">What is few-shot prompting?</p>
+                        <p class="faq-a">Showing two or three examples of the input-to-output pattern you want before the real task. It's the most reliable way to communicate a style you'd struggle to describe. Three summaries you already like teach it faster than a paragraph of adjectives. Risk: it copies examples too literally — so vary them, and say explicitly that they demonstrate the pattern, not the content.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Does giving the AI a role actually work?</p>
+                        <p class="faq-a">Yes, but not for the reason people think. Telling it it's an expert grants no expertise it lacked. What a role does is narrow the vocabulary, structure, and priorities it draws on, making output more consistent and context-appropriate. Useful roles are concrete: "a hiring manager who screens sixty resumes a week." Useless roles describe status: "a world-class genius." The model can copy behaviour, not status.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Why does AI give generic answers?</p>
+                        <p class="faq-a">Because a generic question has a huge number of acceptable answers, and the model lands near the middle. Ask for a post about AI and a bland post about AI is a correct response — nothing you said ruled it out. Every detail you add deletes a large set of possible answers and pushes the output away from average and towards what you meant.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Is prompt engineering a real skill or just hype?</p>
+                        <p class="faq-a">Real, and badly oversold. The hype version promises secret words and magic templates; that version is nonsense. The real version is unglamorous — the ability to specify a task clearly, which is the same skill that makes someone good at briefing a colleague or writing a bug report. An afternoon to learn the fundamentals, years to get genuinely good, mostly because the hard part is knowing what you want rather than how to phrase it.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Should I ask the AI to write my prompt for me?</p>
+                        <p class="faq-a">It's a legitimate shortcut and I use it, with a caveat. Describing your task and asking for a detailed prompt, then editing the result, often beats a blank box. But the model doesn't know your audience, constraints, or taste — what you get is a competent skeleton with your specifics missing. Treat it as a draft to correct, never as finished, or you've just moved the vagueness one step back.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">How do I stop AI writing from sounding like AI?</p>
+                        <p class="faq-a">Ban the specific patterns rather than asking for a human tone — "human tone" isn't actionable. Name the words you never want, prohibit the habits you find hollow (opening on a rhetorical question, closing on an inspirational summary), demand one concrete detail only real experience would produce, and set a hard word limit. The limit does the most work, because padding is where the tells live. It'll still need your edit, but it starts far closer.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Do I need to rewrite a prompt five times every day?</p>
+                        <p class="faq-a">No. The five rewrites here are a teaching device for a process that collapses into one good prompt once you've learned it. In daily use I write something like version five first time, because the decisions became habits. Deliberate rewriting is worth it when the task is new, when output disappoints and you don't know why, or when you're building something reusable. For a throwaway question, a throwaway prompt is fine.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Can I reuse the same prompt for different tasks?</p>
+                        <p class="faq-a">Yes, and building a small library is probably the highest-return habit here. Write them as templates with obvious blanks, keep them in a plain text file rather than trusting chat history, and revise any template that produced something you had to heavily edit. Five or six refined prompts will cover most of what you actually do, and they improve every time you fix one.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">What's the most common prompting mistake?</p>
+                        <p class="faq-a">Assuming the model knows what's in your head. You know who it's for, why you're writing it, what happened last week, what you'd never say. None of that is in the prompt, and it can't ask, so it fills every gap with the most ordinary option available. Nearly every disappointing output I've produced traces back to something I knew and didn't share.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Is "think step by step" still worth adding in 2026?</p>
+                        <p class="faq-a">Usually not. Reasoning models do that internally before answering, so the phrase adds little to nothing. Where a model exposes a thinking control &mdash; Claude's extended thinking, ChatGPT's Think button, Gemini's reasoning depth &mdash; use the control instead of asking in the prompt. It is more reliable and it does not eat into your instruction budget. On older or lighter non-reasoning models the phrase still helps.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Has any prompting advice actually expired?</p>
+                        <p class="faq-a">Yes &mdash; mostly the tricks. Chain-of-thought instructions, elaborate jailbreak-adjacent framings, and "you are a world-class expert" flattery all did something on 2023-era models and do much less now. What has not expired is anything that supplies information the model cannot obtain: context, audience, constraints, format, examples. A useful filter is to ask whether a technique is compensating for a model weakness or supplying missing information. The first kind expires; the second kind does not.</p>
+                    </div>
+                </div>
 
                 <h2>Key Takeaways</h2>
 
@@ -716,6 +817,7 @@
                     <li><strong>Fluent isn't accurate.</strong> These systems sound equally confident when wrong. Verify anything that matters.</li>
                     <li><strong>Don't over-engineer.</strong> Most questions are just questions. The formula is for when output disappoints.</li>
                     <li><strong>Save what works.</strong> A handful of refined templates beats a folder of downloaded ones.</li>
+                    <li><strong>Techniques expire; information doesn't.</strong> "Think step by step" faded as models got better. Telling it your audience never will.</li>
                 </ul>
 
                 <h2>Final Thoughts</h2>
@@ -730,7 +832,31 @@
 
                 <blockquote>The best AI users aren't the ones with the smartest AI. They're the ones who ask better questions — and the reason they ask better questions is that they did the thinking first.</blockquote>
 
-                <p>Related reading on this site: <a href="/blogs/using-ai-for-coding-interview-prep.html">Using AI for Coding Interview Prep</a>, <a href="/blogs/free-ai-study-stack-notes-flashcards-summaries.html">A Free AI Study Stack</a>, and <a href="/blogs/ai-resume-rejected-what-actually-fixed-it.html">My AI Resume Got Rejected</a>.</p>
+                <div class="verdict-box">
+                    <h3>If you do one thing after reading this</h3>
+                    <p>Take the last request where AI let you down &mdash; the one that made you close the tab &mdash; and rebuild it once, properly. Add the context you skipped. Name the reader. Give it a shape. Ban five words. Then compare what comes back with what you got the first time. That single comparison teaches more than any list of techniques, this one included, because it happens on a task you actually care about.</p>
+                </div>
+
+                <h2>Sources and Further Reading</h2>
+
+                <p>The mechanism section above is a simplified mental model, not a technical account. If you want the formal versions, all three major providers publish prompting documentation, and it is better than most of the paid courses built on top of it. All three links were checked on 27 August 2026 &mdash; each had moved since this article was first published, and the old URLs now redirect:</p>
+
+                <ul class="source-list">
+                    <li><a href="https://developers.openai.com/api/docs/guides/prompt-engineering" target="_blank" rel="noopener noreferrer nofollow">OpenAI&rsquo;s prompt engineering guide</a> &mdash; covers message roles, Markdown and XML structuring, few-shot examples, and the split between explicit instructions for the GPT-5 series and high-level goals for reasoning models.</li>
+                    <li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener noreferrer nofollow">Anthropic&rsquo;s prompt engineering overview</a> &mdash; notable for starting with success criteria and evaluation rather than technique, which is the right order and the one most guides skip.</li>
+                    <li><a href="https://ai.google.dev/gemini-api/docs/prompting-strategies" target="_blank" rel="noopener noreferrer nofollow">Google&rsquo;s prompt design strategies for Gemini</a> &mdash; the most systematic of the three on constraints, response formatting and breaking complex prompts into stages.</li>
+                </ul>
+
+                <p style="font-size:0.92rem;">Disclosure: this article contains no affiliate links, no sponsored placements, and no paid tools are recommended. Every prompt and output shown was produced on a personal account. The example company scenario is drawn from a real automation project, with figures rounded and identifying details removed.</p>
+
+                <h2>Update Log</h2>
+
+                <p><strong>27 August 2026 &mdash; substantial update.</strong> Added a section on what reasoning models changed about standard prompting advice, added two FAQ entries on expired techniques, corrected all three provider documentation links after they moved, and added this methodology and sources section.</p>
+                <p><strong>21 April 2026 &mdash; first published,</strong> with the full five-rewrite experiment and all six outputs as recorded.</p>
+
+                <p>Tried the formula on something and it did not work? <a href="/contact.html">Send me the prompt</a> &mdash; failures are more instructive than successes here, and a few of the examples in this guide came from readers.</p>
+
+                <p>Related reading on this site: <a href="/blogs/using-ai-for-coding-interview-prep.html">Using AI for Coding Interview Prep</a>, <a href="/blogs/free-ai-study-stack-notes-flashcards-summaries.html">A Free AI Study Stack</a>, <a href="/blogs/free-ai-tiers-2026-chatgpt-claude-gemini-perplexity.html">Free AI Tiers in 2026</a>, and <a href="/blogs/ai-resume-rejected-what-actually-fixed-it.html">My AI Resume Got Rejected</a>.</p>
 
             </div>
 
@@ -758,6 +884,24 @@
                         <input type="text" id="blog-search" name="q" class="search-input" placeholder="Search blogs..." aria-label="Search blog posts">
                         <button type="submit" class="search-btn">Search</button>
                     </form>
+                </div>
+                <div class="sidebar-widget">
+                    <h3>Related Reading</h3>
+                    <a href="free-ai-tiers-2026-chatgpt-claude-gemini-perplexity.html" class="sidebar-post">
+                        <div class="sidebar-post-content">
+                            <h4>Free AI Tiers in 2026: What You Actually Get</h4>
+                        </div>
+                    </a>
+                    <a href="free-ai-study-stack-notes-flashcards-summaries.html" class="sidebar-post">
+                        <div class="sidebar-post-content">
+                            <h4>The Free AI Study Stack</h4>
+                        </div>
+                    </a>
+                    <a href="ai-resume-rejected-what-actually-fixed-it.html" class="sidebar-post">
+                        <div class="sidebar-post-content">
+                            <h4>My AI Resume Got Rejected</h4>
+                        </div>
+                    </a>
                 </div>
             </aside>
         </div>

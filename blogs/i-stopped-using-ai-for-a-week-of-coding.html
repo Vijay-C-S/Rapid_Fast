@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="I stopped using AI for a week of coding — no ChatGPT, Claude or Copilot. Here's what I actually lost, what I gained, and the honest time cost of manual coding.">
+    <meta name="description" content="I stopped using AI for a week of coding — no ChatGPT, Claude or Copilot. What I lost, what I gained, my measured numbers, and how they compare with the published research.">
     <title>I Stopped Using AI for a Week of Coding | RapidFast</title>
     <link rel="icon" type="image/jpeg" href="../images/favicon.jpg">
     <link rel="canonical" href="https://rapidfast.page/blogs/i-stopped-using-ai-for-a-week-of-coding.html">
@@ -13,7 +13,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="I Stopped Using AI for a Week of Coding. Here's What I Actually Lost.">
-    <meta property="og:description" content="Seven days without ChatGPT, Claude or Copilot. The slowdown was real — but it landed in places I never predicted.">
+    <meta property="og:description" content="Seven days without ChatGPT, Claude or Copilot. The slowdown was real — but it landed in places I never predicted, and the research disagrees with me in an interesting way.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://rapidfast.page/blogs/i-stopped-using-ai-for-a-week-of-coding.html">
     <meta property="og:site_name" content="RapidFast">
@@ -23,7 +23,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="I Coded for a Week With No AI. Here's What I Lost.">
-    <meta name="twitter:description" content="No Copilot, no ChatGPT, no Claude. A week of manual coding, measured honestly — including the parts that got faster.">
+    <meta name="twitter:description" content="No Copilot, no ChatGPT, no Claude. A week of manual coding measured honestly — including the parts that got faster, and what the controlled studies found.">
     <meta name="twitter:image" content="https://rapidfast.page/images/ai_coding_left.webp">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../blog-styles.css">
@@ -39,7 +39,7 @@
         "headline": "I Stopped Using AI for a Week of Coding. Here's What I Actually Lost.",
         "description": "A seven-day experiment in coding without AI assistants, measuring where the time actually went, which skills sharpened, and where AI genuinely earns its place in a developer workflow.",
         "datePublished": "2026-05-31",
-        "dateModified": "2026-05-31",
+        "dateModified": "2026-08-27",
         "author": {
             "@type": "Person",
             "name": "Vijay",
@@ -151,13 +151,77 @@
                     "@type": "Answer",
                     "text": "More than anything else in the experiment. Without the option of pasting a stack trace somewhere, I went back to reading it line by line, setting breakpoints, and bisecting the problem space. By midweek I was locating bugs noticeably faster than I had been, because I was forming a hypothesis before touching the keyboard rather than outsourcing that step. That habit is the single thing I kept after the week ended."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "Is AI autocomplete or a chat assistant worse for your coding skills?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Autocomplete was harder to give up and, in my experience, the more habit-forming of the two. A chat assistant requires you to stop and articulate a problem, which is at least a small act of thinking. Inline autocomplete inserts itself into the moment before thought, which is why the first day without it felt so disorienting. If you only turn off one thing as an experiment, turn off the autocomplete, because it is the more revealing half."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does any real study show AI makes developers slower?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. METR's randomised controlled trial found 16 experienced open-source developers were 19 percent slower on 246 real tasks when allowed to use AI tools, while believing afterwards that they had been 20 percent faster. The authors are explicit that this does not generalise to all developers or all work, since their participants were maintainers deeply familiar with large mature codebases, which is close to the worst case for AI assistance. It is strong evidence that self-assessment of AI productivity is unreliable, and weaker evidence about AI productivity itself."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do other developers report losing confidence in their own skills?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Around 20 percent do, according to Stack Overflow's 2025 Developer Survey. The same survey found 84 percent using or planning to use AI tools while only about 3 percent highly trust their output, and 66 percent naming solutions that are almost right but not quite as their top frustration. Adoption and trust are moving in opposite directions, which is unusual for a technology and worth sitting with if you are wondering whether your own unease is unusual."
+                }
             }
+        ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rapidfast.page/" },
+            { "@type": "ListItem", "position": 2, "name": "Blogs", "item": "https://rapidfast.page/blogs.html" },
+            { "@type": "ListItem", "position": 3, "name": "I Stopped Using AI for a Week of Coding", "item": "https://rapidfast.page/blogs/i-stopped-using-ai-for-a-week-of-coding.html" }
         ]
     }
     </script>
 
     <!-- Google AdSense verification -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4371693143508188" crossorigin="anonymous"></script>
+
+    <style>
+        .summary-box { background: linear-gradient(135deg, #f0f7ff, #e8f4fd); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+        .summary-box h3 { margin-top: 0; color: #1d4ed8; font-size: 1.05rem; }
+        .summary-box ul { margin: 10px 0 0; padding-left: 20px; }
+        .summary-box ul li { margin-bottom: 6px; font-size: 0.97rem; }
+        .verdict-box { background: linear-gradient(135deg, #fdf4ff, #f3e8ff); border-left: 4px solid #9333ea; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+        .verdict-box h3 { margin-top: 0; color: #7e22ce; font-size: 1.05rem; }
+        .faq-section .faq-item { border-bottom: 1px solid #e5e7eb; padding: 18px 0; }
+        .faq-section .faq-item:last-child { border-bottom: none; }
+        .faq-section .faq-q { font-weight: 600; font-size: 1rem; color: #1e293b; margin-bottom: 8px; }
+        .faq-section .faq-a { font-size: 0.97rem; color: #475569; line-height: 1.7; margin: 0; }
+        .highlight-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 16px 20px; margin: 20px 0; font-size: 0.97rem; color: #1e293b; }
+        .highlight-box strong { color: #92400e; }
+        .source-list { font-size: 0.93rem; line-height: 1.8; }
+        [data-theme="dark"] .summary-box { background: rgba(59, 130, 246, 0.1); border-left-color: #60a5fa; }
+        [data-theme="dark"] .summary-box h3 { color: #93c5fd; }
+        [data-theme="dark"] .summary-box ul li { color: #e2e8f0; }
+        [data-theme="dark"] .verdict-box { background: rgba(147, 51, 234, 0.12); border-left-color: #a78bfa; }
+        [data-theme="dark"] .verdict-box h3 { color: #c4b5fd; }
+        [data-theme="dark"] .verdict-box p { color: #e2e8f0; }
+        [data-theme="dark"] .faq-section .faq-item { border-bottom-color: #334155; }
+        [data-theme="dark"] .faq-section .faq-q { color: #e2e8f0; }
+        [data-theme="dark"] .faq-section .faq-a { color: #94a3b8; }
+        [data-theme="dark"] .highlight-box { background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.3); color: #e2e8f0; }
+        [data-theme="dark"] .highlight-box strong { color: #fcd34d; }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem;background:#6366f1;color:#fff;text-decoration:none;font-weight:600;" onfocus="this.style.cssText='position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;z-index:9999;padding:1rem;background:#6366f1;color:#fff;text-decoration:none;font-weight:600;'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'">Skip to content</a>
@@ -198,9 +262,16 @@
                 <h1 class="article-title">I Stopped Using AI for a Week of Coding. Here's What I Actually Lost.</h1>
                 <div class="article-meta">
                     <span class="article-meta-item">May 31, 2026</span>
+                    <span class="article-meta-item">Updated Aug 27, 2026</span>
                     <span class="article-meta-item">by <a href="/about.html#author" class="author-link">Vijay</a></span>
                 </div>
             </header>
+
+            <aside class="research-note" aria-label="How this experiment was run and measured">
+                <h2 class="research-note-title">How this was measured, and what that&rsquo;s worth</h2>
+                <p>This is one developer, one week, one codebase &mdash; a diary with timings, not a study. Times were tracked per task in a notebook and compared against my own normal pace on similar work in the preceding weeks, which means the baseline is my memory and my previous timings rather than a controlled condition. Nothing here is blinded, the tasks were not randomised, and I knew what I was hoping to find, which is exactly the kind of setup that produces flattering numbers. I have tried to counter that by reporting the days I did badly and the tasks that got dramatically worse.</p>
+                <p><strong>Updated 27 August 2026:</strong> I have added a section comparing my numbers against the published research on AI and developer productivity, including a controlled trial whose headline result points the opposite way from mine. That disagreement is more interesting than my week was, so I have left it standing rather than explaining it away.</p>
+            </aside>
 
             <!-- Featured Image -->
             <div class="featured-image-container">
@@ -212,6 +283,18 @@
             <div class="article-content" id="main-content">
 
                 <p class="lead">It was a Monday, and I noticed something about myself that I didn't love. I'd opened the editor, written maybe nine lines, hit a type error I didn't immediately understand — and my hand had already moved to the other window. Not after thinking about it. <em>Before</em> thinking about it. The gap between "problem appears" and "ask a machine" had shrunk to something under two seconds, and at no point in that sequence had I actually looked at the error. So I stopped using AI for a week of coding, mostly to find out whether the reflex was earning its keep or just replacing a skill I used to have.</p>
+
+                <div class="summary-box">
+                    <h3>&#9889; What the week found</h3>
+                    <ul>
+                        <li><strong>Throughput dropped 15&ndash;20%</strong> &mdash; real, survivable, and concentrated in work I don't enjoy anyway.</li>
+                        <li><strong>The loss was narrow.</strong> Regex, boilerplate, SQL and unfamiliar APIs got dramatically slower. Almost nothing else did.</li>
+                        <li><strong>Debugging got faster by midweek,</strong> because I formed a hypothesis before touching the keyboard instead of outsourcing that step.</li>
+                        <li><strong>Autocomplete was harder to quit than chat.</strong> It inserts itself before thought, which is why day one felt disorienting.</li>
+                        <li><strong>The published research disagrees with me</strong> in a way worth reading &mdash; a controlled trial found experienced developers were <em>slower</em> with AI while believing they were faster. <a href="#research">Jump to that section</a>.</li>
+                        <li><strong>What I kept:</strong> AI on for mechanical work, deliberately off for debugging first passes and for anything I want to understand rather than have.</li>
+                    </ul>
+                </div>
 
                 <h2>Why I Ran This Experiment</h2>
 
@@ -476,6 +559,22 @@
 
                 <p>The gap between those two numbers is the whole story of this experiment. My sense of dependency was far larger than my actual dependency, and I suspect that's true for a lot of developers. Losing a fifth of your throughput is a real cost that I wouldn't accept permanently. It is also not the catastrophe the reflex implied.</p>
 
+                <h2 id="research">What the Research Says &mdash; Including Where It Disagrees With Me</h2>
+
+                <p>A diary with timings is weak evidence. So after the week I went looking for the controlled work, partly to check myself and partly because I assumed it would back me up. It mostly did not, and the way it failed to is the most useful thing in this article.</p>
+
+                <p><strong>The finding that undercuts my whole premise.</strong> METR ran a randomised controlled trial with 16 experienced open-source developers across 246 real tasks from their own backlogs, randomly assigning each task to allow or forbid AI tools. Developers were <em>19% slower</em> when allowed to use AI. The perception gap is the part that should worry anyone reading this: they forecast a 24% speedup beforehand, and even after finishing &mdash; having actually been slower &mdash; they estimated AI had sped them up by 20%. People measured their own experience and got the direction wrong.</p>
+
+                <p>My week found a 15&ndash;20% slowdown <em>without</em> AI. METR found a 19% slowdown <em>with</em> it. Those cannot both be general truths, and mine is the weaker evidence by a wide margin: theirs was randomised and screen-recorded, mine was self-timed by someone with a hypothesis.</p>
+
+                <div class="highlight-box"><strong>The honest reading:</strong> METR's authors are careful to say their result does not show AI fails to help developers generally &mdash; their sample was experienced maintainers working in large, mature codebases they know intimately, which is close to the worst case for AI assistance, since the tool's context is thin exactly where the human's is deepest. My week was mostly unfamiliar-API and boilerplate work, which is close to the best case. Both results can be true of their own setting. What neither supports is the confident, universal claim in either direction &mdash; and it is worth noticing that the study measured the same self-assessment I was relying on, and found it unreliable.</div>
+
+                <p><strong>Where the survey data lines up with the week.</strong> Stack Overflow's 2025 Developer Survey, with roughly 49,000 respondents, found adoption and trust moving in opposite directions: 84% using or planning to use AI tools, but only about 3% saying they highly trust the output and around 46% actively distrusting it. The top frustration, cited by 66%, is code that is "almost right, but not quite" &mdash; which is precisely the failure mode that cost me an hour on day three, and precisely the one that is hardest to catch when you have stopped reading carefully. Another 45% say debugging AI-generated code takes longer than writing it themselves.</p>
+
+                <p><strong>And one number that named the thing I was actually worried about.</strong> In the same survey, around 20% of developers report reduced confidence in their own problem-solving ability after relying on AI tools. That is not a productivity statistic. It is the exact feeling that made me start this experiment on a Monday morning, and finding out that a fifth of the profession reports it too was more clarifying than any of my own timings.</p>
+
+                <p><strong>The organisational picture is a trade, not a win.</strong> DORA's research has consistently found AI adoption correlating with higher throughput and lower delivery stability &mdash; more changes shipping faster, each slightly more likely to cause an incident. That matches the shape of my week in miniature: the speed was real, and so was the cost, and the cost showed up somewhere other than where I was looking for it.</p>
+
                 <h2>What I Actually Gained</h2>
 
                 <p>The gains are harder to tabulate, which is exactly why they're easy to undervalue.</p>
@@ -562,38 +661,60 @@
 
                 <h2>Frequently Asked Questions</h2>
 
-                <h3>Is coding without AI still realistic in 2026?</h3>
-                <p>Completely realistic, just slower on certain categories of work. Across my week I finished everything I'd planned, roughly a day and a half behind schedule, and the delay was concentrated almost entirely in boilerplate and syntax I could have looked up but chose to reconstruct from memory. Nothing became impossible. Documentation is better than it has ever been, Stack Overflow still answers the awkward questions, and the debugger has not gotten worse. If your job disappeared the moment your assistant went offline, that's worth knowing about yourself.</p>
-
-                <h3>Does using AI reduce your programming skills?</h3>
-                <p>It doesn't erase what you know, but it does let specific skills go quiet from disuse. The ones that faded fastest for me were recall-based: regex syntax, less common Git commands, the exact shape of a Docker healthcheck block. Those came back within days. What worried me more was a subtler habit — reaching for an answer before I'd finished forming the question. That's not a skill loss so much as a thinking loss, and it took the whole week to notice properly.</p>
-
-                <h3>Should beginners avoid AI coding assistants?</h3>
-                <p>Not avoid, but delay and ration. The problem for beginners isn't that AI writes bad code — often it writes better code than they would. The problem is that accepting a correct solution you can't evaluate teaches you nothing, and programming is largely the skill of evaluating solutions. A reasonable compromise is to attempt everything yourself first, then use AI as a reviewer or explainer afterwards. You keep the learning and still get the feedback loop.</p>
-
-                <h3>How much slower is manual coding without AI?</h3>
-                <p>For me, roughly 15 to 20 percent slower overall across a normal working week — much less than the 50 percent I'd braced for. The average hides enormous variance though. Boilerplate-heavy tasks took two to three times longer. Regex and unfamiliar API integration were dramatically slower. Meanwhile small bug fixes, refactoring and reading existing code were essentially unchanged, and a few were marginally faster because I wasn't reviewing generated suggestions.</p>
-
-                <h3>Is GitHub Copilot worth it for professional developers?</h3>
-                <p>For most professionals doing production work, yes — the repetitive typing it removes is real and it compounds daily. The value is highest in codebases with heavy conventions, where the next twelve lines are genuinely predictable. It's lowest when you're solving something novel, because that's exactly when a confident wrong suggestion is most expensive. My week convinced me the tool is worth its cost and also that turning it off occasionally is worth the inconvenience.</p>
-
-                <h3>Can experienced developers safely rely on AI assistants?</h3>
-                <p>Experience is exactly what makes reliance safe, because reviewing generated code well requires knowing what good looks like. The risk for senior developers is different: it's drift. You stop reading documentation because summaries are faster, and slowly your mental model of a framework becomes second-hand. I noticed that in myself with a library I'd used for two years and could not describe accurately without help. That's a quieter problem than bad code, and harder to catch.</p>
-
-                <h3>Will AI replace software engineers?</h3>
-                <p>Nothing in my week suggested that. What AI removed from my day was typing, lookup and recall — genuinely useful to remove, and not the part of the job anyone was paying me for. What remained was deciding what to build, choosing between imperfect approaches, understanding why a system behaved unexpectedly, and taking responsibility for the result. The job is shifting toward specification and review rather than production, which is a real change worth preparing for, but it isn't replacement.</p>
-
-                <h3>Should students practice coding without AI?</h3>
-                <p>Yes, deliberately and regularly. Interviews are still largely unassisted, but that's the smaller reason. The larger one is that struggling with a problem for twenty minutes builds a kind of durable understanding that reading a correct answer simply does not produce. You don't need to be a purist about it — a few unassisted hours a week is enough to keep the muscle alive. Treat it like practising scales rather than a moral position.</p>
-
-                <h3>What coding tasks is AI genuinely best at?</h3>
-                <p>Anything repetitive, well-specified and easy to verify. Regex, SQL joins, test scaffolding, config files, data transformation scripts, migration between two known formats, and explaining an error message you've never seen. The common thread is that you can check the output quickly, so a wrong answer costs seconds rather than hours. Tasks that fail that test — architecture decisions, subtle concurrency bugs, anything where being wrong is expensive and hard to detect — are where I'd rather do the thinking myself.</p>
-
-                <h3>Did coding without AI improve my debugging?</h3>
-                <p>More than anything else in the experiment. Without the option of pasting a stack trace somewhere, I went back to reading it line by line, setting breakpoints, and bisecting the problem space. By midweek I was locating bugs noticeably faster than I had been, because I was forming a hypothesis before touching the keyboard rather than outsourcing that step. That habit is the single thing I kept after the week ended.</p>
-
-                <h3>What about AI autocomplete versus chat assistants — is one worse for skills?</h3>
-                <p>Autocomplete was harder to give up and, I think, the more habit-forming of the two. A chat assistant requires you to stop and articulate a problem, which is at least a small act of thinking. Inline autocomplete inserts itself into the moment before thought, which is why day one felt so disorienting. If you only turn off one thing as an experiment, turn off the autocomplete — it's the more revealing half.</p>
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <p class="faq-q">Is coding without AI still realistic in 2026?</p>
+                        <p class="faq-a">Completely realistic, just slower on certain categories of work. Across my week I finished everything I'd planned, roughly a day and a half behind schedule, and the delay was concentrated almost entirely in boilerplate and syntax I could have looked up but chose to reconstruct from memory. Nothing became impossible. Documentation is better than it has ever been, Stack Overflow still answers the awkward questions, and the debugger has not gotten worse. If your job disappeared the moment your assistant went offline, that's worth knowing about yourself.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Does using AI reduce your programming skills?</p>
+                        <p class="faq-a">It doesn't erase what you know, but it does let specific skills go quiet from disuse. The ones that faded fastest for me were recall-based: regex syntax, less common Git commands, the exact shape of a Docker healthcheck block. Those came back within days. What worried me more was a subtler habit — reaching for an answer before I'd finished forming the question. That's not a skill loss so much as a thinking loss, and it took the whole week to notice properly.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Should beginners avoid AI coding assistants?</p>
+                        <p class="faq-a">Not avoid, but delay and ration. The problem for beginners isn't that AI writes bad code — often it writes better code than they would. The problem is that accepting a correct solution you can't evaluate teaches you nothing, and programming is largely the skill of evaluating solutions. A reasonable compromise is to attempt everything yourself first, then use AI as a reviewer or explainer afterwards. You keep the learning and still get the feedback loop.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">How much slower is manual coding without AI?</p>
+                        <p class="faq-a">For me, roughly 15 to 20 percent slower overall across a normal working week — much less than the 50 percent I'd braced for. The average hides enormous variance though. Boilerplate-heavy tasks took two to three times longer. Regex and unfamiliar API integration were dramatically slower. Meanwhile small bug fixes, refactoring and reading existing code were essentially unchanged, and a few were marginally faster because I wasn't reviewing generated suggestions.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Is GitHub Copilot worth it for professional developers?</p>
+                        <p class="faq-a">For most professionals doing production work, yes — the repetitive typing it removes is real and it compounds daily. The value is highest in codebases with heavy conventions, where the next twelve lines are genuinely predictable. It's lowest when you're solving something novel, because that's exactly when a confident wrong suggestion is most expensive. My week convinced me the tool is worth its cost and also that turning it off occasionally is worth the inconvenience.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Can experienced developers safely rely on AI assistants?</p>
+                        <p class="faq-a">Experience is exactly what makes reliance safe, because reviewing generated code well requires knowing what good looks like. The risk for senior developers is different: it's drift. You stop reading documentation because summaries are faster, and slowly your mental model of a framework becomes second-hand. I noticed that in myself with a library I'd used for two years and could not describe accurately without help. That's a quieter problem than bad code, and harder to catch.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Will AI replace software engineers?</p>
+                        <p class="faq-a">Nothing in my week suggested that. What AI removed from my day was typing, lookup and recall — genuinely useful to remove, and not the part of the job anyone was paying me for. What remained was deciding what to build, choosing between imperfect approaches, understanding why a system behaved unexpectedly, and taking responsibility for the result. The job is shifting toward specification and review rather than production, which is a real change worth preparing for, but it isn't replacement.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Should students practice coding without AI?</p>
+                        <p class="faq-a">Yes, deliberately and regularly. Interviews are still largely unassisted, but that's the smaller reason. The larger one is that struggling with a problem for twenty minutes builds a kind of durable understanding that reading a correct answer simply does not produce. You don't need to be a purist about it — a few unassisted hours a week is enough to keep the muscle alive. Treat it like practising scales rather than a moral position.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">What coding tasks is AI genuinely best at?</p>
+                        <p class="faq-a">Anything repetitive, well-specified and easy to verify. Regex, SQL joins, test scaffolding, config files, data transformation scripts, migration between two known formats, and explaining an error message you've never seen. The common thread is that you can check the output quickly, so a wrong answer costs seconds rather than hours. Tasks that fail that test — architecture decisions, subtle concurrency bugs, anything where being wrong is expensive and hard to detect — are where I'd rather do the thinking myself.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Did coding without AI improve my debugging?</p>
+                        <p class="faq-a">More than anything else in the experiment. Without the option of pasting a stack trace somewhere, I went back to reading it line by line, setting breakpoints, and bisecting the problem space. By midweek I was locating bugs noticeably faster than I had been, because I was forming a hypothesis before touching the keyboard rather than outsourcing that step. That habit is the single thing I kept after the week ended.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">What about AI autocomplete versus chat assistants — is one worse for skills?</p>
+                        <p class="faq-a">Autocomplete was harder to give up and, I think, the more habit-forming of the two. A chat assistant requires you to stop and articulate a problem, which is at least a small act of thinking. Inline autocomplete inserts itself into the moment before thought, which is why day one felt so disorienting. If you only turn off one thing as an experiment, turn off the autocomplete — it's the more revealing half.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Does any real study show AI makes developers slower?</p>
+                        <p class="faq-a">Yes. METR's randomised controlled trial found 16 experienced open-source developers were 19% slower on 246 real tasks when allowed to use AI tools &mdash; while believing afterwards that they had been 20% faster. The authors are explicit that this does not generalise to all developers or all work: their participants were maintainers deeply familiar with large, mature codebases, which is close to the worst case for AI assistance. It is strong evidence that self-assessment of AI productivity is unreliable, and weaker evidence about AI productivity itself.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Do other developers report losing confidence in their own skills?</p>
+                        <p class="faq-a">Around 20% do, according to Stack Overflow's 2025 Developer Survey. The same survey found 84% using or planning to use AI tools while only about 3% highly trust their output, and 66% naming "almost right, but not quite" as their top frustration. Adoption and trust are moving in opposite directions, which is unusual for a technology and worth sitting with if you are wondering whether your own unease is unusual. It isn't.</p>
+                    </div>
+                </div>
 
                 <h2>The Honest Verdict</h2>
 
@@ -608,6 +729,32 @@
                 <p>Try a week. Or a day, or an afternoon. Not because AI is bad for you, but because knowing the difference between a tool you use and a habit you perform is worth the inconvenience of finding out.</p>
 
                 <blockquote>AI is an excellent assistant and a poor substitute for understanding. The week didn't teach me that — I already believed it. It just showed me how far my actual behaviour had drifted from something I thought I believed.</blockquote>
+
+                <div class="verdict-box">
+                    <h3>If you want the one-paragraph version</h3>
+                    <p>Going cold turkey for a week cost me 15&ndash;20% of my throughput, almost all of it in regex, boilerplate, SQL and unfamiliar APIs. Debugging got <em>better</em>. The controlled research suggests my self-measurement should be taken lightly &mdash; developers in a randomised trial got the direction of the effect wrong about themselves &mdash; so treat this as a diary that might change how you use the tools, not as a number to plan around. The change worth making is not quitting. It is noticing the difference between reaching for a tool and performing a habit.</p>
+                </div>
+
+                <h2>Sources and Further Reading</h2>
+
+                <p>My own numbers are self-reported. These are not, and if you only click one link, make it the first &mdash; it is the study that most directly challenges what I wrote here. All were checked on 27 August 2026:</p>
+
+                <ul class="source-list">
+                    <li><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener noreferrer nofollow">METR &mdash; Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity</a>. The randomised controlled trial: 16 developers, 246 real tasks, 19% slower with AI, and a 39-point gap between perception and measurement. Read the limitations section too &mdash; the authors are notably careful about what it does and does not show.</li>
+                    <li><a href="https://survey.stackoverflow.co/2025/ai" target="_blank" rel="noopener noreferrer nofollow">Stack Overflow 2025 Developer Survey &mdash; AI section</a>. Roughly 49,000 respondents. Source for the adoption-versus-trust divergence, the 66% "almost right, but not quite" frustration, and the figure on reduced confidence in one's own problem-solving.</li>
+                    <li><a href="https://dora.dev/research/" target="_blank" rel="noopener noreferrer nofollow">DORA research</a> &mdash; the ongoing work on AI adoption correlating with higher throughput alongside lower delivery stability, which is the organisational version of the same trade-off.</li>
+                </ul>
+
+                <p style="font-size:0.92rem;">Disclosure: no affiliate links, no sponsorship, and no tool vendor had any involvement in this experiment or article. I pay for my own subscriptions to two AI assistants, which is a bias worth knowing about when reading a piece that concludes they are broadly worth using. The timings are self-reported and, per the study above, self-reporting on this specific question has a documented track record of being wrong.</p>
+
+                <h2>Update Log</h2>
+
+                <p><strong>27 August 2026 &mdash; substantial update.</strong> Added the research comparison section, including the METR trial that contradicts the direction of my result, two FAQ entries covering it, this sources section, and the methodology note explaining what a one-person diary is and is not worth.</p>
+                <p><strong>31 May 2026 &mdash; first published,</strong> written up from notes taken during the week itself.</p>
+
+                <p>Run something similar and get different numbers? <a href="/contact.html">I'd like to hear it</a> &mdash; particularly if your week went badly, since those write-ups are rarer than they should be.</p>
+
+                <p>Related reading on this site: <a href="/blogs/ai-tools-save-10-hours-a-week-i-tracked-mine.html">I Tracked Exactly How Many Hours AI Saves Me</a>, <a href="/blogs/how-to-write-a-prompt-that-actually-works.html">How to Write a Prompt That Actually Works</a>, and <a href="/blogs/free-ai-tiers-2026-chatgpt-claude-gemini-perplexity.html">Free AI Tiers in 2026</a>.</p>
 
             </div>
 
@@ -635,6 +782,24 @@
                         <input type="text" id="blog-search" name="q" class="search-input" placeholder="Search blogs..." aria-label="Search blog posts">
                         <button type="submit" class="search-btn">Search</button>
                     </form>
+                </div>
+                <div class="sidebar-widget">
+                    <h3>Related Reading</h3>
+                    <a href="ai-tools-save-10-hours-a-week-i-tracked-mine.html" class="sidebar-post">
+                        <div class="sidebar-post-content">
+                            <h4>I Tracked Exactly How Many Hours AI Saves Me</h4>
+                        </div>
+                    </a>
+                    <a href="how-to-write-a-prompt-that-actually-works.html" class="sidebar-post">
+                        <div class="sidebar-post-content">
+                            <h4>How to Write a Prompt That Actually Works</h4>
+                        </div>
+                    </a>
+                    <a href="free-ai-tiers-2026-chatgpt-claude-gemini-perplexity.html" class="sidebar-post">
+                        <div class="sidebar-post-content">
+                            <h4>Free AI Tiers in 2026: What You Actually Get</h4>
+                        </div>
+                    </a>
                 </div>
             </aside>
         </div>

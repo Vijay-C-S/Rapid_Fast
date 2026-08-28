@@ -4,13 +4,13 @@
   <!-- ===== Main Pages ===== -->
   <url>
     <loc>https://rapidfast.page/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -74,169 +74,127 @@
   <!-- ===== Blog Articles ===== -->
   <url>
     <loc>https://rapidfast.page/blogs/ai-tools-save-10-hours-a-week-i-tracked-mine.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/free-ai-tiers-2026-chatgpt-claude-gemini-perplexity.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/subscripkiller-find-cancel-hidden-subscriptions.html</loc>
-    <lastmod>2025-10-23</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/opencode-open-source-ai-coding-agent-review.html</loc>
-    <lastmod>2025-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://rapidfast.page/blogs/dzine-ai-image-video-studio-review.html</loc>
-    <lastmod>2025-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://rapidfast.page/blogs/tettra-ai-stop-answering-repetitive-questions-slack.html</loc>
-    <lastmod>2025-11-22</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/voibe-ai-get-1-hour-back-every-day-review.html</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/nbot-build-trackers-for-what-matters.html</loc>
-    <lastmod>2025-12-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://rapidfast.page/blogs/potions-done-for-you-newsletter-system-review.html</loc>
-    <lastmod>2025-12-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://rapidfast.page/blogs/zealos-ai-operating-system-founders-revenue-teams.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://rapidfast.page/blogs/fast-image-ai-free-headshot-generator-review.html</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://rapidfast.page/blogs/paperanimator-photo-to-paper-animation-ai-review.html</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://rapidfast.page/blogs/reka-clip-viral-clips-from-long-videos.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/raphael-ai-free-ai-image-generator-review.html</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://rapidfast.page/blogs/expertise-ai-turn-website-visitors-into-meetings-qualified-pipeline.html</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://rapidfast.page/blogs/ai-image-video-tools-compared-2026.html</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://rapidfast.page/blogs/neamx-ai-get-the-clicks-you-deserve.html</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://rapidfast.page/blogs/ai-tools-for-founders-small-teams-2026.html</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/claude-fable-5-mythos-ai-storytelling-review.html</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/run-llm-on-laptop-8gb-ram-no-gpu-ollama.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/ai-entry-level-jobs-what-changed.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/i-stopped-using-ai-for-a-week-of-coding.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/ai-ml-fresher-salary-bangalore-2026.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/do-you-need-a-masters-for-ai-jobs-india.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/ai-skills-in-indian-job-postings-2026.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/portfolio-projects-that-got-interviews.html</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/ai-resume-rejected-what-actually-fixed-it.html</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/free-ai-study-stack-notes-flashcards-summaries.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/how-to-write-a-prompt-that-actually-works.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rapidfast.page/blogs/using-ai-for-coding-interview-prep.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>

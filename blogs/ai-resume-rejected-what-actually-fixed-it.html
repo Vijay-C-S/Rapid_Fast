@@ -39,7 +39,7 @@
         "headline": "I Built My Resume with AI and Still Got Rejected — What Actually Fixed It",
         "description": "A first-person account of building a resume with AI, getting rejected for months, and discovering that the real problem was not the AI at all.",
         "datePublished": "2026-04-01",
-        "dateModified": "2026-04-01",
+        "dateModified": "2026-08-27",
         "author": {
             "@type": "Person",
             "name": "Vijay",
@@ -191,6 +191,14 @@
                     "@type": "Answer",
                     "text": "One font, one accent colour at most, generous white space, bullets of one to two lines each, and no more than five bullets per role. Then apply the squint test: step back from the screen until the words blur and see whether the shape of the page still looks organised. If it looks like a dense grey block, the reader will feel that before they read a single word."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "Does ATS really reject 75% of resumes automatically?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, and that specific number traces back to a 2012 marketing claim from Preptel, a small ATS vendor that shut down the following year without ever publishing its methodology. Forbes repeated it without checking, then CIO.com and CNBC repeated Forbes, and it's been recycled as fact since. ATS adoption among large employers is close to universal - Jobscan's own audit found one on 489 of the Fortune 500's 500 career pages - but it mostly ranks and sorts applications rather than silently auto-rejecting three out of four of them."
+                }
             }
         ]
     }
@@ -267,6 +275,7 @@
                 <h1 class="article-title">I Built My Resume with AI and Still Got Rejected — What Actually Fixed It</h1>
                 <div class="article-meta">
                     <span class="article-meta-item">Apr 1, 2026</span>
+                    <span class="article-meta-item">Updated Aug 27, 2026</span>
                     <span class="article-meta-item">by <a href="/about.html#author" class="author-link">Vijay</a></span>
                 </div>
             </header>
@@ -412,7 +421,7 @@
 
                 <p>My AI-built resume had a two-column layout with a sidebar, a colour accent, and icons next to the section headings. It looked designed. I replaced it with one column, one font, black text, generous white space, standard headings.</p>
 
-                <p>It looked less impressive and worked significantly better. Two-column layouts confuse a lot of parsing software, and more importantly, a human reading forty resumes doesn't want to be impressed by your layout. They want to find the information and leave.</p>
+                <p>It looked less impressive and worked significantly better. Two-column layouts confuse a lot of parsing software &mdash; <a href="https://www.jobscan.co/blog/resume-tables-columns-ats/" target="_blank" rel="noopener noreferrer nofollow">Jobscan has documented a case</a> where a column-based resume went through the Lever ATS and came out the other side with only the work experience section intact; the skills section, the summary, the contact details and the links all silently vanished, because the parser reads left to right, top to bottom, and a column layout breaks that assumption. And more importantly, a human reading forty resumes doesn't want to be impressed by your layout. They want to find the information and leave.</p>
 
                 <div class="tip-box">
                     <h4>Quick tip: the squint test</h4>
@@ -534,7 +543,9 @@
 
                 <h2 id="ats">ATS Isn't Magic (And It Isn't the Villain)</h2>
 
-                <p>I spent months half-convinced there was a robot somewhere rejecting me for mysterious reasons. There's a whole industry built on that fear, and it sells a lot of ATS score checkers.</p>
+                <p>I spent months half-convinced there was a robot somewhere rejecting me for mysterious reasons. There's a whole industry built on that fear, and it sells a lot of ATS score checkers. So after I'd worked out my own mistake, I went and checked where that fear actually comes from, because it turns out you can trace it.</p>
+
+                <p>You've probably seen the claim that "75% of resumes are rejected by ATS before a human ever sees them." I had. It's everywhere. It traces back to a single 2012 marketing claim from Preptel, a small ATS vendor that shut down the following year without ever publishing the methodology behind it. Forbes cited Preptel without checking. CIO.com cited Forbes. CNBC cited CIO.com. Thousands of career blogs cited all of them, and the number calcified into received wisdom nobody had actually verified. What's real: <a href="https://www.jobscan.co/blog/resume-tables-columns-ats/" target="_blank" rel="noopener noreferrer nofollow">Jobscan's own 2025 audit</a> found a detectable ATS on 489 of the Fortune 500's 500 career pages &mdash; so yes, nearly every large employer uses one. But an ATS ranking and sorting your application is a very different claim from an ATS silently auto-rejecting three out of four resumes, and the second claim has no real source behind it at all.</p>
 
                 <p>Here's what an applicant tracking system actually is: a database. It's software that stores applications so a recruiter can search and sort them. That's it. It's closer to a filing cabinet than a judge.</p>
 
@@ -653,6 +664,9 @@
                 <h3>How do I make my resume easier to read?</h3>
                 <p>One font. One accent colour at most. Generous white space. Bullets of one to two lines, no more than five per role. Then squint at it from across the room — if the shape still looks organised, you're fine. If it's a grey brick, the reader feels that before they've read a word.</p>
 
+                <h3>Does ATS really reject 75% of resumes automatically?</h3>
+                <p>No, and that specific number is worth knowing the history of. It traces back to a 2012 marketing claim from Preptel, a small ATS vendor that shut down the following year without ever publishing how they calculated it. Forbes repeated it without checking, then CIO.com and CNBC repeated Forbes, and it's been recycled as fact ever since. What's actually true: ATS adoption among large employers is close to universal — Jobscan's own audit found one on 489 of the Fortune 500's 500 career pages. But what it mostly does is rank and sort applications, not silently auto-reject three out of four of them. The real risk is being ranked low or badly parsed, not an invisible robot binning your application.</p>
+
                 <h2 id="final">Final Thoughts</h2>
 
                 <p>If you're where I was — inbox open, nothing in it, quietly wondering if you're the problem — I want to leave you with the thing that actually helped me.</p>
@@ -672,6 +686,24 @@
             </div>
 
             <!-- Tags -->
+
+                <h2>Sources and verification</h2>
+
+                <p>These are the outside references behind the ATS and resume-screening claims in this article. The list was reviewed and consolidated on 27 August 2026; the links are given so you can check each claim at its origin rather than taking this page's word for it. Anything time-sensitive &mdash; pricing, limits, salary bands, posting volumes &mdash; moves faster than an article can, so verify before you act on a specific number.</p>
+
+                <ul class="source-list">
+                    <li><a href="https://www.jobscan.co/blog/resume-tables-columns-ats/" target="_blank" rel="noopener noreferrer nofollow">Jobscan has documented a case</a></li>
+                </ul>
+
+                <p style="font-size:0.92rem;">Disclosure: this article contains no affiliate links and no sponsored placements. No company mentioned paid for inclusion, was given a preview, or had any editorial input. Where a figure comes from a vendor's own page or marketing material rather than an independent source, it is described as such in the text.</p>
+
+                <h2>Update log</h2>
+
+                <p><strong>27 August 2026 &mdash; reviewed and updated.</strong> Gathered the article's outside references into the sources section above and added the editorial disclosure. No factual claims were changed in this pass.</p>
+                <p><strong>1 April 2026 &mdash; first published.</strong></p>
+
+                <p>Fixed a resume problem this doesn't cover? <a href="/contact.html">Let me know what worked</a>.</p>
+
             <div class="article-tags">
                 <span class="tag-label">Tags:</span>
                 <a href="javascript:void(0)" class="tag">AI Resume</a>

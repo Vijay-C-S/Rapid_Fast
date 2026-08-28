@@ -5,7 +5,7 @@
         <!-- Google Analytics (gtag) removed -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Google Alerts misses about 40% of important news and cannot see Reddit or Hacker News. NBot builds AI monitoring feeds from plain English. Real pricing and an honest comparison.">
+    <meta name="description" content="NBot builds AI monitoring feeds from plain English. Pricing verified August 2026, the credit maths the pricing page hides, and an honest look at the Google Alerts research everyone quotes.">
     <title>NBot Review 2026: AI News Trackers vs Google Alerts | RapidFast</title>
     <link rel="icon" type="image/jpeg" href="../images/favicon.jpg">
     <link rel="canonical" href="https://rapidfast.page/blogs/nbot-build-trackers-for-what-matters.html">
@@ -38,9 +38,9 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "NBot Review: A Real Replacement for Google Alerts?",
-        "description": "Google Alerts misses about 40% of important news and cannot see Reddit or Hacker News. NBot builds AI monitoring feeds from plain English. Real pricing and an honest comparison.",
+        "description": "A tested review of NBot, the AI content tracker: pricing verified August 2026, the credit costs the pricing page underplays, how it compares with Feedly and Google Alerts, and where it falls short.",
         "datePublished": "2025-12-12",
-        "dateModified": "2025-12-12",
+        "dateModified": "2026-08-27",
         "author": {
             "@type": "Person",
             "name": "Vijay",
@@ -61,8 +61,8 @@
         "image": {
             "@type": "ImageObject",
             "url": "https://rapidfast.page/images/NBot.webp",
-            "caption": "NBot is a flexible personal tracking platform that lets anyone build custom trackers for goals, habits, productivity, and beyond.",
-            "name": "NBot – Build Trackers for What Matters to You"
+            "caption": "NBot builds AI-powered content monitoring feeds from a plain-English topic description, aimed at replacing Google Alerts for news, blogs, and forum discussion.",
+            "name": "NBot – AI Content Monitoring vs Google Alerts"
         }
     }
     </script>
@@ -94,7 +94,7 @@
             "name": "How do NBot's credits work?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Separately from tracker limits. Chat Q&A costs 1 credit per message and a podcast summary costs 10. Daily credits reset at midnight UTC, and monthly bonus credits roll over up to 50% of your allocation."
+                "text": "Separately from tracker limits. Chat Q&A costs 1 credit per message, each tracker update costs 2, and a podcast summary costs 10. Daily credits reset at midnight UTC, and monthly bonus credits roll over up to 50% of your allocation."
             }
         },
         {
@@ -102,7 +102,7 @@
             "name": "Is NBot better than Google Alerts?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "For most purposes yes, though that's a low bar. A Contify study found only about 10% of Google Alerts results were relevant and roughly 40% of important news went undetected, and Alerts is blind to Reddit and Hacker News entirely."
+                "text": "For most purposes yes, though that's a low bar. A widely cited Contify study, produced by a company that sells a competing product, found only about 10% of Google Alerts results were relevant across 148 Fortune 1000 companies, and Alerts is blind to Reddit and Hacker News entirely."
             }
         },
         {
@@ -127,6 +127,22 @@
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "An AI-generated audio summary of your feed, useful for commutes. It costs 10 credits per generation, which makes it occasional rather than daily on lower tiers."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is the Google Alerts 40% missed statistic reliable?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Treat it as directional, not authoritative. It comes from Contify, which sells a Google Alerts alternative, so it is vendor research rather than independent research. The underlying method is published: 148 Fortune 1000 companies, 2,024 alerts across three midweek days, and 115 significant stories identified as uncovered. The failure modes it describes are real and easily reproduced, but it measured enterprise company tracking rather than general topic monitoring, and the headline percentage is the vendor's framing of its own count."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Which NBot plan should I actually start on?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Free, and stay there until it fails you for a specific reason you can name. Two trackers is enough to run the recall test that tells you whether the tool works for your topic. If you upgrade, the honest reason is usually credits rather than trackers, because Plus adds 1,000 monthly bonus credits on top of the daily allowance, and that is what unlocks actually using Feed Chat. For most individuals that matters more than going from 2 trackers to 10."
             }
         },
         {
@@ -170,6 +186,33 @@
     </script>
     <link rel="stylesheet" href="../css/cookie-consent.css">
 
+    <style>
+        .summary-box { background: linear-gradient(135deg, #f0f7ff, #e8f4fd); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+        .summary-box h3 { margin-top: 0; color: #1d4ed8; font-size: 1.05rem; }
+        .summary-box ul { margin: 10px 0 0; padding-left: 20px; }
+        .summary-box ul li { margin-bottom: 6px; font-size: 0.97rem; }
+        .verdict-box { background: linear-gradient(135deg, #fdf4ff, #f3e8ff); border-left: 4px solid #9333ea; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+        .verdict-box h3 { margin-top: 0; color: #7e22ce; font-size: 1.05rem; }
+        .faq-section .faq-item { border-bottom: 1px solid #e5e7eb; padding: 18px 0; }
+        .faq-section .faq-item:last-child { border-bottom: none; }
+        .faq-section .faq-q { font-weight: 600; font-size: 1rem; color: #1e293b; margin-bottom: 8px; }
+        .faq-section .faq-a { font-size: 0.97rem; color: #475569; line-height: 1.7; margin: 0; }
+        .highlight-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 16px 20px; margin: 20px 0; font-size: 0.97rem; color: #1e293b; }
+        .highlight-box strong { color: #92400e; }
+        .source-list { font-size: 0.93rem; line-height: 1.8; }
+        [data-theme="dark"] .summary-box { background: rgba(59, 130, 246, 0.1); border-left-color: #60a5fa; }
+        [data-theme="dark"] .summary-box h3 { color: #93c5fd; }
+        [data-theme="dark"] .summary-box ul li { color: #e2e8f0; }
+        [data-theme="dark"] .verdict-box { background: rgba(147, 51, 234, 0.12); border-left-color: #a78bfa; }
+        [data-theme="dark"] .verdict-box h3 { color: #c4b5fd; }
+        [data-theme="dark"] .verdict-box p { color: #e2e8f0; }
+        [data-theme="dark"] .faq-section .faq-item { border-bottom-color: #334155; }
+        [data-theme="dark"] .faq-section .faq-q { color: #e2e8f0; }
+        [data-theme="dark"] .faq-section .faq-a { color: #94a3b8; }
+        [data-theme="dark"] .highlight-box { background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.3); color: #e2e8f0; }
+        [data-theme="dark"] .highlight-box strong { color: #fcd34d; }
+    </style>
+
     <!-- Google AdSense verification -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4371693143508188" crossorigin="anonymous"></script>
 </head>
@@ -212,6 +255,7 @@
                 <h1 class="article-title">NBot Review: A Real Replacement for Google Alerts?</h1>
                 <div class="article-meta">
                     <span class="article-meta-item">Dec 12, 2025</span>
+                    <span class="article-meta-item">Updated Aug 27, 2026</span>
                     <span class="article-meta-item">by <a href="/about.html#author" class="author-link">Vijay</a></span>
                 </div>
             </header>
@@ -220,7 +264,8 @@
             <aside class="research-note" aria-label="How this review was researched">
                 <h2 class="research-note-title">How I tested this</h2>
                 <p>I built trackers on <a href="https://nbot.ai/" target="_blank" rel="noopener noreferrer nofollow">NBot's</a> free tier &mdash; two topics I already follow closely, chosen deliberately so I could judge whether it surfaced things I'd otherwise have missed and how much noise came with them. That's the only test that matters for a monitoring tool.</p>
-                <p>I also ran the same topics through Google Alerts for comparison, since that's the free default almost everyone reaches for first. Pricing came from NBot's pricing page. Where I cite research on monitoring accuracy, it's linked.</p>
+                <p>I also ran the same topics through Google Alerts for comparison, since that's the free default almost everyone reaches for first. What I could not test is the thing that matters most in this category &mdash; what a tracker <em>misses</em>. Nobody can audit that from the outside, which is why the recall test further down is the only honest evaluation method I can recommend.</p>
+                <p><strong>Every price and credit figure below was re-checked against NBot's live pricing page on 27 August 2026</strong>, and the Feedly comparison figures were re-checked the same day. Where I cite research on monitoring accuracy, it is linked &mdash; and in one case, flagged, because the study everyone quotes was produced by a company selling a competing product. Nothing here is sponsored and there are no affiliate links.</p>
             </aside>
 
 
@@ -233,9 +278,11 @@
             <!-- Article Content -->
             <div class="article-content">
 
-                <p class="lead">Most people monitor topics with Google Alerts, because it's free and it's been there forever. Almost nobody checks whether it works. When someone did, the results were bleak: a Contify study of Fortune 1000 companies found roughly <strong>10% of Google Alerts results were actually relevant</strong>, and about <strong>40% of important news was never detected at all</strong>.</p>
+                <p class="lead">Most people monitor topics with Google Alerts, because it's free and it's been there forever. Almost nobody checks whether it works. The most-quoted attempt to check is <a href="https://www.contify.com/resources/blog/how-good-are-google-alerts-for-tracking-companies-a-litmus-test/" target="_blank" rel="noopener noreferrer nofollow">a Contify study</a> of 148 Fortune 1000 companies: across 2,024 alerts over three midweek days, it judged only 211 &mdash; about <strong>10%</strong> &mdash; business-relevant, and identified 115 significant stories that Alerts never surfaced at all.</p>
 
-                <p>Think about what that means in practice. You set up an alert, you get a trickle of mostly-junk emails, and you assume you're covered. You're not. You're missing two out of every five things that mattered, and you have no way of knowing what they were.</p>
+                <div class="highlight-box"><strong>Read that number with the source in mind.</strong> Contify sells a market-intelligence platform positioned explicitly as a Google Alerts alternative, so this is vendor research, not independent research. That does not make it wrong &mdash; the methodology is published and the failure modes it describes match what anyone who has used Alerts recognises &mdash; but it is marketing material from an interested party, and the "40% of important news missed" figure that gets repeated everywhere is their framing of their own count. It also measured a specific job: tracking named companies for enterprise intelligence. If you are an individual following a subject area rather than a competitor list, it does not transfer cleanly. I have quoted it because it is the only public attempt at measurement I could find, not because it settles anything.</div>
+
+                <p>What you can verify without any study is the structural stuff, and it is damning enough on its own: Alerts matches strings rather than meaning, cannot see Reddit or Hacker News, and gives you no way to distinguish a quiet week from a broken alert.</p>
 
                 <p><a href="https://nbot.ai/" target="_blank" rel="noopener noreferrer nofollow">NBot</a> attacks that problem from a different angle. You describe in plain English what you want to follow, and it builds a tracker that scans across news outlets, blogs, newsletters, social platforms, and RSS feeds &mdash; then summarises what it finds. Here's how well that works, what it costs, and where it falls short.</p>
 
@@ -282,8 +329,12 @@
                 <p>NBot's pricing has two dimensions, and only one is advertised prominently. Tracker count is the headline. Credits are the thing that will actually constrain you.</p>
 
                 <div class="highlight-box">
-                    <strong>Actions consume credits.</strong> A Chat Q&amp;A message costs 1 credit. Generating a podcast summary costs 10. Daily credits reset at midnight UTC, and monthly bonus credits roll over &mdash; but only up to 50% of your monthly allocation.
+                    <strong>Three things consume credits, not two.</strong> A Chat Q&amp;A message costs 1 credit. A podcast summary costs 10. And &mdash; the one that is easy to miss &mdash; <strong>each tracker update costs 2 credits</strong>. Daily credits reset at midnight UTC, and monthly bonus credits roll over, but only up to 50% of your monthly allocation.
                 </div>
+
+                <p><strong>Do the free-tier arithmetic before you plan around it,</strong> because it is tighter than the plan comparison suggests. Free gives you 20 credits a day, 2 trackers, and 3 updates per day. Running both trackers through all three daily updates is 2 &times; 3 &times; 2 = 12 credits, before you have asked a single question. That leaves 8 credits a day for Feed Chat, which is roughly eight messages &mdash; or nothing at all if you generate one podcast summary, which alone costs 10 and would put you over.</p>
+
+                <p>This is not a criticism of the pricing so much as a warning about how it reads. The pricing page leads with tracker count, which is the number people compare across plans, while the constraint you will actually feel on the free tier is the credit budget being consumed by the trackers themselves running in the background. Paid tiers change the picture substantially &mdash; Plus adds 1,000 monthly bonus credits on top of the daily 20, Pro adds 2,500 &mdash; which is the real reason to upgrade, rather than the tracker count.</p>
 
                 <p>The practical implication: your tracker limit tells you how many topics you can follow, but credits determine how much you can <em>interact</em> with what comes back. If Feed Chat is the feature that sold you, model your actual usage. A conversational refinement session is many messages, and at 1 credit each that adds up faster than the headline numbers suggest.</p>
 
@@ -292,6 +343,8 @@
                 <p>The 50% rollover cap is worth reading carefully too. Unused credits don't accumulate indefinitely, so there's no banking a quiet quarter to fund a busy one.</p>
 
                 <h2>What it costs</h2>
+                <p>Verified against NBot's live pricing page on 27 August 2026. Prices in this category move, so check before paying.</p>
+                <div class="data-table-wrapper" style="overflow-x:auto;">
                 <table>
                     <thead>
                         <tr>
@@ -299,6 +352,8 @@
                             <th>Monthly</th>
                             <th>Annual</th>
                             <th>Trackers</th>
+                            <th>Credits</th>
+                            <th>Updates/day</th>
                             <th>Data refresh</th>
                         </tr>
                     </thead>
@@ -308,6 +363,8 @@
                             <td>$0</td>
                             <td>&mdash;</td>
                             <td>2</td>
+                            <td>20/day</td>
+                            <td>3</td>
                             <td>Standard</td>
                         </tr>
                         <tr>
@@ -315,6 +372,8 @@
                             <td>$9.99</td>
                             <td>$8.33/mo</td>
                             <td>10</td>
+                            <td>20/day + 1,000/mo</td>
+                            <td>6</td>
                             <td>Faster</td>
                         </tr>
                         <tr>
@@ -322,16 +381,23 @@
                             <td>$19.99</td>
                             <td>$16.67/mo</td>
                             <td>30</td>
+                            <td>20/day + 2,500/mo</td>
+                            <td>8</td>
                             <td>Fastest</td>
                         </tr>
                         <tr>
                             <td><strong>Enterprise</strong></td>
                             <td colspan="2">Custom</td>
                             <td>Unlimited</td>
+                            <td>Custom</td>
+                            <td>Priority</td>
                             <td>Fastest</td>
                         </tr>
                     </tbody>
                 </table>
+                </div>
+
+                <p>The annual discount is about 17% on both paid tiers, which is standard. Note that the monthly bonus credits are where the real difference between Free and Plus sits &mdash; jumping from 20 credits a day to 20 a day plus 1,000 a month is roughly a 2.5&times; increase in what you can actually do, and it dwarfs the significance of going from 2 trackers to 10 for most individual users.</p>
 
                 <p>Refresh speed being a paid differentiator is worth thinking about honestly. For most topics, the difference between learning something at 9am and 11am is nothing. For competitive intelligence, breaking news, or anything where you might act on the information, it's the entire point. Be clear about which you are before paying for speed.</p>
 
@@ -340,7 +406,7 @@
                 <h2>How it compares</h2>
                 <p>The obvious comparison is Feedly, which has around 14 million registered users and an AI assistant called Leo that prioritises, summarises, and deduplicates.</p>
 
-                <p>The catch with Feedly is that Leo requires Pro+ &mdash; roughly $8.93/month billed annually, or $15.99 monthly. The free tier and the $6.99 Pro tier have <strong>no AI features at all</strong>. So NBot's Plus at $9.99 sits almost exactly at Feedly Pro+ pricing, which makes the comparison unusually clean.</p>
+                <p>The catch with Feedly is that Leo requires Pro+, which as of 27 August 2026 is $8.25/month billed annually ($99/year) or $12.99 month-to-month. The free tier and the $6/month Pro tier have <strong>no AI features at all</strong>. So NBot's Plus at $9.99 sits between Feedly Pro+'s annual and monthly rates, which makes the comparison unusually clean.</p>
 
                 <table>
                     <thead>
@@ -354,8 +420,8 @@
                     <tbody>
                         <tr>
                             <td><strong>Cost</strong></td>
-                            <td>$9.99/mo</td>
-                            <td>~$8.93&ndash;15.99/mo</td>
+                            <td>$9.99/mo ($8.33 annual)</td>
+                            <td>$8.25&ndash;12.99/mo</td>
                             <td>Free</td>
                         </tr>
                         <tr>
@@ -441,15 +507,15 @@
                     </div>
                     <div class="faq-item">
                         <p class="faq-q">How do NBot's credits work?</p>
-                        <p class="faq-a">Separately from tracker limits. Chat Q&amp;A costs 1 credit per message and a podcast summary costs 10. Daily credits reset at midnight UTC, and monthly bonus credits roll over up to 50% of your allocation. Trackers determine how many topics you follow; credits determine how much you interact with them.</p>
+                        <p class="faq-a">Separately from tracker limits, and with one cost that is easy to miss. Chat Q&amp;A costs 1 credit per message, a podcast summary costs 10, and each tracker update costs 2. On the free tier's 20 daily credits, two trackers running three updates a day consume 12 before you ask a single question. Daily credits reset at midnight UTC, and monthly bonus credits roll over up to 50% of your allocation. Trackers determine how many topics you follow; credits determine how much you can interact with them.</p>
                     </div>
                     <div class="faq-item">
                         <p class="faq-q">Is NBot better than Google Alerts?</p>
-                        <p class="faq-a">For most purposes, yes &mdash; though that's a low bar. A Contify study found only about 10% of Google Alerts results were relevant and roughly 40% of important news went undetected, and Alerts is blind to Reddit and Hacker News entirely. NBot matches on meaning rather than keywords and covers more source types.</p>
+                        <p class="faq-a">For most purposes yes, though that is a low bar and the evidence usually quoted needs a caveat. The widely cited Contify study &mdash; 148 Fortune 1000 companies, about 10% of alerts judged relevant &mdash; was produced by a company selling a competing product, and measured enterprise company-tracking rather than general topic monitoring. The structural weaknesses need no study: Alerts matches strings rather than meaning and cannot see Reddit or Hacker News at all. NBot matches on meaning and covers more source types.</p>
                     </div>
                     <div class="faq-item">
                         <p class="faq-q">How does it compare to Feedly?</p>
-                        <p class="faq-a">Different jobs. Feedly is for reading sources you've already chosen; NBot is for discovering things across sources you haven't. Feedly's Leo AI needs the Pro+ tier (~$8.93&ndash;15.99/month) &mdash; free and $6.99 Pro have no AI at all. Many people are best served using both.</p>
+                        <p class="faq-a">Different jobs. Feedly is for reading sources you've already chosen; NBot is for discovering things across sources you haven't. Feedly's Leo AI needs the Pro+ tier ($8.25/month annual, $12.99 monthly as of August 2026) &mdash; the free and $6 Pro tiers have no AI at all. Many people are best served using both.</p>
                     </div>
                     <div class="faq-item">
                         <p class="faq-q">Is the free tier enough to judge it?</p>
@@ -463,19 +529,46 @@
                         <p class="faq-q">Can I trust the summaries?</p>
                         <p class="faq-a">For triage, yes. For decisions, no &mdash; read the source. AI summarisation is reliable enough to tell you whether something deserves attention and not reliable enough to be the only thing you read before acting on it.</p>
                     </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Is the Google Alerts "40% missed" statistic reliable?</p>
+                        <p class="faq-a">Treat it as directional, not authoritative. It comes from Contify, which sells a Google Alerts alternative, so it is vendor research rather than independent research. The underlying method is published &mdash; 148 Fortune 1000 companies, 2,024 alerts across three midweek days, 115 significant stories identified as uncovered &mdash; and the failure modes it describes are real and easily reproduced. But it measured enterprise company tracking, and the headline percentage is the vendor's framing of its own count. It is the best public measurement available, which is not the same as being a settled fact.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Which plan should I actually start on?</p>
+                        <p class="faq-a">Free, and stay there until it fails you for a specific reason you can name. Two trackers is enough to run the recall test that tells you whether the tool works for your topic. If you upgrade, the honest reason is usually credits rather than trackers &mdash; Plus adds 1,000 monthly bonus credits on top of the daily allowance, which is what unlocks actually using Feed Chat, and that matters more for most individuals than going from 2 trackers to 10.</p>
+                    </div>
                 </div>
 
                 <h2>Verdict</h2>
                 <div class="verdict-box">
                     <h3>&#127942; Our Assessment: NBot</h3>
-                    <p>A genuine improvement on the free default, which is a lower bar than it sounds &mdash; Google Alerts misses roughly 40% of what matters and can't see Reddit or Hacker News at all. Natural-language tracker building and cross-source coverage are the real value. The credit system deserves closer reading than the pricing page gives it, and the company behind it is anonymous.</p>
+                    <p>A genuine improvement on the free default, which is a lower bar than it sounds &mdash; Google Alerts matches strings rather than meaning and cannot see Reddit or Hacker News at all, no study required. Natural-language tracker building and cross-source coverage are the real value. Two caveats to weigh: the credit system costs more than the pricing page's headline numbers suggest, because trackers consume credits just by running, and there is very little public information about who builds this.</p>
                 </div>
 
                 <p>What I'd actually do: use the free tier on a topic you know cold, and run the recall test &mdash; check whether it surfaces the things you already know happened over the past month. That single exercise tells you more than any review, because relevance is easy to judge and completeness is nearly impossible to judge without a known answer.</p>
 
                 <p>If it passes, $9.99 is reasonable for something that saves you from missing things. If it doesn't, you've spent nothing and you've learned that your current setup probably has the same blind spot &mdash; which is worth knowing either way.</p>
 
+                <h2>Sources and how to check these numbers</h2>
+
+                <p>Everything priced or quantified above is verifiable, and in a category that changes pricing often you should verify it. All links checked 27 August 2026:</p>
+
+                <ul class="source-list">
+                    <li><a href="https://nbot.ai/pricing" target="_blank" rel="noopener noreferrer nofollow">NBot's pricing page</a> &mdash; source for all plan prices, tracker limits, daily and monthly credit allowances, updates per day, and the per-action credit costs (chat 1, tracker update 2, podcast 10).</li>
+                    <li><a href="https://www.contify.com/resources/blog/how-good-are-google-alerts-for-tracking-companies-a-litmus-test/" target="_blank" rel="noopener noreferrer nofollow">Contify's Google Alerts litmus test</a> &mdash; the 148-company study quoted in the opening. Worth reading the methodology yourself given that Contify sells a competing product; the numbers are theirs, the framing is theirs, and I have flagged both.</li>
+                    <li><a href="https://feedly.com/i/pricing" target="_blank" rel="noopener noreferrer nofollow">Feedly's pricing page</a> &mdash; for the Pro / Pro+ split and which tier actually includes the Leo AI features.</li>
+                </ul>
+
+                <p style="font-size:0.92rem;">Disclosure: this review contains no affiliate links and is not sponsored. NBot was not contacted before publication and had no input into it. Testing was done on the free tier using a personal account, which means I have not used the paid tiers' faster refresh rates and cannot vouch for them from experience &mdash; those rows in the pricing table are the vendor's claims, not my observations.</p>
+
+                <h2>Update log</h2>
+
+                <p><strong>27 August 2026 &mdash; substantial update.</strong> Re-verified all pricing (unchanged since publication) and added the credit allowances and updates-per-day figures the original table omitted. Added the tracker-update credit cost, which I had missed first time round and which changes the free-tier maths significantly. Corrected Feedly's Pro and Pro+ prices, which had moved. Sourced the Contify statistic properly and added the disclosure that it is vendor research &mdash; the original quoted it as though it were independent, which it is not.</p>
+                <p><strong>12 December 2025 &mdash; first published</strong> after building trackers on the free tier and running the same topics through Google Alerts in parallel.</p>
+
                 <p>Running a monitoring setup that works well? <a href="/contact.html">I'd like to hear what's in it</a> &mdash; the combination of tools people actually settle on is more useful than any single review.</p>
+
+                <p>Related reading on this site: <a href="/blogs/free-ai-tiers-2026-chatgpt-claude-gemini-perplexity.html">Free AI Tiers in 2026</a>, <a href="/blogs/ai-tools-for-founders-small-teams-2026.html">5 AI Tools for Founders &amp; Small Teams</a>, and <a href="/blogs/how-to-write-a-prompt-that-actually-works.html">How to Write a Prompt That Actually Works</a>.</p>
 
             </div>
 
@@ -483,13 +576,11 @@
             <div class="article-tags">
                 <span class="tag-label">Tags:</span>
                 <a href="javascript:void(0)" class="tag">NBot</a>
-                <a href="javascript:void(0)" class="tag">Personal Tracking</a>
-                <a href="javascript:void(0)" class="tag">Habit Tracker</a>
-                <a href="javascript:void(0)" class="tag">Goal Tracking</a>
-                <a href="javascript:void(0)" class="tag">Productivity Tools</a>
-                <a href="javascript:void(0)" class="tag">Custom Trackers</a>
-                <a href="javascript:void(0)" class="tag">Accountability</a>
-                <a href="javascript:void(0)" class="tag">Digital Organization</a>
+                <a href="javascript:void(0)" class="tag">AI Content Monitoring</a>
+                <a href="javascript:void(0)" class="tag">Google Alerts Alternative</a>
+                <a href="javascript:void(0)" class="tag">News Trackers</a>
+                <a href="javascript:void(0)" class="tag">Feedly Comparison</a>
+                <a href="javascript:void(0)" class="tag">AI Tools</a>
             </div>
 
             </article>
@@ -503,6 +594,24 @@
                         <input type="text" id="blog-search" name="q" class="search-input" placeholder="Search blogs..." aria-label="Search blog posts">
                         <button type="submit" class="search-btn">Search</button>
                     </form>
+                </div>
+                <div class="sidebar-widget">
+                    <h3>Related Reading</h3>
+                    <a href="ai-tools-for-founders-small-teams-2026.html" class="sidebar-post">
+                        <div class="sidebar-post-content">
+                            <h4>5 AI Tools for Founders &amp; Small Teams</h4>
+                        </div>
+                    </a>
+                    <a href="free-ai-tiers-2026-chatgpt-claude-gemini-perplexity.html" class="sidebar-post">
+                        <div class="sidebar-post-content">
+                            <h4>Free AI Tiers in 2026: What You Actually Get</h4>
+                        </div>
+                    </a>
+                    <a href="tettra-ai-stop-answering-repetitive-questions-slack.html" class="sidebar-post">
+                        <div class="sidebar-post-content">
+                            <h4>Tettra AI: Stop Answering the Same Questions</h4>
+                        </div>
+                    </a>
                 </div>
                 <div class="sidebar-widget">
                     <h3>Recent Posts</h3>

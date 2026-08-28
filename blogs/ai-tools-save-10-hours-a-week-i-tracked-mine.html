@@ -39,7 +39,7 @@
         "headline": "Every AI Tool Claims It Saves 10 Hours a Week. I Tracked Mine for a Month.",
         "description": "A 30-day productivity experiment measuring how much time AI tools actually save, including the hidden costs of prompting, editing, fact-checking and tool switching.",
         "datePublished": "2026-05-21",
-        "dateModified": "2026-05-21",
+        "dateModified": "2026-08-27",
         "author": {
             "@type": "Person",
             "name": "Vijay",
@@ -175,6 +175,13 @@
                     "@type": "Answer",
                     "text": "Three patterns accounted for nearly all my losses. First, using AI on tasks that were already short — anything under about ten minutes rarely repaid the prompting. Second, editing generic output into something that sounded like me, which sometimes took longer than writing it fresh. Third, chasing a plausible but wrong answer down a dead end before realising it was wrong. The first is avoidable with a simple rule; the third is why verification isn't optional."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there real research showing AI tools make people slower, not faster?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. A 2025 randomized controlled trial by METR had 16 experienced open-source developers complete 246 real tasks in codebases they knew well. Measured result: using AI tools made them 19% slower, not faster. Before starting, they'd predicted a 24% speedup; afterward, despite the measured slowdown, they still believed AI had made them 20% faster. A separate Microsoft Research study found Copilot made developers 55.8% faster on a narrow, well-specified task, showing the difference comes down to the type of task, not the tool." }
             }
         ]
     }
@@ -251,6 +258,7 @@
                 <h1 class="article-title">Every AI Tool Claims It Saves 10 Hours a Week. I Tracked Mine for a Month.</h1>
                 <div class="article-meta">
                     <span class="article-meta-item">May 21, 2026</span>
+                    <span class="article-meta-item">Updated Aug 27, 2026</span>
                     <span class="article-meta-item">by <a href="/about.html#author" class="author-link">Vijay</a></span>
                 </div>
             </header>
@@ -271,6 +279,8 @@
                 <p>The trigger was small and slightly embarrassing. I'd told a friend, with total confidence, that AI had "probably halved" my writing time. Then that evening I sat down to draft something and caught myself on the fifth prompt for a single opening line. Five prompts. Each one read, rejected, rephrased. I had no idea how long I'd been at it.</p>
 
                 <p>That's the problem with productivity impressions — you remember the moment the tool nailed something in four seconds and you forget the twenty minutes you spent nudging it. Psychologists have a name for most of this, but you don't need the terminology to recognise the effect. The wins are vivid. The friction is invisible. Any honest answer to "does AI save time?" needs a clock, not a feeling.</p>
+
+                <p>I found out afterwards that this exact gap has been measured properly, at a scale one person with a stopwatch can't match. <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener noreferrer nofollow">METR ran a randomized controlled trial</a> with 16 experienced open-source developers completing 246 real tasks, averaging two hours each, in codebases they already knew well. Measured result: developers using AI tools took <strong>19% longer</strong> to finish, not less. Before the study, they'd predicted AI would speed them up by 24%. After finishing — after directly experiencing the slowdown — they still estimated AI had made them 20% faster. Their own lived experience of the tool didn't correct their belief about it. That's not a knock on those developers; it's the same trap I fell into in week one, run properly, on more people, with a control group I didn't have.</p>
 
                 <p>So I built a small experiment. Nothing scientific enough to publish in a journal — one person, one job, one month. But it was honest, and I recorded the failures as carefully as the successes, which is the part most people skip.</p>
 
@@ -475,6 +485,8 @@
 
                 <p>Fact-checking was the cost I was most tempted to skip, and the one I'd defend most strongly. In week three I nearly published a figure that a model had stated with complete assurance and which turned out to be off by a wide margin. It took me nine minutes to confirm it was wrong. Nine minutes is cheap. The alternative wasn't.</p>
 
+                <p>My own overhead worked out to roughly 65% of the raw gains, which is higher than what shows up in broader surveys — worth flagging rather than quietly ignoring. <a href="https://newsroom.workday.com/2026-01-14-New-Workday-Research-Companies-Are-Leaving-AI-Gains-on-the-Table" target="_blank" rel="noopener noreferrer nofollow">Workday's January 2026 survey</a> of 3,200 employees and business leaders found roughly 37% of AI time savings get eaten by reviewing, correcting and rewriting output — for every 10 hours supposedly saved, about 4 are lost to rework. My number came in higher, and I think I know why: I was running six tools instead of settling on one or two, which stacked switching costs the average respondent probably doesn't carry, and I was verifying everything with the standard of "would I publish this," which is a stricter bar than most daily work needs. Even taking the lower, more representative 37% figure, the conclusion doesn't change — a meaningful chunk of every "saved" hour gets spent again before you can bank it.</p>
+
                 <h2>The Weekly Trend, Which Is the Real Story</h2>
 
                 <div style="overflow-x:auto;">
@@ -554,6 +566,8 @@
                 <h3>GitHub Copilot and Cursor</h3>
 
                 <p>Measured per hour of use, the coding tools saved the most time of anything I tracked. Copilot is at its best on the predictable middle of a function — the loop you've written a hundred times, the boilerplate, the test scaffolding. Cursor earned its place on multi-file changes, where the tedium is in the mechanical propagation of an edit rather than the thinking.</p>
+
+                <p>This lines up with the one properly controlled study on Copilot specifically: <a href="https://arxiv.org/abs/2302.06590" target="_blank" rel="noopener noreferrer nofollow">Microsoft Research's RCT with 95 professional developers</a> found the group using Copilot completed a well-specified task — building an HTTP server — 55.8% faster (71 minutes versus 160). Worth setting against the METR finding above rather than picking whichever number flatters the tool: that task was narrow and clearly specified, the kind of predictable, well-bounded work Copilot is genuinely built for. METR's developers were working in large, unfamiliar-to-the-tool codebases on real maintenance issues, which is a different and harder job. Same category of tool, opposite results, because the task shape decided it — which is exactly what my own log showed too.</p>
 
                 <p>Where they cost me: an accepted suggestion I didn't fully read cost me about forty minutes of debugging in week two. It looked right. It compiled. It was subtly wrong in a way that only appeared under a specific input. That's the whole risk in one anecdote — these tools remove the typing, not the responsibility, and if you don't understand the code you accepted, the time comes back later with interest. If you're using AI to actually learn rather than just produce, the <a href="/blogs/using-ai-for-coding-interview-prep.html">interview prep piece</a> covers that distinction properly.</p>
 
@@ -739,6 +753,9 @@
                 <h3>Why did AI make some tasks slower?</h3>
                 <p>Three patterns accounted for nearly all my losses. First, using AI on tasks that were already short — anything under about ten minutes rarely repaid the prompting. Second, editing generic output into something that sounded like me, which sometimes took longer than writing it fresh. Third, chasing a plausible but wrong answer down a dead end before realising it was wrong. The first is avoidable with a simple rule; the third is why verification isn't optional.</p>
 
+                <h3>Is there real research showing AI tools make people slower, not faster?</h3>
+                <p>Yes. A 2025 randomized controlled trial by METR had 16 experienced open-source developers complete 246 real tasks in codebases they knew well. Measured result: using AI tools made them 19% slower, not faster. Before starting, they'd predicted a 24% speedup; afterward, despite the measured slowdown, they still believed AI had made them 20% faster. It's the same perception gap this article describes, run as a proper controlled study rather than one person's stopwatch. It doesn't mean AI never helps developers — a separate Microsoft Research study found Copilot made developers 55.8% faster on a narrow, well-specified task. The difference is the task: predictable and well-bounded work speeds up, unfamiliar work in a complex codebase can slow down.</p>
+
                 <h2>The Honest Verdict</h2>
 
                 <p>Did AI save me ten hours a week? No. It saved me about two and a half, and it took me three weeks of adjusting my own habits to get there.</p>
@@ -754,6 +771,26 @@
             </div>
 
             <!-- Tags -->
+
+                <h2>Sources and verification</h2>
+
+                <p>These are the outside references behind the productivity claims and tool details in this article. The list was reviewed and consolidated on 27 August 2026; the links are given so you can check each claim at its origin rather than taking this page's word for it. Anything time-sensitive &mdash; pricing, limits, salary bands, posting volumes &mdash; moves faster than an article can, so verify before you act on a specific number.</p>
+
+                <ul class="source-list">
+                    <li><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener noreferrer nofollow">METR ran a randomized controlled trial</a></li>
+                    <li><a href="https://newsroom.workday.com/2026-01-14-New-Workday-Research-Companies-Are-Leaving-AI-Gains-on-the-Table" target="_blank" rel="noopener noreferrer nofollow">Workday's January 2026 survey</a></li>
+                    <li><a href="https://arxiv.org/abs/2302.06590" target="_blank" rel="noopener noreferrer nofollow">Microsoft Research's RCT with 95 professional developers</a></li>
+                </ul>
+
+                <p style="font-size:0.92rem;">Disclosure: this article contains no affiliate links and no sponsored placements. No company mentioned paid for inclusion, was given a preview, or had any editorial input. Where a figure comes from a vendor's own page or marketing material rather than an independent source, it is described as such in the text.</p>
+
+                <h2>Update log</h2>
+
+                <p><strong>27 August 2026 &mdash; reviewed and updated.</strong> Gathered the article's outside references into the sources section above and added the editorial disclosure. No factual claims were changed in this pass.</p>
+                <p><strong>21 May 2026 &mdash; first published.</strong></p>
+
+                <p>Tracked your own hours and got a different number? <a href="/contact.html">I'd genuinely like to see it</a> &mdash; especially if it was lower.</p>
+
             <div class="article-tags">
                 <span class="tag-label">Tags:</span>
                 <a href="javascript:void(0)" class="tag">AI Productivity Tools</a>
